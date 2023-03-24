@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Available Items</h1>
+
+  <% if @items.empty? %>
+    <p>Sorry, there are no available items at the moment.</p>
+  <% else %>
+    <ul>
+      <% @items.each do |item| %>
+        <li>
+          <%= link_to item.name, item %>
+          <p><%= item.description %></p>
+          <p><strong>Age:</strong> <%= item.age %></p>
+          <p><strong>House:</strong> <%= item.house %></p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

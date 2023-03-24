@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :items do
+    collection do
+      get 'search' # Route for searching items
+    end
+    member do
+      patch 'share' # Route for sharing an item
+    end
+  end
+
+  root to: "pages#home"
 end

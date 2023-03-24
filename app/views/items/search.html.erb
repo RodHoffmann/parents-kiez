@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+
+<% if @items.present? %>
+  <ul>
+    <% @items.each do |item| %>
+      <li><%= link_to item.name, item %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No items found.</p>
+<% end %>
