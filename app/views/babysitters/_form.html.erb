@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for(babysitter) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :age%>
+    <%= f.input :gender%>
+    <%= f.input :address %>
+    <%= f.input :cost_per_hour%>
+    <%= f.input :years_of_experience %>
+    <%= f.input :image, as: :file %>
+    <%= f.submit "Save application!" %>
+  <% end %>
+</div>
