@@ -1,0 +1,13 @@
+<div class="container m-10">
+  <div class="card h-20 w-20 text-center m-10">
+    <img src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h3 class="card_title"><%= @babysitter.first_name%><%= @babysitter.last_name%></h2>
+      <h4>-<%= @babysitter.age%> years old </h4>
+      <h4 class="card-text">-gender: <%= @babysitter.gender%></h4>
+      <h5 class="card-text">-Address :<%= @babysitter.address%></h5>
+      <h5 class="card-meta mb-2"> -cost per hour :<%= @babysitter.cost_per_hour%></h5>
+      <h5 class="card-meta mb-2">-years of experience :<%= @babysitter.years_of_experience%></h5>
+    </div>
+  </div>
+</div>
