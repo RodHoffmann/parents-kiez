@@ -34,6 +34,10 @@ class BabysittersController < ApplicationController
     end
   end
 
+  def destroy
+    @babysitter.destroy
+    redirect_to babysitters_path, notice: "Bbabysitter application was successfully destroyed."
+  end
 
   private
 
