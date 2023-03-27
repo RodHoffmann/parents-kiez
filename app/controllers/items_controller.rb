@@ -3,42 +3,102 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy, :share]
 
   def index
-    # @items = Item.where(available: true)
-    @items = Item.all
+    @items = Item.where(available: true)
+    # @items = Item.all
   end
+
+  # def index
+  #   @items = Item.where(available: true)
+  #   if @items.empty?
+  #     flash[:notice] = 'There are no items available at the moment. Please try again later.'
+  #   end
+  # end
+
+  # def show
+  #   @item = Item.find(params[:id])
+  #   if @item.available
+  #     # render the show view with a "Reserve" button
+  #   else
+  #     redirect_to items_path, notice: 'Item not available'
+  #   end
+  # end
+
+  def reserve
+    @item = Item.find(params[:id])
+    @reservation = Reservation.new(item: @item, user: current_user, reserved_at: Time.now, expires_at: 24.hours.from_now)
+    if @reservation.save
+      @item.update(available: false)
+      ReservationCleanupJob.set(wait: 24.hours).perform_later(@reservation.id)
+      redirect_to @item, notice: 'Item was successfully reserved.'
+    else
+      redirect_to @item, alert: 'Failed to reserve item.'
+    end
+  end
+
+  # def reserve
+  #   @item = Item.find(params[:id])
+  #   @reservation = Reservation.new(item: @item, user: current_user)
+  #   if @reservation.save
+  #     @item.update(available: false)
+  #     ReservationCleanupJob.set(wait: 24.hours).perform_later(@reservation.id)
+  #     redirect_to @item, notice: 'Item was successfully reserved.'
+  #   else
+  #     redirect_to @item, alert: 'Failed to reserve item.'
+  #   end
+  # end
 
   def show
     @item = Item.find(params[:id])
     if @item.available
-      # render the show view
+      @reservation = Reservation.find_by(item_id: @item.id, user_id: current_user.id)
+      if @reservation.nil?
+        # The item is available and has not been reserved by the current user
+        # Show the reservation button
+      elsif @reservation.user == current_user
+        # The current user has already reserved this item
+        # Show a message saying that the item is already reserved
+        flash[:notice] = "You have already reserved this item."
+      else
+        # The item has been reserved by someone else
+        # Show a message saying that the item is no longer available
+        flash[:alert] = "This item is currently reserved by someone else."
+      end
     else
-      redirect_to items_path, notice: 'Item not available'
+      if current_user && current_user == @item.user
+        # Item is not available, but belongs to the current user
+        # Show the cleanup button
+      else
+        # Item is not available and does not belong to the current user
+        # Show a message saying that the item is no longer available
+        flash[:alert] = "This item is no longer available."
+      end
     end
   end
 
   def new
-    @item = Item.new
-    # @item = current_user.items.build
+    # @item = Item.new # added
+    @item = current_user.items.build
+  end
+
+  def create
+    @item = current_user.items.build(item_params)
+    @item.available = true
+    if @item.save
+      redirect_to @item, notice: "Item was successfully created."
+    else
+      render :new
+    end
   end
 
   # def create
-  #   @item = current_user.items.build(item_params)
+  #   @item = Item.new(item_params)
+  #   @item.user = current_user
   #   if @item.save
-  #     redirect_to @item, notice: "Item was successfully created."
+  #     redirect_to items_path, notice: "Item was successfully created."
   #   else
-  #     render :new
+  #     render :new, status: :unprocessable_entity
   #   end
   # end
-
-  def create
-    @item = Item.new(item_params)
-    @item.user = current_user
-    if @item.save
-      redirect_to items_path, notice: "Item was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
 
   def edit
   end
@@ -51,6 +111,40 @@ class ItemsController < ApplicationController
     end
   end
 
+  # def reserve
+  #   @item = Item.find(params[:id])
+  #   if @item.available
+  #     @item.update(available: false, reserved_by: current_user.id, reserved_until: 24.hours.from_now)
+  #     redirect_to @item, notice: "Item reserved successfully."
+  #   else
+  #     redirect_to @item, notice: "Item is not available for reservation."
+  #   end
+  # end
+
+  # def reserve
+  #   @item = Item.find(params[:id])
+  #   @reservation = Reservation.new(item: @item, user: current_user)
+  #   if @reservation.save
+  #     @item.update(available: false)
+  #     ReservationCleanupJob.set(wait: 24.hours).perform_later(@reservation.id)
+  #     redirect_to @item, notice: 'Item was successfully reserved.'
+  #   else
+  #     redirect_to @item, alert: 'Failed to reserve item.'
+  #   end
+  # end
+
+  def set_item
+    @item = Item.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Item not found"
+    redirect_to root_path
+  end
+
+  def cleanup
+    expired_items = Item.where("reserved_until < ?", Time.now)
+    expired_items.update_all(available: true, reserved_by: nil, reserved_until: nil)
+  end
+
   def destroy
     @item.destroy
     redirect_to items_url, notice: "Item was successfully destroyed."
@@ -61,9 +155,9 @@ class ItemsController < ApplicationController
     redirect_to @item, notice: "Item is now available for sharing."
   end
 
-  # def search
-  #   @items = Item.where("name LIKE ?", "%#{params[:q]}%")
-  # end
+  def search
+    @items = Item.where("name LIKE ?", "%#{params[:q]}%")
+  end
 
   private
 
