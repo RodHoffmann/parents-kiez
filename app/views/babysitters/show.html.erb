@@ -8,6 +8,9 @@
       <h5 class="card-text">-Address :<%= @babysitter.address%></h5>
       <h5 class="card-meta mb-2"> -cost per hour :<%= @babysitter.cost_per_hour%></h5>
       <h5 class="card-meta mb-2">-years of experience :<%= @babysitter.years_of_experience%></h5>
+      <div class="mb-3 mt-3">
+        <%= link_to "Edit #{@babysitter.first_name}", edit_babysitter_path, class: 'btn btn-primary rounded-pill px-4 fw-bold' %>
+      </div>
     </div>
   </div>
 </div>

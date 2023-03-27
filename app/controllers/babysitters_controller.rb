@@ -13,6 +13,9 @@ class BabysittersController < ApplicationController
     @babysitter = Babysitter.new
   end
 
+  def edit
+  end
+
   def create
     @babysitter = Babysitter.new(babysitter_params)
     @babysitter.user = current_user
@@ -23,6 +26,15 @@ class BabysittersController < ApplicationController
     end
   end
 
+  def update
+    if @babysitter.update(babysitter_params)
+      redirect_to babysitter_path(@babysitter), notice: "your application was successfully updated."
+    else
+    render :edit, status: :unprocessable_entity
+    end
+  end
+
+
   private
 
   def set_babysitter
@@ -30,6 +42,6 @@ class BabysittersController < ApplicationController
   end
 
   def babysitter_params
-    params.require(:babysitter).permit(:first_name, :first_name,:age, :gender, :address, :cost_per_hour, :years_of_experience, :image)
+    params.require(:babysitter).permit(:first_name, :first_name, :age, :gender, :address, :cost_per_hour, :years_of_experience, :image)
   end
 end
