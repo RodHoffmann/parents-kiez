@@ -1,0 +1,26 @@
+<div class="container m-5">
+  <h2>Check out our available babysitters!!</h2>
+</dev>
+
+<div class="container m-10">
+
+  <div class="row">
+
+    <% @babysitters.each do |babysitter| %>
+      <div class="col-md-3">
+        <div class="card h-100 text-center mb-5">
+          <img src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h3 class="card_title"><%= babysitter.first_name%><%= babysitter.last_name%></h2>
+            <h4>-<%= babysitter.age%> years old </h4>
+            <h4 class="card-text">-gender: <%= babysitter.gender%></h4>
+            <h5 class="card-meta mb-2"> -cost per hour :<%= babysitter.cost_per_hour%></h5>
+            <h5 class="card-meta mb-2">-years of experience :<%= babysitter.years_of_experience%></h5>
+           <button class="btn btn-outline-primary my-2 my-sm-0 mr-3" type="submit"><%= link_to 'More Details', babysitter_path(babysitter) %></button>
+           </button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
