@@ -28,7 +28,7 @@ class BabysittersController < ApplicationController
 
   def update
     if @babysitter.update(babysitter_params)
-      redirect_to babysitter_path(@babysitter), notice: "your application was successfully updated."
+      redirect_to babysitter_path(@babysitter), notice: "Your information was successfully updated."
     else
     render :edit, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class BabysittersController < ApplicationController
 
   def destroy
     @babysitter.destroy
-    redirect_to babysitters_path, notice: "Bbabysitter application was successfully destroyed."
+    redirect_to babysitters_path, notice: "Your babysitter profile was deleted."
   end
 
   private
