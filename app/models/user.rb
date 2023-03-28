@@ -5,4 +5,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :chatrooms_as_user1, class_name: "Chatroom", foreign_key: :user1_id
+  has_many :chatrooms_as_user2, class_name: "Chatroom", foreign_key: :user2_id
 end

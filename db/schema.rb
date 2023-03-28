@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_23_101657) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_24_111919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_101657) do
     t.index ["user_id"], name: "index_babysitters_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user1_id"
+    t.bigint "user2_id"
+    t.index ["user1_id"], name: "index_chatrooms_on_user1_id"
+    t.index ["user2_id"], name: "index_chatrooms_on_user2_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -38,6 +47,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_101657) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "chatroom_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,5 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_23_101657) do
   end
 
   add_foreign_key "babysitters", "users"
+  add_foreign_key "chatrooms", "users", column: "user1_id"
+  add_foreign_key "chatrooms", "users", column: "user2_id"
   add_foreign_key "items", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
 end
