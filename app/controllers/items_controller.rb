@@ -4,24 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.where(available: true)
-    # @items = Item.all
   end
-
-  # def index
-  #   @items = Item.where(available: true)
-  #   if @items.empty?
-  #     flash[:notice] = 'There are no items available at the moment. Please try again later.'
-  #   end
-  # end
-
-  # def show
-  #   @item = Item.find(params[:id])
-  #   if @item.available
-  #     # render the show view with a "Reserve" button
-  #   else
-  #     redirect_to items_path, notice: 'Item not available'
-  #   end
-  # end
 
   def reserve
     @item = Item.find(params[:id])
@@ -34,18 +17,6 @@ class ItemsController < ApplicationController
       redirect_to @item, alert: 'Failed to reserve item.'
     end
   end
-
-  # def reserve
-  #   @item = Item.find(params[:id])
-  #   @reservation = Reservation.new(item: @item, user: current_user)
-  #   if @reservation.save
-  #     @item.update(available: false)
-  #     ReservationCleanupJob.set(wait: 24.hours).perform_later(@reservation.id)
-  #     redirect_to @item, notice: 'Item was successfully reserved.'
-  #   else
-  #     redirect_to @item, alert: 'Failed to reserve item.'
-  #   end
-  # end
 
   def show
     @item = Item.find(params[:id])
@@ -76,7 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-    # @item = Item.new # added
     @item = current_user.items.build
   end
 
@@ -90,16 +60,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def create
-  #   @item = Item.new(item_params)
-  #   @item.user = current_user
-  #   if @item.save
-  #     redirect_to items_path, notice: "Item was successfully created."
-  #   else
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
-
   def edit
   end
 
@@ -109,35 +69,6 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  # def reserve
-  #   @item = Item.find(params[:id])
-  #   if @item.available
-  #     @item.update(available: false, reserved_by: current_user.id, reserved_until: 24.hours.from_now)
-  #     redirect_to @item, notice: "Item reserved successfully."
-  #   else
-  #     redirect_to @item, notice: "Item is not available for reservation."
-  #   end
-  # end
-
-  # def reserve
-  #   @item = Item.find(params[:id])
-  #   @reservation = Reservation.new(item: @item, user: current_user)
-  #   if @reservation.save
-  #     @item.update(available: false)
-  #     ReservationCleanupJob.set(wait: 24.hours).perform_later(@reservation.id)
-  #     redirect_to @item, notice: 'Item was successfully reserved.'
-  #   else
-  #     redirect_to @item, alert: 'Failed to reserve item.'
-  #   end
-  # end
-
-  def set_item
-    @item = Item.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "Item not found"
-    redirect_to root_path
   end
 
   def cleanup

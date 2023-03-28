@@ -3,19 +3,20 @@ Rails.application.routes.draw do
 
   resources :items do
     collection do
-      get 'search' # Route for searching items
+      get 'search'
     end
     member do
-      patch 'share' # Route for sharing an item
+      get 'share'
+      patch 'share'
     end
+    member do
+      patch 'reserve'
+      post 'create_reservation'
+    end
+    get 'reserve', on: :member
+    resources :reservations, only: [:index, :new, :create]
   end
-
-  get '/my_items', to: 'items#my_items', as: 'my_items'
-  get '/shared_items', to: 'items#shared_items', as: 'shared_items'
+    resources :reservations, only: [:show, :edit, :update, :destroy]
 
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
