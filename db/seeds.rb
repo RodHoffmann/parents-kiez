@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# User.create(
+#   email: "example@example.com",
+#   password: "password"
+# )
+
 puts "Deleting Users..."
 
 User.destroy_all
@@ -67,6 +73,50 @@ p rodrigo
 users << rodrigo
 
 puts "Users creation completed successfuly"
+
+puts "Creating Items.."
+
+item1 = john.items.create!(
+  name: "Baby rattle",
+  description: "A colorful plastic rattle for babies",
+  age: "0-6 months",
+  house: "clean",
+  available: true,
+  user_id: User.last.id
+)
+p item1
+
+item2 = felix.items.create!(
+  name: "Toddler shoes",
+  description: "A pair of used toddler shoes in good condition",
+  age: "1-2 years",
+  house: "pet-free",
+  available: true,
+  user_id: User.last.id
+)
+p item2
+
+item3 = jane.items.create!(
+  name: "Baby clothes",
+  description: "A bag of gently used baby clothes",
+  age: "0-6 months",
+  house: "smoke-free",
+  available: true,
+  user_id: User.last.id
+)
+p item3
+
+item4 = norma.items.create!(
+  name: "Potty seat",
+  description: "A used potty seat in good condition",
+  age: "1-3 years",
+  house: "clean",
+  available: true,
+  user_id: User.last.id
+)
+p item4
+
+puts "Items created successfully"
 
 puts "Creating Chatrooms..."
 
