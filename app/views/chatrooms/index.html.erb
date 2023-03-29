@@ -1,0 +1,9 @@
+<h1>Your conversations</h1>
+
+<div class="container">
+<ul>
+  <% @my_chatrooms.each do |chatroom| %>
+    <li><%= link_to (@current_user == chatroom.user2 ? chatroom.user1.first_name : chatroom.user2.first_name), chatroom_path(chatroom) %></li>
+  <% end %>
+</ul>
+</div>
