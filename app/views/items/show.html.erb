@@ -4,15 +4,6 @@
 <p><strong>Age:</strong> <%= @item.age %></p>
 <p><strong>House:</strong> <%= @item.house %></p>
 
-<% if @item.reservations.any? %>
-  <p>This item is currently reserved.</p>
-<% else %>
-  <p>This item is available for reserving.</p>
-
-  <%= link_to "Reserve this item", item_reservations_path(@item), class: 'btn btn-success rounded-pill px-4 fw-bold', method: :post %>
-
-<% end %>
-
 <div class="mb-3 mt-3">
   <%= link_to "Edit", edit_item_path(@item), class: 'btn btn-primary rounded-pill px-4 fw-bold' %>
 </div>
