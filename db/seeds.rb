@@ -10,6 +10,7 @@
 #   email: "example@example.com",
 #   password: "password"
 # )
+require "open-uri"
 
 puts "Deleting Users..."
 
@@ -33,6 +34,7 @@ john = User.create(email: 'john@example.com',
   last_name: 'Doe',
   address: 'Berliner Alle 125')
 
+john.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098718/d4f1w05kkbpee3sctons.jpg'), filename: 'profile1.jpg', content_type: 'image/jpg')
 p john
 users << john
 
@@ -42,6 +44,7 @@ felix = User.create(email: 'felix@example.com',
   last_name: 'Baumgartner',
   address: 'Rosa Luxemburg Str. 84')
 
+felix.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098713/ikvov8istpbwhcf0k9tg.jpg'), filename: 'profile2.jpg', content_type: 'image/jpg')
 p felix
 users << felix
 
@@ -51,6 +54,7 @@ jane = User.create(email: 'jane@example.com',
   last_name: 'Jackson',
   address: 'Simon Bolivar Str. 52')
 
+jane.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098708/aqfxtwzil5kqpqb2k740.jpg'), filename: 'profile3.jpg', content_type: 'image/jpg')
 p jane
 users << jane
 
@@ -60,6 +64,7 @@ norma = User.create(email: 'norma@example.com',
   last_name: 'Baker',
   address: 'Sonnenalle 785')
 
+norma.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098703/opaimkxebgsw1ld2gosw.jpg'), filename: 'profile4.jpg', content_type: 'image/jpg')
 p norma
 users << norma
 
@@ -69,6 +74,7 @@ rodrigo = User.create(email: 'rodrigo@example.com',
   last_name: 'Mueller',
   address: 'Schönhauser Alle 77')
 
+rodrigo.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098439/ucuf0ijqdn74bbxgzcg9.jpg'), filename: 'profile5.jpg', content_type: 'image/jpg')
 p rodrigo
 users << rodrigo
 

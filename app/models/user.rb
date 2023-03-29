@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_one :babysitter, dependent: :destroy
   has_many :items, dependent: :destroy
 
+  has_one_attached :image
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

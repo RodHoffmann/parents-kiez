@@ -3,7 +3,7 @@
 <div class="container">
 <ul>
   <% @my_chatrooms.each do |chatroom| %>
-    <li><%= link_to (@current_user == chatroom.user2 ? chatroom.user1.first_name : chatroom.user2.first_name), chatroom_path(chatroom) %></li>
+    <li><%= cl_image_tag (@current_user == chatroom.user2 ? chatroom.user1.image.key : chatroom.user2.image.key), class: 'avatar-bordered' %> <%= link_to (@current_user == chatroom.user2 ? chatroom.user1.first_name : chatroom.user2.first_name), chatroom_path(chatroom) %></li>
   <% end %>
 </ul>
 </div>
