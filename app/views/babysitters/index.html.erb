@@ -7,18 +7,19 @@
   </div>
 
   <div class="container m-10" id="index-container">
-    <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
-
+   <%if !current_user.babysitter.present?  %>
+      <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
+    <%end%>
     <div class="row">
       <% @babysitters.each do |babysitter| %>
-        <div class="col-md-3">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
           <div class="card h-100  mb-10 mt-10" id= "index-card">
             <img src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card_title"><%= babysitter.first_name%>  <%= babysitter.last_name%></h2>
               <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= babysitter.age%> Years Old</h4>
               <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
-              <h5 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
+              <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
             <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
             </button>
             </div>
