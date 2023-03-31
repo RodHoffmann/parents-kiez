@@ -80,7 +80,7 @@ item1 = john.items.create!(
   name: "Baby rattle",
   description: "A colorful plastic rattle for babies",
   age: "0-6 months",
-  house: "clean",
+  house: "Herman Str.5",
   available: true,
   user_id: User.last.id
 )
@@ -90,7 +90,7 @@ item2 = felix.items.create!(
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
   age: "1-2 years",
-  house: "pet-free",
+  house: "Eisenacher Str.7",
   available: true,
   user_id: User.last.id
 )
@@ -100,7 +100,7 @@ item3 = jane.items.create!(
   name: "Baby clothes",
   description: "A bag of gently used baby clothes",
   age: "0-6 months",
-  house: "smoke-free",
+  house: "Wittineu Str.17",
   available: true,
   user_id: User.last.id
 )
@@ -110,7 +110,7 @@ item4 = norma.items.create!(
   name: "Potty seat",
   description: "A used potty seat in good condition",
   age: "1-3 years",
-  house: "clean",
+  house: "Senftenberger 17",
   available: true,
   user_id: User.last.id
 )
