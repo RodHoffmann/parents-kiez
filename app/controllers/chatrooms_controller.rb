@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @my_chatrooms = Chatroom.all.select { |chatroom| (chatroom.user1 || chatroom.user2) == current_user }
+    @my_chatrooms = Chatroom.all.select { |chatroom| (chatroom.user1 == current_user) || (chatroom.user2 == current_user) }
     @current_user = current_user
   end
 
