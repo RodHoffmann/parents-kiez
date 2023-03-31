@@ -8,7 +8,7 @@
   #apply-btn {
     margin-top: 10px;
     margin-bottom: 30px;
-    background-color: #daab9d;
+    background-color: #ffffff;
     border:#332e2e;
     padding: 16px 32px;
     text-align:start;
@@ -31,7 +31,7 @@
 
 
 #index-card {
-  background-color: #f7fdff;
+
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border: 1px solid #ddd;
@@ -40,15 +40,17 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
-  .card-img-top {
+.card-img-top {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    border: 10px solid transparent;
   }
 
   .card-body {
     padding: 15px;
+    background-color: rgb(240, 246, 251);
 
 
     .card_title {
@@ -70,7 +72,7 @@
 
     #babysitter-btn {
     margin-top: 10px;
-    background-color: #eea28b;
+    background-color:rgb(252, 137, 91);
     border: none;
     padding: 16px 32px;
     text-align: center;

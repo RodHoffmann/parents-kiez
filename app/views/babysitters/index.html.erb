@@ -7,7 +7,7 @@
   </div>
 
   <div class="container m-10" id="index-container">
-   <%if !current_user.babysitter.present?  %>
+    <%if !current_user.babysitter.present?  %>
       <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
     <%end%>
     <div class="row">
