@@ -1,9 +1,14 @@
-<h1>Your conversations</h1>
-
+<div class="container my-5 text-center">
+  <h1>Messages</h1>
+</div>
 <div class="container">
-<ul>
   <% @my_chatrooms.each do |chatroom| %>
-    <li><%= link_to (@current_user == chatroom.user2 ? chatroom.user1.first_name : chatroom.user2.first_name), chatroom_path(chatroom) %></li>
+    <div class="card-chat">
+      <%= cl_image_tag (@current_user == chatroom.user2 ? chatroom.user1.image.key : chatroom.user2.image.key), class: '' %>
+      <div class="card-chat-infos">
+        <h2><%= link_to (@current_user == chatroom.user2 ? chatroom.user1.first_name : chatroom.user2.first_name), chatroom_path(chatroom), class: 'stretched-link' %></h2>
+        <p><%= chatroom.messages.last.content %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
 </div>
