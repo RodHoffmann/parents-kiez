@@ -27,4 +27,12 @@
       margin-bottom: 0;
     }
   }
+
+  .chat_btn {
+    background-color: #2f4f4f !important;
+    &:hover {
+      background-color: #507c7c !important;
+      transition: 0.3s !important;
+    }
+  }
 }
