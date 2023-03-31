@@ -29,6 +29,13 @@
     </div>
   </div>
 
-
-
 </div>
+
+
+<#% if babysitter.image.key != nil %>
+            <#div class="text-white card card-has-bg click-col" style="background-image:url('<#%= cl_image_path babysitter.image.key %>');">
+              <#img class="card-img d-none" src="<#%= cl_image_path babysitter.image.key %>" alt="<#%= babysitter.first_name %>">
+            <#% else %>
+            <#div class="text-white card card-has-bg click-col" style="background-image:url('person.jpg');">
+              <#img class="card-img d-none" src="paerson.jpg" alt="<#%=  babysitter.first_name %>">
+            <#% end %>

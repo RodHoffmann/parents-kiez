@@ -6,21 +6,31 @@
     </div>
   </div>
 
-  <div class="container m-10" id="index-container>
-    <div class="card h-100  mb-10 mt-10", id= "index-card">
-      <img src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h2 class="card_title"><%= @babysitter.first_name%><%= @babysitter.last_name%></h2>
-        <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</h4>
-        <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></h4>
-        <h5 class="card-text"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></h5>
-        <h5 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></h5>
-        <h5 class="card-meta mb-2">-years of experience :<%= @babysitter.years_of_experience%></h5>
-        <div class="mb-3 mt-3">
-          <% if @babysitter.user == current_user %>
-            <%= link_to "Edit information", edit_babysitter_path(current_user), class: "btn btn-primary btn-xs" %>
-            <%= link_to "Delete your application", babysitter_path(@babysitter), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing your application ?" }, class: 'btn btn-danger rounded-pill px-4 fw-bold' %>
+  <div class="row m-10" id="container>
+    <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+      <div class="card-show mb-10 mt-10", id= "show-card">
+        <div classs="item">
+          <% if @babysitter.image.key != nil %>
+              <img class="card-img-top" src="<%= cl_image_path @babysitter.image.key %>" alt="<%= @babysitter.first_name %>">
+          <% else %>
+              <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  @babysitter.first_name %>">
           <% end %>
+        </div>
+
+        <div class="card-body">
+          <h2 class="card-title"><%= @babysitter.first_name%><%= @babysitter.last_name%></h2>
+          <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</h4>
+          <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></h4>
+          <h5 class="card-text"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></h5>
+          <h5 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></h5>
+          <h5 class="card-meta mb-2">-years of experience :<%= @babysitter.years_of_experience%></h5>
+          <div class="mb-3 mt-3">
+            <% if @babysitter.user == current_user %>
+              <%= link_to "Edit information", edit_babysitter_path, class: "btn btn-primary btn-xs" %>
+              <%= link_to "Delete your application", babysitter_path(@babysitter), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing your application ?" }, class: 'btn btn-danger rounded-pill px-4 fw-bold' %>
+              <%= link_to "send Message", edit_babysitter_path, class: "btn btn-primary btn-xs" %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
