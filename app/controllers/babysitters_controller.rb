@@ -2,7 +2,11 @@ class BabysittersController < ApplicationController
   before_action :set_babysitter, only: [:show, :edit, :update, :destroy]
 
   def index
-    @babysitters = Babysitter.all
+    if params[:query].present?
+      @babysitters = Babysitter.search_by_first_name_and_last_name_and_cost_per_hour_and_address_and_age_and_gender(params[:query])
+    else
+      @babysitters = Babysitter.all
+    end
   end
 
   def show
