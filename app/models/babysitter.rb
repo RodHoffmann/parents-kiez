@@ -5,7 +5,7 @@ class Babysitter < ApplicationRecord
   validates :last_name, presence: true
   validates :age, presence: true
   validates :gender, presence: true
-  validates :gender, inclusion: { in: %w[Female male else] }
+  validates :gender, inclusion: { in: %w[Female Male Else] }
   validates :address, presence: true
   validates :cost_per_hour, presence: true
   validates :years_of_experience, presence: true
