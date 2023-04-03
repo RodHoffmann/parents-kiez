@@ -1,4 +1,12 @@
 <div class="body-container">
+  <div class ="search">
+    <%= form_with url: babysitters_path, method: :get, class: "d-flex my-3 mx-3" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Nanny or babysitter ?" %>
+    <% end %>
+  </div>
   <div class="maintxt m-2">
     <img src="/assets/child.jpg", class="img-fluid alt="...">
     <div class="text-block">
@@ -12,7 +20,7 @@
     <%end%>
     <div class="row">
       <% @babysitters.each do |babysitter| %>
-        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="col-sm-12 col-md-12 col-lg-3 mb-4">
           <div class="card h-100  mb-10 mt-10" id= "index-card">
             <div classs="item">
               <% if babysitter.image.key != nil %>
