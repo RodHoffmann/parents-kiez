@@ -25,7 +25,7 @@ puts "Deleting Messages..."
 Message.destroy_all
 puts "Deleting babysitters"
 
-Bbaysitter.destroy_all
+Babysitter.destroy_all
 
 puts "Creating Users..."
 
