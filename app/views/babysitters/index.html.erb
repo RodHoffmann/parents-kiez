@@ -14,13 +14,19 @@
       <% @babysitters.each do |babysitter| %>
         <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
           <div class="card h-100  mb-10 mt-10" id= "index-card">
-            <img src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png" class="card-img-top" alt="...">
+            <div classs="item">
+              <% if babysitter.image.key != nil %>
+                <img class="card-img-top" src="<%= cl_image_path babysitter.image.key %>" alt="<%= babysitter.first_name %>">
+              <% else %>
+                <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  babysitter.first_name %>">
+              <% end %>
+            </div>
             <div class="card-body">
               <h2 class="card_title"><%= babysitter.first_name%>  <%= babysitter.last_name%></h2>
               <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= babysitter.age%> Years Old</h4>
               <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
               <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
-            <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
+            <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
             </button>
             </div>
           </div>
@@ -30,12 +36,3 @@
   </div>
 
 </div>
-
-
-<#% if babysitter.image.key != nil %>
-            <#div class="text-white card card-has-bg click-col" style="background-image:url('<#%= cl_image_path babysitter.image.key %>');">
-              <#img class="card-img d-none" src="<#%= cl_image_path babysitter.image.key %>" alt="<#%= babysitter.first_name %>">
-            <#% else %>
-            <#div class="text-white card card-has-bg click-col" style="background-image:url('person.jpg');">
-              <#img class="card-img d-none" src="paerson.jpg" alt="<#%=  babysitter.first_name %>">
-            <#% end %>
