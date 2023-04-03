@@ -23,6 +23,9 @@ Chatroom.destroy_all
 puts "Deleting Messages..."
 
 Message.destroy_all
+puts "Deleting babysitters"
+
+Bbaysitter.destroy_all
 
 puts "Creating Users..."
 
@@ -144,3 +147,34 @@ chatrooms.each do |chatroom|
 end
 
 puts "Messages successfully created"
+
+
+
+# Create 20 users
+puts "Creating babysitters.."
+# Define arrays of possible values
+first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack"]
+last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson"]
+genders = ["Male", "Female"]
+addresses = ["123 Main St.", "456 Elm St.", "789 Maple Ave.", "1011 Oak Rd.", "1213 Pine Blvd.", "1415 Cedar Ln.", "1617 Walnut St.", "1819 Spruce Dr.", "2021 Birch Ave.", "2223 Poplar Rd."]
+costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
+years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Create 10 Babysitter records
+10.times do |i|
+  user = User.create!(
+    email: "babysitter#{i + 1}@example.com",
+    password: "password"
+  )
+
+  Babysitter.create!(
+    first_name: first_names[i % 10],
+    last_name: last_names[i % 10],
+    age: 18 + (i % 13),
+    gender: genders[i % 2],
+    address: addresses[i % 10],
+    cost_per_hour: costs_per_hour[i % 5],
+    years_of_experience: years_of_experience[i % 11],
+    user: user
+  )
+end
