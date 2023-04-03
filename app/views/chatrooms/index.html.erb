@@ -7,7 +7,7 @@
       <%= cl_image_tag (@current_user == chatroom.user2 ? chatroom.user1.image.key : chatroom.user2.image.key), class: '' %>
       <div class="card-chat-infos">
         <h2><%= link_to (@current_user == chatroom.user2 ? chatroom.user1.first_name : chatroom.user2.first_name), chatroom_path(chatroom), class: 'stretched-link' %></h2>
-        <p><%= chatroom.messages.last.content %></p>
+        <p><%= chatroom.messages.last.content if chatroom.messages.empty? == false %></p>
       </div>
     </div>
   <% end %>

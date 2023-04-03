@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :items
   resources :babysitters
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :new, :create] do
     resources :messages, only: :create
   end
   resources :chatrooms, only: :index

@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div class="row m-10" id="container>
+  <div class="row m-10" id="container">
     <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
       <div class="card-show mb-10 mt-10", id= "show-card">
         <div classs="item">
@@ -28,7 +28,7 @@
             <% if @babysitter.user == current_user %>
               <%= link_to "Edit information", edit_babysitter_path, class: "btn btn-primary btn-xs" %>
               <%= link_to "Delete your application", babysitter_path(@babysitter), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing your application ?" }, class: 'btn btn-danger rounded-pill px-4 fw-bold' %>
-              <%= link_to "send Message", edit_babysitter_path, class: "btn btn-primary btn-xs" %>
+              <%= link_to "send Message", chatroom_path(@chatroom), class: "btn btn-primary btn-xs" %>
               <%= link_to "Back to babysitters Page", babysitters_path, class: "btn btn-primary btn-xs" %>
             <% end %>
           </div>
