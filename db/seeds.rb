@@ -82,6 +82,7 @@ puts "Users creation completed successfuly"
 
 puts "Creating Items.."
 
+image_item1 = URI.open("https://www.verywellfamily.com/thmb/oAmzoovzj0HqQmprnm9KkwueGJ4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-Baby-Rattles-VWF-tout-281a53fe25764897ad227834f014e655.jpg")
 item1 = john.items.create!(
   name: "Baby rattle",
   description: "A colorful plastic rattle for babies",
@@ -91,7 +92,12 @@ item1 = john.items.create!(
   user_id: User.last.id
 )
 p item1
+item1.image.attach(io: image_item1, filename: "item1.jpg")
+item1.image.analyze
+item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
+item1.save
 
+image_item2 = URI.open("https://cdn.shopify.com/s/files/1/1428/3302/products/Kids_Shoes_SS22_Ravine_Denim_P_1024x1024.jpg?v=1642550883")
 item2 = felix.items.create!(
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
@@ -101,7 +107,12 @@ item2 = felix.items.create!(
   user_id: User.last.id
 )
 p item2
+item2.image.attach(io: image_item2, filename: "item2.jpg")
+item2.image.analyze
+item2.image.metadata["public_id"] = Cloudinary::Uploader.upload(item2.image.blob.url, resource_type: :auto)["public_id"]
+item2.save
 
+image_item3 = URI.open("https://www.sassymamasg.com/wp-content/uploads/2021/11/kids-clothes-babies-singapore-poney.jpeg")
 item3 = jane.items.create!(
   name: "Baby clothes",
   description: "A bag of gently used baby clothes",
@@ -111,7 +122,12 @@ item3 = jane.items.create!(
   user_id: User.last.id
 )
 p item3
+item3.image.attach(io: image_item3, filename: "item3.jpg")
+item3.image.analyze
+item3.image.metadata["public_id"] = Cloudinary::Uploader.upload(item3.image.blob.url, resource_type: :auto)["public_id"]
+item3.save
 
+image_item4 = URI.open("https://media-www.canadiantire.ca/product/fixing/plumbing/faucets-fixtures/0631048/children-s-potty-seat-75f8a6df-590e-4147-9da1-758f491bb969.png")
 item4 = norma.items.create!(
   name: "Potty seat",
   description: "A used potty seat in good condition",
@@ -121,6 +137,10 @@ item4 = norma.items.create!(
   user_id: User.last.id
 )
 p item4
+item4.image.attach(io: image_item4, filename: "item4.jpg")
+item4.image.analyze
+item4.image.metadata["public_id"] = Cloudinary::Uploader.upload(item4.image.blob.url, resource_type: :auto)["public_id"]
+item4.save
 
 puts "Items created successfully"
 
