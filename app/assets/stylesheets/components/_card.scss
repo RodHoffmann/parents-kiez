@@ -139,4 +139,15 @@
     text-decoration: none;
     color: #ff8247;
   }
+
+  .avatar-img {
+    height: 7vh;
+    width: 7vh;
+  }
+
+  .avatar-container {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
 }
