@@ -12,7 +12,6 @@ class BabysittersController < ApplicationController
   def show
     user2 = @babysitter.user
     if !Chatroom.where(user1: current_user, user2: user2).empty?
-      raise
       @chatroom = Chatroom.where(user1: current_user, user2: user2)[0]
     elsif !Chatroom.where(user1: user2, user2: current_user).empty?
       @chatroom = Chatroom.where(user1: user2, user2: current_user)[0]
