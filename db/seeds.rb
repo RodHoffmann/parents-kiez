@@ -100,7 +100,7 @@ item1.image.analyze
 item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
 item1.save
 
-image_item2 = URI.open("https://cdn.shopify.com/s/files/1/1428/3302/products/Kids_Shoes_SS22_Ravine_Denim_P_1024x1024.jpg?v=1642550883")
+image_item2 = URI.open("https://i.ebayimg.com/images/g/gscAAOSwwUdgM8Ck/s-l1600.jpg")
 item2 = felix.items.create!(
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
