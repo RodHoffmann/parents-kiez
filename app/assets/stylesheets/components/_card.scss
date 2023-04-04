@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 10px;
+  margin: 10px auto;
   #apply-btn {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -138,5 +138,16 @@
   a {
     text-decoration: none;
     color: #ff8247;
+  }
+
+  .avatar-img {
+    height: 7vh;
+    width: 7vh;
+  }
+
+  .avatar-container {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
   }
 }
