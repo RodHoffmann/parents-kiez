@@ -198,3 +198,4 @@ years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     user: user
   )
 end
+puts "babysitters successfully created"
