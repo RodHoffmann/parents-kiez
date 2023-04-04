@@ -179,6 +179,8 @@ genders = ["Male", "Female"]
 addresses = ["123 Main St.", "456 Elm St.", "789 Maple Ave.", "1011 Oak Rd.", "1213 Pine Blvd.", "1415 Cedar Ln.", "1617 Walnut St.", "1819 Spruce Dr.", "2021 Birch Ave.", "2223 Poplar Rd."]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+image_paths = ["assets/bbs1.jpeg", "assets/bbs2.jpeg", "assets/bbs3.jpeg", "assets/bbs4.jpeg", "assets/bbs5.jpeg", "assets/bbs6.jpeg", "assets/bbs7.jpeg", "assets/bbs8.jpeg", "assets/bbs8.jpeg", "assets/bbs9,jpeg"]
+
 
 # Create 10 Babysitter records
 10.times do |i|
@@ -195,6 +197,7 @@ years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     address: addresses[i % 10],
     cost_per_hour: costs_per_hour[i % 5],
     years_of_experience: years_of_experience[i % 11],
+    image: image_paths.sample,
     user: user
   )
 end
