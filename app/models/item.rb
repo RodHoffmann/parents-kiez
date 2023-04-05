@@ -8,5 +8,5 @@ class Item < ApplicationRecord
 
   belongs_to :user
 
-  AGES = ["Less than 1 month", "Between 1 and 3 months", "Between 3 and 6 months", "Between 6 and 12 months", "Between 1 and 1,5 years", "Between 1 and 1,5 years", "Between 1,5 and 2 years", "More than 2 years"]
+  AGES = ["less than 1 month old", "between 1 and 3 months old", "between 3 and 6 months old", "between 6 and 12 months old", "between 1 and 1,5 years old", "between 1 and 1,5 years old", "between 1,5 and 2 years old", "more than 2 years old"]
 end
