@@ -1,4 +1,4 @@
-<div class="body-container">
+<div class="body-container m-20">
   <div class="maintxt m-2">
     <img src="/assets/child.jpg", class="img-fluid alt="...">
     <div class="text-block">
@@ -23,14 +23,21 @@
           <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></h4>
           <h5 class="card-text"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></h5>
           <h5 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></h5>
-          <h5 class="card-meta mb-2">-years of experience :<%= @babysitter.years_of_experience%></h5>
+          <h5 class="card-meta mb-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></h5>
           <div class="mb-3 mt-3">
             <% if @babysitter.user == current_user %>
               <%= link_to "Edit information", edit_babysitter_path, class: "btn btn-primary btn-xs" %>
               <%= link_to "Delete your application", babysitter_path(@babysitter), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing your application ?" }, class: 'btn btn-danger rounded-pill px-4 fw-bold' %>
            <% end %>
-              <%= link_to "send Message", chatroom_path(@chatroom), class: "btn btn-primary btn-xs" %>
-              <%= link_to "Back to babysitters Page", babysitters_path, class: "btn btn-primary btn-xs" %>
+            <%= link_to  babysitters_path, class: "btn btn-primary btn-xs" do %>
+              <i class="fa-solid fa-angle-left"></i>
+              Back to babysitters Page
+            <% end %>
+            <%= link_to chatroom_path(@chatroom), class: "btn btn-primary btn-xs" do %>
+              send Message
+              <i class="fa-regular fa-envelope"></i>
+            <% end %>
+
           </div>
         </div>
       </div>
