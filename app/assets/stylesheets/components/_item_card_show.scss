@@ -5,8 +5,17 @@
   margin-bottom: 3rem;
   border-radius: 0px;
   box-shadow: #CBBFBB 1px 1px 10px;
+  height: 350px; /* set a fixed height for the card */
+  overflow: hidden; /* hide any content that overflows beyond the boundaries of the card */
+}
+// .custom-card-body {
+//   height: 350px;
+// }
+.custom-card-body {
+  height: 245px;
 }
 .btn-item-show {
+  margin: 35px 20px 20px 55px; /* Adds a fixed 20px margin to the bottom and removes top margin */
   border: 5px solid;
   border-image-slice: 1;
   background: linear-gradient(to left top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.8) 90%) !important;
@@ -29,8 +38,8 @@
   font-family: 'Nunito';
 }
 .card-img-right {
-  height: 324px;
-  width: 415px;
+  height: 349px;
+  width: 423px;
   border: 3px solid;
   border-image-slice: 1;
   background-color: #E6F3FF;
