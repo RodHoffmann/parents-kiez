@@ -1,8 +1,9 @@
 #show-card{
-  display: flex;
+  display:flex;
   justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
   background: rgb(237, 245, 255);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%;
