@@ -179,7 +179,19 @@ genders = ["Male", "Female"]
 addresses = ["123 Main St.", "456 Elm St.", "789 Maple Ave.", "1011 Oak Rd.", "1213 Pine Blvd.", "1415 Cedar Ln.", "1617 Walnut St.", "1819 Spruce Dr.", "2021 Birch Ave.", "2223 Poplar Rd."]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-image_paths = ["assets/bbs1.jpeg", "assets/bbs2.jpeg", "assets/bbs3.jpeg", "assets/bbs4.jpeg", "assets/bbs5.jpeg", "assets/bbs6.jpeg", "assets/bbs7.jpeg", "assets/bbs8.jpeg", "assets/bbs8.jpeg", "assets/bbs9,jpeg"]
+image_paths = [
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684576/pexels-photo-774909_kkqjgd.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684546/bbysitter8_vxhlkb.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684534/bbysitter7_oh2jpf.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684523/bbysitter6_plhyf6.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684512/bbs2_chvgbj.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684497/bbs1_j2rglu.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684479/basitter5_b4qys3.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684463/babysitter3_igahah.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684450/babysitter2_dvsjj4.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg"
+]
+
 
 
 # Create 10 Babysitter records
@@ -188,17 +200,24 @@ image_paths = ["assets/bbs1.jpeg", "assets/bbs2.jpeg", "assets/bbs3.jpeg", "asse
     email: "babysitter#{i + 1}@example.com",
     password: "password"
   )
+  puts i
+  # Download a random image from the internet and upload it to Cloudinary
+  file = image_paths[i]
+  puts "trying to add #{file}"
+  image = user.image.attach(io: URI.open(file), filename: "image.jpg")
 
-  Babysitter.create!(
+puts "image added to user "
+
+puts "babysitters successfully created"
+  babysitter= Babysitter.create!(
     first_name: first_names[i % 10],
     last_name: last_names[i % 10],
     age: 18 + (i % 13),
     gender: genders[i % 2],
     address: addresses[i % 10],
     cost_per_hour: costs_per_hour[i % 5],
-    years_of_experience: years_of_experience[i % 11],
-    image: image_paths.sample,
-    user: user
-  )
+    years_of_experience: years_of_ex
+  babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
+  babysitter.save!
 end
 puts "babysitters successfully created"
