@@ -30,12 +30,12 @@
                   <% end %>
 
                 <p class="card-text"><strong>Description: </strong><%= item.description %></p>
-                <p class="card-text"><strong>Age: </strong> for <%= item.age %> <%= item.age == '1' ? "Year" : "Years" %></p>
-                <p class="card-text"><strong>House No.: </strong><%= item.house %></p>
+                <p class="card-text"><strong>Age: </strong> for babys between <%= item.age %></p>
+                <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
 
                 <a href="#" class="btn btn-item-index" style="margin-right: 20px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
                 <%= link_to item_path(item), class: "btn btn-item-index" do %>
-                  <i class="fab fa-github"></i><strong> Detail</strong>
+                  <i class="fab fa-github"></i><strong> Details</strong>
                 <% end %>
               </div>
             </div>
