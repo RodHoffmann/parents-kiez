@@ -175,7 +175,7 @@ puts "Creating babysitters.."
 # Define arrays of possible values
 first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack"]
 last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson"]
-genders = ["Male", "Female"]
+genders = ["Female", "Female", "Female"]
 addresses = ["123 Main St.", "456 Elm St.", "789 Maple Ave.", "1011 Oak Rd.", "1213 Pine Blvd.", "1415 Cedar Ln.", "1617 Walnut St.", "1819 Spruce Dr.", "2021 Birch Ave.", "2223 Poplar Rd."]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -187,9 +187,9 @@ image_paths = [
   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684512/bbs2_chvgbj.webp",
   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684497/bbs1_j2rglu.jpg",
   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684479/basitter5_b4qys3.webp",
-  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684463/babysitter3_igahah.jpg",
-  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684450/babysitter2_dvsjj4.webp",
-  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg"
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680269286/development/0tvh27st2cftr688nzogenl4q3f8.png",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680696646/pexels-photo-1499327_pfelku.jpg"
 ]
 
 
@@ -216,7 +216,9 @@ puts "babysitters successfully created"
     gender: genders[i % 2],
     address: addresses[i % 10],
     cost_per_hour: costs_per_hour[i % 5],
-    years_of_experience: years_of_ex
+    years_of_experience: years_of_experience[i % 11],
+    user: user
+  )
   babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
   babysitter.save!
 end
