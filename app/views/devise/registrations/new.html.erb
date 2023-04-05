@@ -1,41 +1,81 @@
-<h2>Sign up</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "First Name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Last Name" }%>
-    <%= f.input :address,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "Address" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :image, as: :file,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "Last Name" }%>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center text-dark mt-5">Sign up</h2>
+      <div class="card my-5">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }, class: "card-body cardbody-color p-lg-5" ) do |f| %>
+            <%= f.error_notification %>
+            <div class="text-center">
+              <img src="https://cdn.pixabay.com/photo/2016/06/15/18/15/family-1459586_960_720.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                width="200px" alt="profile">
+            </div>
+            <div class="m-3">
+              <%= f.input :first_name,
+                          required: true,
+                          autofocus: true,
+                          class: "form-control",
+                          id: "first_name",
+                          aria_describedby: "emailHelp",
+                          input_html: { autocomplete: "First Name" } %>
+            </div>
+            <div class="m-3">
+              <%= f.input :last_name,
+                          required: true,
+                          autofocus: true,
+                          class: "form-control",
+                          id: "last_name",
+                          aria_describedby: "emailHelp",
+                          input_html: { autocomplete: "Last Name" }%>
+            </div>
+            <div class="m-3 d-flex">
+              <%= f.input :gender,
+                          required: true,
+                          autofocus: true,
+                          collection: User::GENDERS, as: :radio_buttons,
+                          input_html: { autocomplete: "Gender" }%>
+            </div>
+            <div class="m-3">
+              <%= f.input :address,
+                          required: true,
+                          autofocus: true,
+                          id: "address",
+                          aria_describedby: "emailHelp",
+                          input_html: { autocomplete: "Address" }%>
+            </div>
+            <div class="m-3">
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          id: "email",
+                          aria_describedby: "emailHelp",
+                          input_html: { autocomplete: "email" }%>
+            </div>
+            <div class="m-3">
+              <%= f.input :password,
+                          required: true,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" } %>
+            </div>
+            <div class="m-3">
+              <%= f.input :password_confirmation,
+                          required: true,
+                          input_html: { autocomplete: "new-password" } %>
+            </div>
+            <div class="m-3">
+              <%= f.input :image, as: :file,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "Last Name" }%>
+            </div>
+            <div class="text-center m-3 mt-4">
+                <%= f.button :submit, "Sign up", class: "btn btn-color px-5 mb-3 w-100" %>
+            </div>
+            <div id="emailHelp" class="form-text text-center m-3 text-dark">
+             <p>Already an account?</p>
+                <%= render "devise/shared/links" %>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
