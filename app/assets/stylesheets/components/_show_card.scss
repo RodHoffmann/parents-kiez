@@ -24,4 +24,25 @@
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
+
+.btn-send-msg {
+  padding: 3px;
+  border: 5px solid;
+  border-image-slice: 1;
+  background: linear-gradient(to left top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.8) 90%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  border-image-source: linear-gradient(to left top, #c3d7ee 10%, #c3d7ee 90%) !important;
+  text-decoration: none;
+  transition: all .4s ease;
+  box-shadow: #b3c8dd 1px 1px 10px;
+}
+.btn-send-msg:hover, .btn-send-msgindex:focus {
+  background: linear-gradient(to left bottom, #E6F3FF 10%, #E6F3FF 90%) !important;
+  -webkit-background-clip: none !important;
+  -webkit-text-fill-color: black !important;
+  border: 5px solid #fff !important;
+  box-shadow: #222 1px 0 10px;
+  text-decoration: none;
+}
 }
