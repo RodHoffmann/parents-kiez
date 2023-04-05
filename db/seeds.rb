@@ -89,7 +89,7 @@ image_item1 = URI.open("https://www.verywellfamily.com/thmb/oAmzoovzj0HqQmprnm9K
 item1 = john.items.create!(
   name: "Baby rattle",
   description: "A colorful plastic rattle for babies",
-  age: "0-6 months",
+  age: "1",
   house: "Herman Str.5",
   available: true,
   user_id: User.last.id
@@ -100,11 +100,11 @@ item1.image.analyze
 item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
 item1.save
 
-image_item2 = URI.open("https://cdn.shopify.com/s/files/1/1428/3302/products/Kids_Shoes_SS22_Ravine_Denim_P_1024x1024.jpg?v=1642550883")
+image_item2 = URI.open("https://i.ebayimg.com/images/g/gscAAOSwwUdgM8Ck/s-l1600.jpg")
 item2 = felix.items.create!(
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
-  age: "1-2 years",
+  age: "3",
   house: "Eisenacher Str.7",
   available: true,
   user_id: User.last.id
@@ -119,7 +119,7 @@ image_item3 = URI.open("https://www.sassymamasg.com/wp-content/uploads/2021/11/k
 item3 = jane.items.create!(
   name: "Baby clothes",
   description: "A bag of gently used baby clothes",
-  age: "0-6 months",
+  age: "2",
   house: "Wittineu Str.17",
   available: true,
   user_id: User.last.id
@@ -134,7 +134,7 @@ image_item4 = URI.open("https://media-www.canadiantire.ca/product/fixing/plumbin
 item4 = norma.items.create!(
   name: "Potty seat",
   description: "A used potty seat in good condition",
-  age: "1-3 years",
+  age: "1",
   house: "Senftenberger 17",
   available: true,
   user_id: User.last.id

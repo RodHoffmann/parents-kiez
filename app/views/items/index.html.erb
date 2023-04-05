@@ -10,23 +10,32 @@
           <div class="col-lg-3">
             <div class="card item-card-index" style="width: 18rem;">
               <%= link_to item_path(item) do %>
+
                 <div class="image-container">
-                  <img class="card-img-top" src="<%= cl_image_path item.image.key %>" alt="<%= item.name %>">
+                  <% if item.image.key != nil %>
+                    <img class="card-img-top" src="<%= cl_image_path item.image.key %>" alt="<%= item.name %>">
+                  <% else %>
+                    <img class="card-img-top" src="https://st.depositphotos.com/4320021/51441/v/450/depositphotos_514411954-stock-illustration-photo-coming-soon-picture-frame.jpg", class="card-img-top, alt="<%= item.name %>">
+                  <% end %>
                 </div>
+
               <% end %>
+
               <div class="card-body">
-                <h5 class="card-title"><%= item.name %></h5>
+                <h5 class="card-title"><strong><%= item.name %></strong></h5>
                   <% if item.available %>
                     <h6 class="card-subtitle mb-2 text-muted">Available</h6>
                   <% else %>
                     <h6 class="card-subtitle mb-2 text-muted">Reserved</h6>
                   <% end %>
-                <p class="card-text"><%= item.description %></p>
-                <p class="card-text"><%= item.age %></p>
-                <p class="card-text"><%= item.house %></p>
-                <a href="#" class="btn btn-item-index" style="margin-right: 20px"><i class="fas fa-link"></i> Reserve</a>
+
+                <p class="card-text"><strong>Description: </strong><%= item.description %></p>
+                <p class="card-text"><strong>Age: </strong> for <%= item.age %> <%= item.age == '1' ? "Year" : "Years" %></p>
+                <p class="card-text"><strong>House No.: </strong><%= item.house %></p>
+
+                <a href="#" class="btn btn-item-index" style="margin-right: 20px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
                 <%= link_to item_path(item), class: "btn btn-item-index" do %>
-                  <i class="fab fa-github"></i> Detail
+                  <i class="fab fa-github"></i><strong> Detail</strong>
                 <% end %>
               </div>
             </div>
@@ -36,8 +45,8 @@
     </div>
   <% end %>
 
-  <div class="text-center">
-    <%= link_to "Create New Item", new_item_path, class:"custom-button" %>
+  <div class="text-center mb-5">
+    <strong><%= link_to "Create New Item", new_item_path, class:"custom-btn-item-index" %></strong>
   </div>
 
 </div>

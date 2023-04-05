@@ -15,9 +15,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = current_user.items.build(item_params)
+    @item.user = current_user
     @item.available = true
     if @item.save
-      redirect_to @item, notice: "Item was successfully created."
+      redirect_to items_path, notice: "Item was successfully created."
     else
       render :new
     end
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to @item, notice: "Item was successfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
