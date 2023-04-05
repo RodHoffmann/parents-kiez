@@ -5,17 +5,14 @@
   margin-bottom: 3rem;
   border-radius: 0px;
   box-shadow: #CBBFBB 1px 1px 10px;
-  height: 350px; /* set a fixed height for the card */
-  overflow: hidden; /* hide any content that overflows beyond the boundaries of the card */
+  height: 350px;
+  overflow: hidden;
 }
-// .custom-card-body {
-//   height: 350px;
-// }
 .custom-card-body {
   height: 245px;
 }
 .btn-item-show {
-  margin: 35px 20px 20px 55px; /* Adds a fixed 20px margin to the bottom and removes top margin */
+  margin: 35px 20px 20px 55px;
   border: 5px solid;
   border-image-slice: 1;
   background: linear-gradient(to left top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.8) 90%) !important;
