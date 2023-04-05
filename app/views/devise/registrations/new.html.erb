@@ -12,6 +12,11 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Last Name" }%>
+    <%= f.input :gender,
+                required: true,
+                autofocus: true,
+                collection: User::GENDERS, as: :radio_buttons,
+                input_html: { autocomplete: "Last Name" }%>
     <%= f.input :address,
                 required: true,
                 autofocus: true,
