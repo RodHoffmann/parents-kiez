@@ -6,9 +6,9 @@
       </div>
     </div>
 
-    <div class="row m-10" id="container">
-      <div class="col-sm-12 col-md-6 col-lg-6 mb-4">
-        <div class="card-show mb-5 mt-10", id= "show-card">
+    <div class="row m-25" id="container">
+      <div class="col-sm-12 col-md-12 col-lg-6 mb-4 mx-auto">
+        <div class="card-show mb-10 mt-20", id= "show-card">
           <div classs="item">
             <% if @babysitter.image.key != nil %>
                 <img class="card-img-top " src="<%= cl_image_path @babysitter.image.key %>" alt="<%= @babysitter.first_name %>" style="width: 200px; height: auto;">
