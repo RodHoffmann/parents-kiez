@@ -5,11 +5,9 @@
   margin-bottom: 3rem;
   border-radius: 0px;
   box-shadow: #CBBFBB 1px 1px 10px;
-  height: 350px;
-  overflow: hidden;
 }
 .custom-card-body {
-  height: 245px;
+  font-family: 'Nunito';
 }
 .btn-item-show {
   margin: 35px 20px 20px 55px;
@@ -42,9 +40,6 @@
   background-color: #E6F3FF;
   border-image-source: linear-gradient(to left top, #D9D9D9 10%, #D9D9D9 90%) !important;
   box-shadow: #CBBFBB 1px 1px 10px;
-}
-.card-body {
-  font-family: 'Nunito';
 }
 .custom-btn-item-show {
   border: 6px solid;

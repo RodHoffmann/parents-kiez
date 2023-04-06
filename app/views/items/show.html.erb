@@ -25,7 +25,7 @@
               <% end %>
               <p class="card-text"><strong>Description: </strong><%= @item.description %></p>
               <p class="card-text"><strong>Age: </strong> for <%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
-              <p class="card-text"><strong>House No.: </strong><%= @item.house %></p>
+              <p class="card-text"><strong>Address: </strong><%= @item.house %></p>
             </div>
             <a href="#" class="btn btn-item-show"><strong>Reserve Item</strong></a>
             <%= link_to edit_item_path(@item), class: "btn btn-item-show", style: "margin-left: 20px" do %>
