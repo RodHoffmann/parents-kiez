@@ -1,5 +1,12 @@
 
 <div class="container">
+  <div class="body-container m-20">
+    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
+      <div class="text-block">
+        <h2>Find what you need for your child here  </h2>
+      </div>
+    </div>
+
   <div class ="search">
     <%= form_with url: items_path, method: :get, class: "d-flex my-3 mx-3" do %>
       <%= text_field_tag :query,
@@ -7,7 +14,7 @@
         class: "form-control",
         placeholder: "Find things you need for your child" %>
     <% end %>
-  </div>
+
   <h1 class="text-center item-heading-index pt-3">Available Items</h1>
 
   <% if @items.empty? %>
