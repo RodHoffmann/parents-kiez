@@ -1,4 +1,13 @@
+
 <div class="container">
+  <div class ="search">
+    <%= form_with url: items_path, method: :get, class: "d-flex my-3 mx-3" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find things you need for your child" %>
+    <% end %>
+  </div>
   <h1 class="text-center item-heading-index pt-3">Available Items</h1>
 
   <% if @items.empty? %>
