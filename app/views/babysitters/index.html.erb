@@ -7,39 +7,40 @@
         placeholder: "Find a Nanny or babysitter ?" %>
     <% end %>
   </div>
-  <div class="maintxt m-2">
-    <img src="/assets/child.jpg", class="img-fluid alt="...">
-    <div class="text-block">
-      <h2>Need a Nanny or babysitter ? </h2>
+  <div class="container">
+    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">>
+      <div class="text-block">
+        <h2>Need a Nanny or babysitter ? </h2>
+      </div>
     </div>
-  </div>
-
-  <div class="container m-10" id="index-container">
-   <%if !current_user.babysitter.present?  %>
-      <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
-    <%end%>
-    <div class="row">
-      <% @babysitters.each do |babysitter| %>
-        <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
-          <div class="card h-100  mb-10 mt-10" id= "index-card">
-            <div classs="item">
-              <% if babysitter.image.key != nil %>
-                <img class="card-img-top" src="<%= cl_image_path babysitter.image.key %>" alt="<%= babysitter.first_name %>">
-              <% else %>
-                <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  babysitter.first_name %>">
-              <% end %>
-            </div>
-            <div class="card-body">
-              <h2 class="card_title"><%= babysitter.first_name%>  <%= babysitter.last_name%></h2>
-              <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= babysitter.age%> Years Old</h4>
-              <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
-              <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
-            <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
-            </button>
+    
+    <div class="container m-10" id="index-container">
+    <%if !current_user.babysitter.present?  %>
+        <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
+      <%end%>
+      <div class="row">
+        <% @babysitters.each do |babysitter| %>
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+            <div class="card h-100  mb-10 mt-10" id= "index-card">
+              <div classs="item">
+                <% if babysitter.image.key != nil %>
+                  <img class="card-img-top" src="<%= cl_image_path babysitter.image.key %>" alt="<%= babysitter.first_name %>">
+                <% else %>
+                  <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  babysitter.first_name %>">
+                <% end %>
+              </div>
+              <div class="card-body">
+                <h2 class="card_title"><%= babysitter.first_name%>  <%= babysitter.last_name%></h2>
+                <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= babysitter.age%> Years Old</h4>
+                <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
+                <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
+              <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
+              </button>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 

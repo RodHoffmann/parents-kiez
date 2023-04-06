@@ -1,4 +1,13 @@
+
 <div class="container">
+  <div class ="search">
+    <%= form_with url: items_path, method: :get, class: "d-flex my-3 mx-3" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find things you need for your child" %>
+    <% end %>
+  </div>
   <h1 class="text-center item-heading-index pt-3">Available Items</h1>
 
   <% if @items.empty? %>
@@ -30,12 +39,12 @@
                   <% end %>
 
                 <p class="card-text"><strong>Description: </strong><%= item.description %></p>
-                <p class="card-text"><strong>Age: </strong> for <%= item.age %> <%= item.age == '1' ? "Year" : "Years" %></p>
-                <p class="card-text"><strong>House No.: </strong><%= item.house %></p>
+                <p class="card-text"><strong>Age: </strong> for babys <%= item.age %></p>
+                <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
 
                 <a href="#" class="btn btn-item-index" style="margin-right: 20px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
                 <%= link_to item_path(item), class: "btn btn-item-index" do %>
-                  <i class="fab fa-github"></i><strong> Detail</strong>
+                  <i class="fab fa-github"></i><strong> Details</strong>
                 <% end %>
               </div>
             </div>
@@ -46,7 +55,7 @@
   <% end %>
 
   <div class="text-center mb-5">
-    <strong><%= link_to "Create New Item", new_item_path, class:"custom-btn-item-index" %></strong>
+    <strong><%= link_to "Post your item", new_item_path, class:"custom-btn-item-index" %></strong>
   </div>
 
 </div>
