@@ -36,14 +36,10 @@ class ItemsController < ApplicationController
   end
 
   def update
-    if current_user == @item.user
-      if @item.update(item_params)
-        redirect_to @item, notice: "Item was successfully updated."
-      else
-        render :edit, status: :unprocessable_entity
-      end
+    if @item.update(item_params)
+      redirect_to @item, notice: "Item was successfully updated."
     else
-      redirect_to @item, notice: "You don't have permission to edit this item."
+      render :edit, status: :unprocessable_entity
     end
   end
 
