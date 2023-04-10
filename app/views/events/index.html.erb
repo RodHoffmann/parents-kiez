@@ -1,0 +1,50 @@
+<div class="body-container">
+
+  <div class="container">
+    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
+      <div class="text-block">
+        <h2>find events ? </h2>
+      </div>
+    </div>
+
+      <div class ="search">
+      <%= form_with url: events_path, method: :get, class: "d-flex my-3 mx-3" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an activity for your children ?" %>
+      <% end %>
+      </div>
+
+    <div class="container m-10" id="index-container">
+      <div class="row">
+        <% @events.each do |event| %>
+          <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
+            <div class="card h-100  mb-10 mt-10" id= "index-card">
+              <div classs="item">
+                <% if event.image.key != nil %>
+                  <img class="card-img-top" src="<%= cl_image_path event.image.key %>" alt="<%= event.name %>">
+                <% else %>
+                  <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  event.name %>">
+                <% end %>
+              </div>
+              <div class="card-body">
+                <h2 class="card_title"><%= event.name%> </h2>
+                <h2 class="card_title"><%= event.description%> </h2>
+                <h2 class="card_title"><%= event.address%> </h2>
+                <h2 class="card_title"><%= event.category%> </h2>
+                <h2 class="card_title"><%= event.date%> </h2>
+
+
+                <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost:<%= event.cost%></h5>
+              <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View detailse', event_path(event), :id =>"a-btn"%></button>
+              </button>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
