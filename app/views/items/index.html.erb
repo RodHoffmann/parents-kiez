@@ -40,8 +40,8 @@
                     <h6 class="card-subtitle mb-2 text-muted">Reserved</h6>
                   <% end %>
 
-                  <p class="card-text"><strong>Description: </strong><%= truncate(item.description, length: 50, separator: ' ', omission: '...') %>
-                  <p class="card-text"><strong>Age: </strong> for <%= item.age %> <%= item.age == '1' ? "Year" : "Years" %></p>
+                  <p class="card-text"><strong>Description: </strong><%= truncate(item.description, length: 50, separator: ' ', omission: '...') %></p>
+                  <p class="card-text"><strong>Age: </strong> For babies <%= truncate(item.age, length: 15, separator: ' ', omission: '...') %></p>
 
                   <% if item.user.address.size > 15 %>
                     <p class="card-text"><strong>Address: </strong><%= item.user.address.slice(0,15) %>...</p>

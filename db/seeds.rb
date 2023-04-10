@@ -109,7 +109,7 @@ item1.image.analyze
 item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
 item1.save
 
-item2 = felix.items.create!(      
+item2 = felix.items.create!(
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
   age: Item::AGES.shuffle[0],
@@ -154,8 +154,7 @@ item4.save
 item5 = john.items.create!(
   name: "Stroller",
   description: "A used stroller in good condition",
-  age: "2",
-  house: "Karl-Marx-Str. 8",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -169,8 +168,7 @@ item5.save
 item6 = felix.items.create!(
   name: "Crib",
   description: "A wooden crib in excellent condition",
-  age: "1",
-  house: "Rosa-Luxemburg-Str. 15",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -184,8 +182,7 @@ item6.save
 item7 = jane.items.create!(
   name: "Breast pump",
   description: "A used breast pump in good condition",
-  age: "1",
-  house: "Schlesische Str. 20",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -199,8 +196,7 @@ item7.save
 item8 = norma.items.create!(
   name: "Baby monitor",
   description: "A used baby monitor in good condition",
-  age: "2",
-  house: "Kastanienallee 36",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -214,8 +210,7 @@ item8.save
 item9 = rodrigo.items.create!(
   name: "Baby swing",
   description: "A used baby swing in good condition",
-  age: "1",
-  house: "Auguststr. 45",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -229,8 +224,7 @@ item9.save
 item10 = john.items.create!(
   name: "Baby bath tub",
   description: "A sturdy plastic baby bath tub with built-in seat and drain plug",
-  age: "1",
-  house: "Herman Str.5",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -244,8 +238,7 @@ item10.save
 item11 = felix.items.create!(
   name: "Baby high chair",
   description: "A sturdy and adjustable high chair suitable for infants and toddlers",
-  age: "2",
-  house: "Eisenacher Str.7",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -259,8 +252,7 @@ item11.save
 item12 = jane.items.create!(
   name: "Baby play mat",
   description: "A soft and colorful play mat for babies with detachable toys",
-  age: "1",
-  house: "Wittenau Str.17",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
