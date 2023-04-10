@@ -109,7 +109,7 @@ item1.image.analyze
 item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
 item1.save
 
-item2 = felix.items.create!(
+item2 = felix.items.create!(      
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
   age: Item::AGES.shuffle[0],
