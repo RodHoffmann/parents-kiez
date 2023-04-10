@@ -23,9 +23,14 @@ Chatroom.destroy_all
 puts "Deleting Messages..."
 
 Message.destroy_all
+
 puts "Deleting babysitters"
 
 Babysitter.destroy_all
+
+puts "Deleting items"
+
+Item.destroy_all
 
 puts "Creating Users..."
 
@@ -35,7 +40,8 @@ john = User.create(email: 'john@example.com',
   password: '123456',
   first_name: 'John',
   last_name: 'Doe',
-  address: 'Berliner Alle 125')
+  address: 'Berliner Alle 125',
+  gender: "Male")
 
 john.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098718/d4f1w05kkbpee3sctons.jpg'), filename: 'profile1.jpg', content_type: 'image/jpg')
 p john
@@ -45,7 +51,8 @@ felix = User.create(email: 'felix@example.com',
   password: '123456',
   first_name: 'Felix',
   last_name: 'Baumgartner',
-  address: 'Rosa Luxemburg Str. 84')
+  address: 'Rosa Luxemburg Str. 84',
+  gender: "Male")
 
 felix.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098713/ikvov8istpbwhcf0k9tg.jpg'), filename: 'profile2.jpg', content_type: 'image/jpg')
 p felix
@@ -55,7 +62,8 @@ jane = User.create(email: 'jane@example.com',
   password: '123456',
   first_name: 'Jane',
   last_name: 'Jackson',
-  address: 'Simon Bolivar Str. 52')
+  address: 'Simon Bolivar Str. 52',
+  gender: "Female")
 
 jane.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098708/aqfxtwzil5kqpqb2k740.jpg'), filename: 'profile3.jpg', content_type: 'image/jpg')
 p jane
@@ -65,7 +73,8 @@ norma = User.create(email: 'norma@example.com',
   password: '123456',
   first_name: 'Norma',
   last_name: 'Baker',
-  address: 'Sonnenalle 785')
+  address: 'Sonnenalle 785',
+  gender: "Female")
 
 norma.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098703/opaimkxebgsw1ld2gosw.jpg'), filename: 'profile4.jpg', content_type: 'image/jpg')
 p norma
@@ -75,7 +84,8 @@ rodrigo = User.create(email: 'rodrigo@example.com',
   password: '123456',
   first_name: 'Rodrigo',
   last_name: 'Mueller',
-  address: 'Schönhauser Alle 77')
+  address: 'Schönhauser Alle 77',
+  gender: "Other")
 
 rodrigo.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098439/ucuf0ijqdn74bbxgzcg9.jpg'), filename: 'profile5.jpg', content_type: 'image/jpg')
 p rodrigo
@@ -88,8 +98,7 @@ puts "Creating Items.."
 item1 = john.items.create!(
   name: "Baby rattle",
   description: "A colorful plastic rattle for babies",
-  age: "1",
-  house: "Herman Str.5",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -103,8 +112,7 @@ item1.save
 item2 = felix.items.create!(
   name: "Toddler shoes",
   description: "A pair of used toddler shoes in good condition",
-  age: "3",
-  house: "Eisenacher Str.7",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -118,8 +126,7 @@ item2.save
 item3 = jane.items.create!(
   name: "Baby clothes",
   description: "A bag of gently used baby clothes",
-  age: "2",
-  house: "Wittineu Str.17",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -133,8 +140,7 @@ item3.save
 item4 = norma.items.create!(
   name: "Potty seat",
   description: "A used potty seat in good condition",
-  age: "1",
-  house: "Senftenberger 17",
+  age: Item::AGES.shuffle[0],
   available: true,
   user_id: User.last.id
 )
@@ -295,19 +301,45 @@ puts "Creating babysitters.."
 # Define arrays of possible values
 first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack"]
 last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson"]
-genders = ["Male", "Female"]
+genders = ["Female", "Female", "Female"]
 addresses = ["123 Main St.", "456 Elm St.", "789 Maple Ave.", "1011 Oak Rd.", "1213 Pine Blvd.", "1415 Cedar Ln.", "1617 Walnut St.", "1819 Spruce Dr.", "2021 Birch Ave.", "2223 Poplar Rd."]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+image_paths = [
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684576/pexels-photo-774909_kkqjgd.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684546/bbysitter8_vxhlkb.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684534/bbysitter7_oh2jpf.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684523/bbysitter6_plhyf6.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684512/bbs2_chvgbj.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684497/bbs1_j2rglu.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684479/basitter5_b4qys3.webp",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680269286/development/0tvh27st2cftr688nzogenl4q3f8.png",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680696646/pexels-photo-1499327_pfelku.jpg"
+]
+
+
 
 # Create 10 Babysitter records
 10.times do |i|
   user = User.create!(
     email: "babysitter#{i + 1}@example.com",
-    password: "password"
+    password: "password",
+    first_name: first_names[i % 10],
+    last_name: last_names[i % 10],
+    gender: genders[i % 2],
+    address: addresses[i % 10]
   )
+  puts i
+  # Download a random image from the internet and upload it to Cloudinary
+  file = image_paths[i]
+  puts "trying to add #{file}"
+  image = user.image.attach(io: URI.open(file), filename: "image.jpg")
 
-  Babysitter.create!(
+puts "image added to user "
+
+puts "babysitters successfully created"
+  babysitter= Babysitter.create!(
     first_name: first_names[i % 10],
     last_name: last_names[i % 10],
     age: 18 + (i % 13),
@@ -317,4 +349,7 @@ years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     years_of_experience: years_of_experience[i % 11],
     user: user
   )
+  babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
+  babysitter.save!
 end
+puts "babysitters successfully created"
