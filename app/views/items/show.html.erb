@@ -13,32 +13,32 @@
                 <img src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" class="card-img-right" alt="<%= @item.name %>">
               <% end %>
             </div>
+          </div>
 
-            <div class="col-md-6">
+          <div class="col-md-6">
 
-              <div class="card-body custom-card-body">
+            <div class="card-body custom-card-body">
 
-                <h2 class="card-title mb-4"><strong><%= @item.name %></strong></h2>
+              <h2 class="card-title mb-4"><strong><%= @item.name %></strong></h2>
 
-                <% if @item.available %>
-                  <h4 class="card-subtitle mb-4 text-muted">Available</h4>
-                <% else %>
-                  <h4 class="card-subtitle mb-4 text-muted">Reserved</h4>
-                <% end %>
-
-                <p class="card-text"><strong>Description: </strong><%= @item.description %></p>
-                <p class="card-text"><strong>Age: </strong> for <%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
-
-                <p class="card-text"><strong>Address: </strong><%= @item.user.address %></p>
-
-              </div>
-
-              <a href="#" class="btn btn-item-show"><strong>Reserve Item</strong></a>
-              <%= link_to edit_item_path(@item), class: "btn btn-item-show", style: "margin-left: 20px" do %>
-                <strong>Edit Item</strong>
+              <% if @item.available %>
+                <h4 class="card-subtitle mb-4 text-muted">Available</h4>
+              <% else %>
+                <h4 class="card-subtitle mb-4 text-muted">Reserved</h4>
               <% end %>
 
+              <p class="card-text"><strong>Description: </strong><%= @item.description %></p>
+              <p class="card-text"><strong>Age: </strong> for <%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
+
+              <p class="card-text"><strong>Address: </strong><%= @item.user.address %></p>
+
             </div>
+
+            <a href="#" class="btn btn-item-show"><strong>Reserve Item</strong></a>
+            <%= link_to edit_item_path(@item), class: "btn btn-item-show", style: "margin-left: 20px" do %>
+              <strong>Edit Item</strong>
+            <% end %>
+
           </div>
         </div>
       </div>
