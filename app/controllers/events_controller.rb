@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     if params[:query].present?
@@ -41,6 +41,18 @@ class EventsController < ApplicationController
     @event.destroy
     redirect_to events_path, notice: "Your post  was deleted."
   end
+
+  def upvote
+    @event.upvote_by current_user
+
+  end
+
+  def downvote
+    @event.downvote_by current_user
+
+  end
+
+
 
   private
 

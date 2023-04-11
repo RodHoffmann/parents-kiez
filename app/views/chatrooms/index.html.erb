@@ -17,4 +17,23 @@
       </div>
     </div>
   <% end %>
+
+
+  <div class="container my-5 text-center">
+    <h2 >Bookmarked Events</h2>
+      <ul>
+      <% current_user.bookmarked_events.each do |event| %>
+        <li class="card m-3"><%= link_to event.name, event %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="container my-5 text-center">
+    <h2 >Bookmarked Babysitters</h2>
+    <ul>
+    <% current_user.bookmarked_babysitters.each do |babysitter| %>
+      <li class="card m-3"><%= link_to babysitter.first_name, babysitter %></li>
+    <% end %>
+    </ul>
+  </div>
 </div>
