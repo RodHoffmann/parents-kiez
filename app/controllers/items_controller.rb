@@ -30,6 +30,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    if current_user != @item.user
+      redirect_to @item, notice: "You don't have permission to edit this item."
+    end
   end
 
   def update
@@ -41,8 +44,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to items_url, notice: "Item was successfully destroyed."
+    if current_user == @item.user
+      @item.destroy
+      redirect_to items_url, notice: "Item was successfully destroyed."
+    else
+      redirect_to @item, notice: "You don't have permission to delete this item."
+    end
   end
 
   private
