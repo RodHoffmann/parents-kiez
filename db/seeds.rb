@@ -326,9 +326,9 @@ image_paths = [
   # Download a random image from the internet and upload it to Cloudinary
   file = image_paths[i]
   puts "trying to add #{file}"
-  image = user.image.attach(io: URI.open(file), filename: "image.jpg")
+  user.image.attach(io: URI.open(file), filename: "image.jpg")
 
-puts "image added to user "
+puts "image added to user"
 
 puts "babysitters successfully created"
   babysitter= Babysitter.create!(
