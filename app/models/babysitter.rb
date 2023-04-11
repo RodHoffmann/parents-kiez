@@ -9,6 +9,9 @@ class Babysitter < ApplicationRecord
   validates :address, presence: true
   validates :cost_per_hour, presence: true
   validates :years_of_experience, presence: true
+
+  acts_as_votable
+  
   include PgSearch::Model
   pg_search_scope :search_by_first_name_and_last_name_and_cost_per_hour_and_address_and_age_and_gender,
                   against: %i[first_name last_name cost_per_hour address age gender],

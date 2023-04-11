@@ -78,7 +78,9 @@ group :test do
   gem "webdrivers"
 end
 
-gem "dotenv-rails", groups: [:development, :test]
+
 gem "cloudinary"
 # search
 gem "pg_search"
+# book mark gem
+gem 'acts_as_votable'
