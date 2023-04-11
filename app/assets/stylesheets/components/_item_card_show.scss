@@ -6,7 +6,11 @@
   border-radius: 0px;
   box-shadow: #CBBFBB 1px 1px 10px;
 }
+.custom-card-body {
+  font-family: 'Nunito';
+}
 .btn-item-show {
+  margin: 35px 20px 20px 55px;
   border: 5px solid;
   border-image-slice: 1;
   background: linear-gradient(to left top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.8) 90%) !important;
@@ -29,16 +33,13 @@
   font-family: 'Nunito';
 }
 .card-img-right {
-  height: 324px;
-  width: 415px;
+  height: 349px;
+  width: 423px;
   border: 3px solid;
   border-image-slice: 1;
   background-color: #E6F3FF;
   border-image-source: linear-gradient(to left top, #D9D9D9 10%, #D9D9D9 90%) !important;
   box-shadow: #CBBFBB 1px 1px 10px;
-}
-.card-body {
-  font-family: 'Nunito';
 }
 .custom-btn-item-show {
   border: 6px solid;

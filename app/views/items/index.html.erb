@@ -1,5 +1,12 @@
 
 <div class="container">
+  <div class="body-container m-20">
+    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
+      <div class="text-block">
+        <h2>Find what you need for your child here  </h2>
+      </div>
+    </div>
+
   <div class ="search">
     <%= form_with url: items_path, method: :get, class: "d-flex my-3 mx-3" do %>
       <%= text_field_tag :query,
@@ -7,7 +14,7 @@
         class: "form-control",
         placeholder: "Find things you need for your child" %>
     <% end %>
-  </div>
+
   <h1 class="text-center item-heading-index pt-3">Available Items</h1>
 
   <% if @items.empty? %>
@@ -24,28 +31,37 @@
                   <% if item.image.key != nil %>
                     <img class="card-img-top" src="<%= cl_image_path item.image.key %>" alt="<%= item.name %>">
                   <% else %>
-                    <img class="card-img-top" src="https://st.depositphotos.com/4320021/51441/v/450/depositphotos_514411954-stock-illustration-photo-coming-soon-picture-frame.jpg", class="card-img-top, alt="<%= item.name %>">
+                    <img class="card-img-top" src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg", class="card-img-top, alt="<%= item.name %>">
                   <% end %>
                 </div>
 
               <% end %>
 
-              <div class="card-body">
-                <h5 class="card-title"><strong><%= item.name %></strong></h5>
+              <div class="card-body custom-card-body-2">
+                <div class="custom-card-body-1">
+                  <h5 class="card-title"><strong><%= item.name %></strong></h5>
+
                   <% if item.available %>
                     <h6 class="card-subtitle mb-2 text-muted">Available</h6>
                   <% else %>
                     <h6 class="card-subtitle mb-2 text-muted">Reserved</h6>
                   <% end %>
 
-                <p class="card-text"><strong>Description: </strong><%= item.description %></p>
-                <p class="card-text"><strong>Age: </strong> for babys <%= item.age %></p>
-                <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
+                  <p class="card-text"><strong>Description: </strong><%= truncate(item.description, length: 50, separator: ' ', omission: '...') %></p>
+                  <p class="card-text"><strong>Age: </strong> For babies <%= truncate(item.age, length: 15, separator: ' ', omission: '...') %></p>
 
-                <a href="#" class="btn btn-item-index" style="margin-right: 20px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
-                <%= link_to item_path(item), class: "btn btn-item-index" do %>
-                  <i class="fab fa-github"></i><strong> Details</strong>
-                <% end %>
+                  <% if item.user.address.size > 15 %>
+                    <p class="card-text"><strong>Address: </strong><%= item.user.address.slice(0,15) %>...</p>
+                  <% else %>
+                    <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
+                  <% end %>
+
+                  <a href="#" class="btn btn-item-index" style="margin-left: 7px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
+                  <%= link_to item_path(item), class: "btn btn-item-index", style: "margin-left: 17px;" do %>
+                    <i class="fab fa-github"></i><strong> Detail</strong>
+                  <% end %>
+
+                </div>
               </div>
             </div>
           </div>
