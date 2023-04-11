@@ -1,5 +1,5 @@
 class BabysittersController < ApplicationController
-  before_action :set_babysitter, only: [:show, :edit, :update, :destroy]
+  before_action :set_babysitter, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     if params[:query].present?
@@ -48,6 +48,16 @@ class BabysittersController < ApplicationController
   def destroy
     @babysitter.destroy
     redirect_to babysitters_path, notice: "Your babysitter profile was deleted."
+  end
+
+  def upvote
+    @babysitter.upvote_by current_user
+
+  end
+
+  def downvote
+    @babysitter.downvote_by current_user
+
   end
 
   private

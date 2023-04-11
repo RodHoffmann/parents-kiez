@@ -1,4 +1,11 @@
 <div class="body-container">
+
+  <div class="container">
+    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
+      <div class="text-block">
+        <h2>Need a Nanny or babysitter ? </h2>
+      </div>
+    </div>
   <div class ="search">
     <%= form_with url: babysitters_path, method: :get, class: "d-flex my-3 mx-3" do %>
       <%= text_field_tag :query,
@@ -7,13 +14,6 @@
         placeholder: "Find a Nanny or babysitter ?" %>
     <% end %>
   </div>
-  <div class="container">
-    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
-      <div class="text-block">
-        <h2>Need a Nanny or babysitter ? </h2>
-      </div>
-    </div>
-
     <div class="container m-10" id="index-container">
     <%if !current_user.babysitter.present?  %>
         <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
@@ -35,6 +35,7 @@
                 <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
                 <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
               <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
+
               </button>
               </div>
             </div>

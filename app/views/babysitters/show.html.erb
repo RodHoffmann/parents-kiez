@@ -45,6 +45,8 @@
                     send Message
                     <i class="fa-regular fa-envelope"></i>
                   <% end %>
+
+                  <%= button_to "Bookmark", upvote_babysitter_path(@babysitter , type: "bookmark") , method: :put %>
                 </div>
               </div>
             </div>

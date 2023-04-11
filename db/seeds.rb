@@ -10,6 +10,7 @@
 #   email: "example@example.com",
 #   password: "password"
 # )
+
 require "open-uri"
 
 puts "Deleting Users..."
@@ -24,13 +25,17 @@ puts "Deleting Messages..."
 
 Message.destroy_all
 
-puts "Deleting babysitters"
+puts "Deleting babysitters..."
 
 Babysitter.destroy_all
 
-puts "Deleting items"
+puts "Deleting items..."
 
 Item.destroy_all
+
+puts "Deleting Events..."
+
+Event.destroy_all
 
 puts "Creating Users..."
 
@@ -345,3 +350,135 @@ puts "babysitters successfully created"
   babysitter.save!
 end
 puts "babysitters successfully created"
+
+puts "Creating Events.."
+
+event1 = john.events.create!(
+  name: 'Berlin Zoo Day Trip',
+  description: 'Join us for a day at the Berlin Zoo! Get up close and personal with lions, tigers, and bears (oh my!), as well as a wide variety of other fascinating creatures from all around the world.',
+  address: 'Tierpark Berlin, Am Tierpark 125, 10319 Berlin',
+  cost: 20.00,
+  category: 'Animals & Nature',
+  date: '2023-05-06',
+  user_id: User.all.sample.id
+)
+p event1
+image_event1 = URI.open("https://i.ytimg.com/vi/rvYvxiJB150/maxresdefault.jpg")
+event1.image.attach(io: image_event1, filename: "event1.jpg")
+event1.image.analyze
+event1.image.metadata["public_id"] = Cloudinary::Uploader.upload(event1.image.blob.url, resource_type: :auto)["public_id"]
+event1.save
+
+event2 = jane.events.create!(
+  name: "Kids' Pottery Workshop",
+  description: 'Bring your little ones to learn the art of pottery! Our expert instructor will guide them through the process of creating their own unique pieces, which they can take home and show off to their friends.',
+  address: 'Keramikwerkstatt Berlin, Paul-Lincke-Ufer 44a, 10999 Berlin',
+  cost: 15.00,
+  category: 'Arts & Crafts',
+  date: '2023-04-22',
+  user_id: User.all.sample.id
+)
+p event2
+image_event2 = URI.open("https://assets.website-files.com/5defbfd220b40f28dec337ba/5fbeb0dff757755589766126_iStock-1014754398.jpg")
+event2.image.attach(io: image_event2, filename: "event2.jpg")
+event2.image.analyze
+event2.image.metadata["public_id"] = Cloudinary::Uploader.upload(event2.image.blob.url, resource_type: :auto)["public_id"]
+event2.save
+
+event3 = jane.events.create!(
+  name: 'Theater for Kids: The Little Mermaid',
+  description: 'Experience the magic of live theater with your kids! Join us for a special performance of "The Little Mermaid" at the Berliner Ensemble Theater. With stunning sets, costumes, and talented actors, this show is sure to delight audiences of all ages.',
+  address: 'Berliner Ensemble Theater, Bertolt-Brecht-Platz 1, 10117 Berlin',
+  cost: 18.00,
+  category: 'Performing Arts',
+  date: '2023-04-30',
+  user_id: User.all.sample.id
+)
+p event3
+image_event3 = URI.open("https://www.clarkcountytoday.com/wp-content/uploads/2022/07/story_Clark-County-Today-Little-Mermaid-Cast-Journey.jpg")
+event3.image.attach(io: image_event3, filename: "event3.jpg")
+event3.image.analyze
+event3.image.metadata["public_id"] = Cloudinary::Uploader.upload(event3.image.blob.url, resource_type: :auto)["public_id"]
+event3.save
+
+event4 = rodrigo.events.create!(
+  name: 'Kids Yoga Class',
+  description: 'Introduce your children to the benefits of yoga! Join us for a fun and engaging yoga class designed specifically for kids. Our certified instructor will guide them through a series of poses and breathing exercises that will help improve their flexibility, balance, and mindfulness.',
+  address: 'YogaBerlin, Görlitzer Str. 39, 10997 Berlin',
+  cost: 10.00,
+  category: 'Fitness & Wellness',
+  date: '2023-06-03',
+  user_id: User.all.sample.id
+)
+p event4
+image_event4 = URI.open("https://www.hairu.de/app/uploads/2020/10/Kids-aspect-ratio-660-420-1.jpg")
+event4.image.attach(io: image_event4, filename: "event4.jpg")
+event4.image.analyze
+event4.image.metadata["public_id"] = Cloudinary::Uploader.upload(event4.image.blob.url, resource_type: :auto)["public_id"]
+event4.save
+
+event5 = norma.events.create!(
+  name: 'Kids Science Workshop',
+  description: 'Get your kids excited about science with our fun and interactive workshop! Our experienced instructor will lead your children through a series of hands-on experiments and activities that will teach them about the wonders of the natural world. From making volcanoes to exploring the properties of different materials, this workshop is sure to ignite their curiosity and imagination.',
+  address: 'Science Center Berlin, Trebbiner Str. 9, 10963 Berlin',
+  cost: 25.00,
+  category: 'Science & Technology',
+  date: '2023-05-20',
+  user_id: User.all.sample.id
+)
+p event5
+image_event5 = URI.open("https://currituck.ces.ncsu.edu/wp-content/uploads/2020/12/12658902_xl.jpg")
+event5.image.attach(io: image_event5, filename: "event5.jpg")
+event5.image.analyze
+event5.image.metadata["public_id"] = Cloudinary::Uploader.upload(event5.image.blob.url, resource_type: :auto)["public_id"]
+event5.save
+
+event6 = felix.events.create!(
+  name: 'Kids Baking Class',
+  description: 'Calling all aspiring bakers! Join us for a fun and educational baking class designed just for kids. Our expert instructor will guide your children through the process of making delicious treats, from cupcakes to cookies and more. They will learn valuable skills such as measuring, mixing, and decorating, all while having a blast in the kitchen.',
+  address: 'Baking School Berlin, Pestalozzistraße 32, 10627 Berlin',
+  cost: 20.00,
+  category: 'Food & Drink',
+  date: '2023-05-15',
+  user_id: User.all.sample.id
+)
+p event6
+image_event6 = URI.open("https://www.littlelondonmagazine.co.uk/wp-content/uploads/kids-baking.jpg")
+event6.image.attach(io: image_event6, filename: "event6.jpg")
+event6.image.analyze
+event6.image.metadata["public_id"] = Cloudinary::Uploader.upload(event5.image.blob.url, resource_type: :auto)["public_id"]
+event6.save
+
+event7 = jane.events.create!(
+  name: 'Art Workshop for Kids',
+  description: 'Unleash your child’s creativity at our art workshop! Our experienced instructor will teach them how to create their own masterpieces using various techniques and mediums. They will have fun, learn new skills, and take home their own unique artwork.',
+  address: 'Art School Berlin, Prenzlauer Allee 242, 10405 Berlin',
+  cost: 25.00,
+  category: 'Arts & Crafts',
+  date: '2023-05-08',
+  user_id: User.all.sample.id
+)
+p event7
+image_event7 = URI.open("https://www.italysbestrome.com/wp-content/uploads/2016/06/Creative-art-workshops-Rome.jpg")
+event7.image.attach(io: image_event7, filename: "event7.jpg")
+event7.image.analyze
+event7.image.metadata["public_id"] = Cloudinary::Uploader.upload(event7.image.blob.url, resource_type: :auto)["public_id"]
+event7.save
+
+event8 = felix.events.create!(
+  name: 'Kids Cooking Class',
+  description: 'Bring your little chefs to our cooking class and let them learn how to make delicious and healthy meals! Our professional chef will guide them through the process of preparing a meal, from choosing ingredients to cooking techniques. They will have fun, learn new skills and, most importantly, taste their creations!',
+  address: 'The Cooking School Berlin, Paul-Lincke-Ufer 44a, 10999 Berlin',
+  cost: 30.00,
+  category: 'Food & Drink',
+  date: '2023-05-15',
+  user_id: User.all.sample.id
+)
+p event8
+image_event8 = URI.open("https://balwyncc.org.au/wp-content/uploads/2020/08/kids-cooking-snip.png")
+event8.image.attach(io: image_event8, filename: "event8.jpg")
+event8.image.analyze
+event8.image.metadata["public_id"] = Cloudinary::Uploader.upload(event8.image.blob.url, resource_type: :auto)["public_id"]
+event8.save
+
+puts "Events successfully created"

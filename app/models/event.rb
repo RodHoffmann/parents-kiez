@@ -6,7 +6,9 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :category, presence: true
 
+  acts_as_votable
 
+  
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description_and_address_and_cost_and_date_and_category,
                   against: %i[name description address cost date category],
