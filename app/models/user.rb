@@ -33,5 +33,5 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :gender, presence: true
 
-  GENDERS = ['Male', 'Female', 'Prefer not to say']
+  GENDERS = ['Male', 'Female', 'Non Binary']
 end
