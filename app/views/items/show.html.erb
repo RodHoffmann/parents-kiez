@@ -1,4 +1,8 @@
 <div class="container mt-5">
+<% content_for :meta_title, "#{@item.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @item.description %>
+<% content_for :meta_image, cl_image_path(@item.image.key) %>
+
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card item-card-show mb-4">

@@ -1,0 +1,5 @@
+meta_product_name: "ParentsKiez"
+meta_title: "ParentsKiez - Because raising a baby takes a village - join ours today"
+meta_description: "Our website is dedicated to connecting new parents in the same neighborhood or local area, providing a supportive and collaborative community for raising little ones. We believe that parenting is easier and more enjoyable when you have a strong network of like-minded individuals who share your experiences, challenges, and joys. Our website offers a platform for parents to connect with each other, exchange toys and clothes, organize events, or even hire babysitters. We believe that raising a baby takes a village, and by joining our community, you will be a part of a supportive network of fellow parents who are also on this journey. With our website, you can find the support you need and the friends you want, building lasting friendships and memories with other families in your area"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
