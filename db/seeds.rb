@@ -45,7 +45,7 @@ john = User.create(email: 'john@example.com',
   password: '123456',
   first_name: 'John',
   last_name: 'Doe',
-  address: 'Berliner Alle 125',
+  address: 'Berliner Allee 125',
   gender: "Male")
 
 john.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098718/d4f1w05kkbpee3sctons.jpg'), filename: 'profile1.jpg', content_type: 'image/jpg')
@@ -89,7 +89,7 @@ rodrigo = User.create(email: 'rodrigo@example.com',
   password: '123456',
   first_name: 'Rodrigo',
   last_name: 'Mueller',
-  address: 'Schönhauser Alle 77',
+  address: 'Schönhauser Allee 77',
   gender: "Other")
 
 rodrigo.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098439/ucuf0ijqdn74bbxgzcg9.jpg'), filename: 'profile5.jpg', content_type: 'image/jpg')
@@ -299,7 +299,7 @@ puts "Creating babysitters.."
 first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack"]
 last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson"]
 genders = ["Female", "Female", "Female"]
-addresses = ["123 Main St.", "456 Elm St.", "789 Maple Ave.", "1011 Oak Rd.", "1213 Pine Blvd.", "1415 Cedar Ln.", "1617 Walnut St.", "1819 Spruce Dr.", "2021 Birch Ave.", "2223 Poplar Rd."]
+addresses = ["Schönhauser Allee 26A, 10435 Berlin", "Immanuelkirchstraße 14A, 10405 Berlin", "Bartningallee 29, 10557 Berlin", "Beusselstraße 61, 10553 Berlin", "Friedrich-Olbricht-Damm 66, 13627 Berlin", "Ohmstraße 4-6, 13629 Berlin", "Zehlendorfer Damm 121, 14532 Kleinmachnow", "Ruhlsdorfer Str. 95, 14532 Stahnsdorf", "Dorfaue 12, 14979 Großbeeren", "Johannisthaler Ch 317, 12351 Berlin"]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 image_paths = [
