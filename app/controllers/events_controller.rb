@@ -43,15 +43,21 @@ class EventsController < ApplicationController
   end
 
   def upvote
-    @event.upvote_by current_user
+    if @event.upvote_by current_user
+      redirect_to events_path, notice: "this events was saved successfully to your favorites !"
+    else
+      render :new, status: :unprocessable_entity
+    end
 
   end
 
   def downvote
-    @event.downvote_by current_user
-
+    if @event.downvote_by current_user
+      redirect_to babysitters_path, notice: "you have unsaved this event!"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
-
 
 
   private
