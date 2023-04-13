@@ -47,12 +47,12 @@ class BabysittersController < ApplicationController
 
   def destroy
     @babysitter.destroy
-    redirect_to babysitters_path, notice: "Babysitter profile was deleted."
+    redirect_to babysitters_path, notice: "Babysitter profile deleted"
   end
 
   def upvote
     if @babysitter.upvote_by current_user
-      redirect_to babysitters_path, notice: "this babysitters was saved successfully !"
+      redirect_to babysitters_path, notice: "This babysitter was saved successfully!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -60,7 +60,7 @@ class BabysittersController < ApplicationController
 
   def downvote
     if @babysitter.downvote_by current_user
-      redirect_to babysitters_path, notice: "you have unsaved this babysitter !"
+      redirect_to babysitters_path, notice: "Babysitter removed from your list!"
     else
       render :new, status: :unprocessable_entity
     end
