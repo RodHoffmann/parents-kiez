@@ -23,7 +23,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
-      redirect_to events_path, notice: "Your activity was posted !"
+      redirect_to events_path, notice: "Your event has been posted!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to event_path(@event), notice: "Your information was successfully updated."
+      redirect_to event_path(@event), notice: "The information was successfully updated"
     else
     render :edit, status: :unprocessable_entity
     end
@@ -43,15 +43,21 @@ class EventsController < ApplicationController
   end
 
   def upvote
-    @event.upvote_by current_user
+    if @event.upvote_by current_user
+      redirect_to events_path, notice: "This event was added to your favourites"
+    else
+      render :new, status: :unprocessable_entity
+    end
 
   end
 
   def downvote
-    @event.downvote_by current_user
-
+    if @event.downvote_by current_user
+      redirect_to babysitters_path, notice: "You have removed this event from your list"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
-
 
 
   private
