@@ -356,7 +356,7 @@ puts "Creating Events.."
 event1 = john.events.create!(
   name: 'Berlin Zoo Day Trip',
   description: 'Join us for a day at the Berlin Zoo! Get up close and personal with lions, tigers, and bears (oh my!), as well as a wide variety of other fascinating creatures from all around the world.',
-  address: 'Tierpark Berlin, Am Tierpark 125, 10319 Berlin',
+  address: 'Simon-Dach-Straße 43, 10245 Berlin, Germany',
   cost: 20.00,
   category: 'Animals & Nature',
   date: '2023-05-06',
@@ -372,7 +372,7 @@ event1.save
 event2 = jane.events.create!(
   name: "Kids' Pottery Workshop",
   description: 'Bring your little ones to learn the art of pottery! Our expert instructor will guide them through the process of creating their own unique pieces, which they can take home and show off to their friends.',
-  address: 'Keramikwerkstatt Berlin, Paul-Lincke-Ufer 44a, 10999 Berlin',
+  address: 'Mehringdamm 50, 10961 Berlin, Germany',
   cost: 15.00,
   category: 'Arts & Crafts',
   date: '2023-04-22',
@@ -388,7 +388,7 @@ event2.save
 event3 = jane.events.create!(
   name: 'Theater for Kids: The Little Mermaid',
   description: 'Experience the magic of live theater with your kids! Join us for a special performance of "The Little Mermaid" at the Berliner Ensemble Theater. With stunning sets, costumes, and talented actors, this show is sure to delight audiences of all ages.',
-  address: 'Berliner Ensemble Theater, Bertolt-Brecht-Platz 1, 10117 Berlin',
+  address: 'Unter Den Linden 100, 10117 Berlin, Germany',
   cost: 18.00,
   category: 'Performing Arts',
   date: '2023-04-30',
@@ -404,7 +404,7 @@ event3.save
 event4 = rodrigo.events.create!(
   name: 'Kids Yoga Class',
   description: 'Introduce your children to the benefits of yoga! Join us for a fun and engaging yoga class designed specifically for kids. Our certified instructor will guide them through a series of poses and breathing exercises that will help improve their flexibility, balance, and mindfulness.',
-  address: 'YogaBerlin, Görlitzer Str. 39, 10997 Berlin',
+  address: 'Görlitzer Straße 20, 10997 Berlin, Germany',
   cost: 10.00,
   category: 'Fitness & Wellness',
   date: '2023-06-03',
@@ -420,7 +420,7 @@ event4.save
 event5 = norma.events.create!(
   name: 'Kids Science Workshop',
   description: 'Get your kids excited about science with our fun and interactive workshop! Our experienced instructor will lead your children through a series of hands-on experiments and activities that will teach them about the wonders of the natural world. From making volcanoes to exploring the properties of different materials, this workshop is sure to ignite their curiosity and imagination.',
-  address: 'Science Center Berlin, Trebbiner Str. 9, 10963 Berlin',
+  address: 'Kottbusser Straße 50, 10999 Berlin, Germany',
   cost: 25.00,
   category: 'Science & Technology',
   date: '2023-05-20',
@@ -436,7 +436,7 @@ event5.save
 event6 = felix.events.create!(
   name: 'Kids Baking Class',
   description: 'Calling all aspiring bakers! Join us for a fun and educational baking class designed just for kids. Our expert instructor will guide your children through the process of making delicious treats, from cupcakes to cookies and more. They will learn valuable skills such as measuring, mixing, and decorating, all while having a blast in the kitchen.',
-  address: 'Baking School Berlin, Pestalozzistraße 32, 10627 Berlin',
+  address: 'Pestalozzistraße 32, 10627 Berlin, Germany',
   cost: 20.00,
   category: 'Food & Drink',
   date: '2023-05-15',
@@ -452,7 +452,7 @@ event6.save
 event7 = jane.events.create!(
   name: 'Art Workshop for Kids',
   description: 'Unleash your child’s creativity at our art workshop! Our experienced instructor will teach them how to create their own masterpieces using various techniques and mediums. They will have fun, learn new skills, and take home their own unique artwork.',
-  address: 'Art School Berlin, Prenzlauer Allee 242, 10405 Berlin',
+  address: 'Prenzlauer Allee 242, 10405 Berlin, Germany',
   cost: 25.00,
   category: 'Arts & Crafts',
   date: '2023-05-08',
@@ -468,7 +468,7 @@ event7.save
 event8 = felix.events.create!(
   name: 'Kids Cooking Class',
   description: 'Bring your little chefs to our cooking class and let them learn how to make delicious and healthy meals! Our professional chef will guide them through the process of preparing a meal, from choosing ingredients to cooking techniques. They will have fun, learn new skills and, most importantly, taste their creations!',
-  address: 'The Cooking School Berlin, Paul-Lincke-Ufer 44a, 10999 Berlin',
+  address: 'Paul-Lincke-Ufer 44, 10999 Berlín, Germany',
   cost: 30.00,
   category: 'Food & Drink',
   date: '2023-05-15',

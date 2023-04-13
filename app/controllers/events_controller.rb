@@ -7,6 +7,15 @@ class EventsController < ApplicationController
     else
       @events = Event.all
     end
+
+    @markers = @events.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { event: event }),
+        marker_html: render_to_string(partial: "marker", locals: { event: event })
+      }
+    end
   end
 
   def show
@@ -67,6 +76,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :address, :cost, :category, :date, :image)
+    params.require(:event).permit(:name, :description, :address, :cost, :category, :date, :image, :longitude, :latitude)
   end
 end
