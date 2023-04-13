@@ -7,8 +7,11 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   acts_as_voter
-  
+
   def bookmarked_events
     self.get_voted(Event)
   end
@@ -30,5 +33,5 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :gender, presence: true
 
-  GENDERS = %w[Male Female Other]
+  GENDERS = ['Male', 'Female', 'Non Binary']
 end

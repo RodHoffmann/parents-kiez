@@ -84,3 +84,5 @@ gem "cloudinary"
 gem "pg_search"
 # book mark gem
 gem 'acts_as_votable'
+# geocoder
+gem 'geocoder'

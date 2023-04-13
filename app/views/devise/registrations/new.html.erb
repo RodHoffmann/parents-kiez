@@ -40,7 +40,9 @@
                           autofocus: true,
                           id: "address",
                           aria_describedby: "emailHelp",
-                          input_html: { autocomplete: "Address" }%>
+                          input_html: {data: {address_autocomplete_target: "address", class: "d-none" }},
+                          wrapper_html: {data: {controller: "address-autocomplete",
+                          address_autocomplete_api_key_value:ENV["MAPBOX_API_KEY"]}}%>
             </div>
             <div class="m-3">
               <%= f.input :email,
