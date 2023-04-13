@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_13_083150) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_13_104305) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -105,6 +105,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_083150) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "babysitter_id", null: false
+    t.index ["babysitter_id"], name: "index_reviews_on_babysitter_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -151,5 +153,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_083150) do
   add_foreign_key "items", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "reviews", "babysitters"
   add_foreign_key "reviews", "users"
 end

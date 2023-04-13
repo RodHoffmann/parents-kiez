@@ -4,10 +4,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
+
     @review = Review.new(review_params)
     @review.user = current_user
+
+    @review.babysitter_id = params[:babysitter].to_i
+
     if @review.save
-      redirect_to new_review_path
+      redirect_to babysitter_path(params[:babysitter])
     else
       flash[:alert] = "Something went wrong."
       render :new
@@ -17,6 +21,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :rating)
+    params.require(:review).permit(:content, :rating, :user_id, :babysitter_id)
   end
 end

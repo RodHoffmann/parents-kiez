@@ -6,7 +6,9 @@ class BabysittersController < ApplicationController
       @babysitters = Babysitter.search_by_first_name_and_last_name_and_cost_per_hour_and_address_and_age_and_gender(params[:query])
     else
       @babysitters = Babysitter.all
+
     end
+
   end
 
   def show
@@ -18,6 +20,9 @@ class BabysittersController < ApplicationController
     else
       @chatroom = Chatroom.create(user1: current_user, user2: user2)
     end
+    @review = Review.new
+    @avarage_review = Review.where(babysitter_id: @babysitter.id)
+  
   end
 
   def new
@@ -70,7 +75,11 @@ class BabysittersController < ApplicationController
 
   def set_babysitter
     @babysitter = Babysitter.find(params[:id])
-  end
+
+
+
+
+      end
 
   def babysitter_params
     params.require(:babysitter).permit(:first_name, :last_name, :age, :gender, :address, :cost_per_hour, :years_of_experience, :image)
