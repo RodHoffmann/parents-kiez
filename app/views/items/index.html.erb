@@ -21,6 +21,10 @@
         placeholder: "Find things you need for your child" %>
     <% end %>
   </div>
+  <div class="text-center mb-5">
+    <strong><%= link_to "Post your item", new_item_path, class:"custom-btn-item-index m-3" %></strong>
+  </div>
+
   <h1 class="text-center item-heading-index pt-3">Available Items</h1>
 
   <% if @items.empty? %>
@@ -76,8 +80,5 @@
     </div>
   <% end %>
 
-  <div class="text-center mb-5">
-    <strong><%= link_to "Post your item", new_item_path, class:"custom-btn-item-index" %></strong>
-  </div>
 
 </div>

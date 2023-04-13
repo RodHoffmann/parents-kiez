@@ -6,7 +6,7 @@
 
   background: rgb(237, 245, 255);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.295);
-  width: 100%;
+  width: 40vw;
   height: 100%;
 
   .card-body{
@@ -32,7 +32,7 @@
 .links {
 
  .btn-send-msg {
-    border: 2px solid;
+
 
     background: linear-gradient(to left top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.8) 90%) !important;
     -webkit-background-clip: text !important;

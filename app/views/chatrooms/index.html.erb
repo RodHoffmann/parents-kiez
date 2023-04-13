@@ -21,10 +21,18 @@
 
   <div class="container my-5 text-center">
     <h2 >Bookmarked Events</h2>
-      <ul>
+    <ul>
       <% current_user.bookmarked_events.each do |event| %>
-        <li class="card m-3"><%= link_to event.name, event %></li>
+      <% if  event.votes_for[0].vote_flag %>
+        <div class="card-chat">
+          <%= cl_image_tag (event.image.key), class: "avatar-img"%>
+          <%= link_to event.name, event %>
+          <%= link_to "Unsave", downvote_event_path(event , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
+        </div>
+      <% else  %>
+        <%= nil %>
       <% end %>
+    <% end %>
     </ul>
   </div>
 
@@ -32,7 +40,15 @@
     <h2 >Bookmarked Babysitters</h2>
     <ul>
     <% current_user.bookmarked_babysitters.each do |babysitter| %>
-      <li class="card m-3"><%= link_to babysitter.first_name, babysitter %></li>
+    <% if  babysitter.votes_for[0].vote_flag %>
+      <div class="card-chat">
+        <%= cl_image_tag (babysitter.image.key), class: "avatar-img"%>
+        <%= link_to babysitter.first_name, babysitter %>
+        <%= link_to "Unsave", downvote_babysitter_path(babysitter , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
+      </div>
+      <% else  %>
+        <%= nil %>
+      <% end %>
     <% end %>
     </ul>
   </div>
