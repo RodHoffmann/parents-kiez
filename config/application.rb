@@ -25,5 +25,6 @@ module ParentsKiez
     # config.eager_load_paths << Rails.root.join("extras")
     config.time_zone = "Berlin"
     config.active_record.default_timezone = :local
+    config.active_job.queue_adapter = :sidekiq
   end
 end
