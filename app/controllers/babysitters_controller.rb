@@ -47,7 +47,7 @@ class BabysittersController < ApplicationController
 
   def destroy
     @babysitter.destroy
-    redirect_to babysitters_path, notice: "Babysitter profile deleted"
+    redirect_to babysitters_path, notice: "Your Babysitter profile was deleted"
   end
 
   def upvote
