@@ -57,7 +57,6 @@
                     <h6 class="card-subtitle mb-2 text-muted">Reserved</h6>
                   <% end %>
 
-                  <p class="card-text"><strong>Description: </strong><%= truncate(item.description, length: 50, separator: ' ', omission: '...') %></p>
                   <p class="card-text"><strong>Age: </strong> For babies <%= truncate(item.age, length: 15, separator: ' ', omission: '...') %></p>
 
                   <% if item.user.address.size > 15 %>
@@ -68,7 +67,7 @@
 
                   <a href="#" class="btn btn-item-index" style="margin-left: 7px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
                   <%= link_to item_path(item), class: "btn btn-item-index", style: "margin-left: 17px;" do %>
-                    <i class="fab fa-github"></i><strong> Detail</strong>
+                    <i class="fab fa-github"></i><strong> Details</strong>
                   <% end %>
 
                 </div>

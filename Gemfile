@@ -86,3 +86,6 @@ gem "pg_search"
 gem 'acts_as_votable'
 # geocoder
 gem 'geocoder'
+# sidekiq for background jobs
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'

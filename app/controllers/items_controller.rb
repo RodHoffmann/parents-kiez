@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
       {
         lat: item.user.latitude,
         lng: item.user.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
+        info_window_html: render_to_string(partial: "info_window", locals: { item: item }),
         marker_html: render_to_string(partial: "marker", locals: { item: item })
       }
     end

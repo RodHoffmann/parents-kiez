@@ -2,7 +2,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 580px;
+  height: 100px;
   .img-fluid{
 
   }
@@ -12,10 +12,10 @@
 
 .text-block {
   position: absolute;
+  background-color: transparent;
   left: 20px;
-  bottom: 30px;
-  background: rgba(255, 252, 252, 0.5);
-  color: rgb(24, 19, 22);
+  top: 30px;
+  color: rgb(226, 241, 245);
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
@@ -23,43 +23,93 @@
 }
 
 
-.container-home{
-
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-
-
   .card-home1{
-    background-color:rgb(250, 137, 88);
-    border-radius: 10px;
+    background-color: #e6f3ff;
     color: aliceblue;
     margin: 3px;
-
+    border-radius: 50%;
+    position: absolute;
+    top: 17vh;
+    left: 85vh;
+    color: black;
     .home-text{
       font-weight: bold;
-      font-size: 25px;
+      font-size: 13px;
       margin: 8px;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
   }
   .card-home2{
-    background-color: rgb(129, 217, 249);
-    border-radius: 10px;
+    background-color: #c8facd;
     color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 52vh;
+    left: 45vh;
+    color: black;
     .home-text{
       font-weight: bold;
-      font-size: 25px;
+      font-size: 13px;
       margin: 8px;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
   }
   .card-home3{
-    background-color: rgb(196, 210, 15);
-    border-radius: 10px;
+    background-color: #ffe4d4;
     color: aliceblue;
+    border-radius: 50%;
+    position: absolute;
+    top: 52vh;
+    left: 127vh;
+    color: black;
     .home-text{
       font-weight: bold;
-      font-size: 25px;
+      font-size: 13px;
       margin: 8px;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
   }
-}
+
+  .home-container {
+    position: relative;
+  }
+
+  div.box {
+    --s:250px;  /*Size of the circle */
+    --p:15px;  /* padding */
+
+    height: var(--s);
+    width:  var(--s);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h4 {
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+  .box i,
+  .box::before {
+    content: '';
+    float: left;
+    height:100%;
+    width: 50%;
+    shape-outside: radial-gradient(farthest-side at right, transparent calc(100% - var(--p)), #fff 0);
+  }
+  .box i {
+    float: right;
+    shape-outside: radial-gradient(farthest-side at left,  transparent calc(100% - var(--p)), #fff 0);
+  }
