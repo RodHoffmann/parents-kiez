@@ -21,8 +21,15 @@ class BabysittersController < ApplicationController
       @chatroom = Chatroom.create(user1: current_user, user2: user2)
     end
     @review = Review.new
-    @avarage_review = Review.where(babysitter_id: @babysitter.id)
-  
+    @count_reviews = Review.where(babysitter_id: @babysitter.id).length
+    if @count_reviews != 0
+      @avarage_review = Review.where(babysitter_id: @babysitter.id).map do |review|
+        review.rating
+      end.reduce {|a, b| a+b } / @count_reviews
+    else
+      @avarage_review = 0
+    end
+
   end
 
   def new
