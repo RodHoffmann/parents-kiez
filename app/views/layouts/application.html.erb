@@ -34,8 +34,8 @@
   </head>
 
   <body>
-    <div class="page-container">
-      <%= render "shared/navbar" %>
+    <%= render "shared/navbar" %>
+    <div class="page-container <%= params[:action] == 'home' ? 'home-background' : '' %>">
       <%= render "shared/flashes" %>
       <main id="main-content">
         <%= yield %>

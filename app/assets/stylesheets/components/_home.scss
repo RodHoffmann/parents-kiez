@@ -2,7 +2,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 580px;
+  height: 100px;
   .img-fluid{
 
   }
@@ -12,10 +12,10 @@
 
 .text-block {
   position: absolute;
+  background-color: transparent;
   left: 20px;
-  bottom: 30px;
-  background: rgba(255, 252, 252, 0.5);
-  color: rgb(24, 19, 22);
+  top: 30px;
+  color: rgb(226, 241, 245);
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
