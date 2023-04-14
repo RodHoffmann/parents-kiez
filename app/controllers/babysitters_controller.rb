@@ -6,7 +6,9 @@ class BabysittersController < ApplicationController
       @babysitters = Babysitter.search_by_first_name_and_last_name_and_cost_per_hour_and_address_and_age_and_gender(params[:query])
     else
       @babysitters = Babysitter.all
+
     end
+
   end
 
   def show
@@ -18,6 +20,16 @@ class BabysittersController < ApplicationController
     else
       @chatroom = Chatroom.create(user1: current_user, user2: user2)
     end
+    @review = Review.new
+    @count_reviews = Review.where(babysitter_id: @babysitter.id).length
+    if @count_reviews != 0
+      @avarage_review = Review.where(babysitter_id: @babysitter.id).map do |review|
+        review.rating
+      end.reduce {|a, b| a+b } / @count_reviews
+    else
+      @avarage_review = 0
+    end
+
   end
 
   def new
