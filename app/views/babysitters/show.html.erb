@@ -10,30 +10,34 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-6 mb-4 mx-auto">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-12 mb-4 ">
         <div class="mb-10 mt-20", id= "show-card">
+
+
           <div class="row">
-          <div class="col-6 col-sm-12 col-lg-4 col-md-4">
-              <div classs="item">
+          <%= button_to "Save <i class='fa-regular fa-bookmark'></i> ".html_safe, upvote_babysitter_path(@babysitter , type: "bookmark") ,class:"save" , method: :put %>
+
+          <div class="col-6 col-sm-12 col-lg-6 col-12 col-md-12">
+              <div class="item-photo">
                 <% if @babysitter.image.key != nil %>
-                    <img class="card-img-top " src="<%= cl_image_path @babysitter.image.key %>" alt="<%= @babysitter.first_name %>" style="width: 200px; height: auto;">
+                    <img class="card-img-show " src="<%= cl_image_path @babysitter.image.key %>" alt="<%= @babysitter.first_name %>" style="width: 400px; height: auto;">
                 <% else %>
-                    <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  @babysitter.first_name %>">
+                    <img class="card-img-show" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-show, alt="<%=  @babysitter.first_name %>">
                 <% end %>
               </div>
-            </div>
-            <div class="col-6 col-sm-12 col-lg-8 col-md-8">
+          </div>
+            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
               <div class="card-body">
-                <h2 class="card-title"><%= @babysitter.first_name%> <%= @babysitter.last_name%></h2>
-                <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</h4>
-                <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></h4>
-                <h5 class="card-text"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></h5>
-                <h5 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></h5>
-                <h5 class="card-meta mb-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></h5>
+
+                <h2 class="card-title m-2"><%= @babysitter.first_name%> <%= @babysitter.last_name%></h2>
+                <h4 class="card-text m-2"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</h4>
+                <h4 class="card-text m-2"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></h4>
+                <h5 class="card-text m-2"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></h5>
+                <h5 class="card-meta m-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></h5>
+                <h5 class="card-meta m-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></h5>
                 <div class="mb-2">
                 <div class= "baby-rating" >
-                <h4> Rating </h4>
-
+                    <h5 > Rating   </h5>
                     <% @avarage_review.times do  %>
                         <i  class="fa-solid fa-star "></i>
                     <% end %>
@@ -54,24 +58,24 @@
 
                   <%= link_to chatroom_path(@chatroom), class: "btn-send-msg m-1" do %>
                     send Message
-                    <i class="fa-regular fa-envelope"></i>
+                    <span><i class="fa-regular fa-envelope"></i></span>
                   <% end %>
 
-                  <%= button_to "Bookmark <i class='fa-regular fa-bookmark'></i> ".html_safe, upvote_babysitter_path(@babysitter , type: "bookmark") , method: :put %>
                 </div>
               </div>
             </div>
 
 
           </div>
-        </div>
-        <div class="links">
-
-            <%= link_to  babysitters_path, class: "btn-send-msg m-3" do %>
+          <div>
+            <%= link_to  babysitters_path, class:"back" do %>
               <i class="fa-solid fa-angle-left"></i>
               Back to babysitters Page
             <% end %>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
