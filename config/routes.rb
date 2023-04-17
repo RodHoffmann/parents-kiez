@@ -10,7 +10,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "pages#home"
 
-  resources :items
+  resources :items do
+    member do
+      put "upvote", to: "items#upvote"
+      put 'downvote', to: 'items#downvote'
+    end
+  end
   resources :babysitters do
     member do
       put "upvote", to: "babysitters#upvote"
@@ -28,4 +33,5 @@ Rails.application.routes.draw do
   end
   resources :chatrooms, only: :index
   resources :reviews, only: [:new, :create]
+  resources :profiles, only: [:create, :edit, :update, :show]
 end
