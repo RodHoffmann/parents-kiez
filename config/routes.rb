@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   end
   resources :chatrooms, only: :index
   resources :reviews, only: [:new, :create]
+  resources :profiles, only: [:create, :edit, :update, :show]
 end
