@@ -21,7 +21,8 @@
         placeholder: "Find things you need for your child" %>
     <% end %>
   </div>
-  <div class="text-center mb-5">
+
+  <div class="text-center m-5">
     <strong><%= link_to "Post your item", new_item_path, class:"custom-btn-item-index m-3" %></strong>
   </div>
 
@@ -54,7 +55,7 @@
                   <p class="card-text"><strong>Age: </strong> For babies <%= truncate(item.age, length: 15, separator: ' ', omission: '...') %></p>
 
                   <% if item.user.address.size > 15 %>
-                    <p class="card-text"><strong>Address: </strong><%= item.user.address.slice(0,15) %>...</p>
+                    <p class="card-text"><strong>Address: </strong><%= item.user.address.slice(0,35) %>...</p>
                   <% else %>
                     <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
                   <% end %>
