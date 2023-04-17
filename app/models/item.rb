@@ -7,6 +7,8 @@ class Item < ApplicationRecord
 
   belongs_to :user
 
+  acts_as_votable
+
   AGES = ["less than 1 month old", "between 1 and 3 months old", "between 3 and 6 months old", "between 6 and 12 months old", "between 1 and 1,5 years old", "between 1 and 1,5 years old", "between 1,5 and 2 years old", "more than 2 years old"]
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description_and_age,

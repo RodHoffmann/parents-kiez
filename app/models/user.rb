@@ -22,7 +22,9 @@ class User < ApplicationRecord
     self.get_voted(Babysitter)
   end
 
-
+  def bookmarked_items
+    self.get_voted(Item)
+  end
 
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable

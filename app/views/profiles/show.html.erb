@@ -34,3 +34,20 @@
     <% end %>
     </ul>
   </div>
+
+    <div class="container my-5 text-center">
+    <h2 >Reserved Items</h2>
+    <ul>
+    <% current_user.bookmarked_items.each do |item| %>
+    <% if  item.votes_for[0].vote_flag %>
+      <div class="card-chat">
+        <%= cl_image_tag (item.image.key), class: "avatar-img"%>
+        <%= link_to item.name, item_path(item) %>
+        <%= link_to "Unsave", downvote_item_path(item , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
+      </div>
+      <% else  %>
+        <%= nil %>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
