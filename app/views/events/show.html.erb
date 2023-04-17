@@ -29,9 +29,9 @@
           <div class="card-body-event">
             <h2 class="card-title m-2"><%= @event.name%> </h2>
             <h2 class="card-text-description m-2"><%= @event.description%> </h2>
-            <h2 class="card-text m-2"><i class="fa-solid fa-house"></i><%= @event.address%> </h2>
+            <h2 class="card-text m-2"><i class="fa-solid fa-earth-americas"></i><%= @event.address%> </h2>
             <h2 class="card-text m-2"><%= @event.category%> </h2>
-            <h2 class="card-text m-2"><%= @event.date%> </h2>
+            <h2 class="card-text m-2"><i class="fa-solid fa-calendar-days"></i> <%= @event.date%> </h2>
             <h5 class="card-meta m-2"><i class="fa-solid fa-sack-dollar"></i> Cost:<%= @event.cost%></h5>
             <div class="mb-2">
               <% if @event.user == current_user %>
