@@ -1,6 +1,9 @@
 
 <div class="">
   <div class="row">
+    <h1 class="text-center item-heading-index pt-3">Find items in your neighbourhood or share them with your community</h1>
+  </div>
+  <div class="row">
     <div class="col-12">
       <%= render "search_bar" %>
     </div>
@@ -14,8 +17,8 @@
         <div>
           <%= render "map" %>
         </div>
-        <div class="text-center m-5">
-          <strong><%= link_to "Post your item", new_item_path, class:"custom-btn-item-index m-3" %></strong>
+        <div class="text-center container_btn_below_map">
+          <strong><%= link_to "Post your item", new_item_path, class:"btn btn_below_map" %></strong>
         </div>
       </div>
     </div>
