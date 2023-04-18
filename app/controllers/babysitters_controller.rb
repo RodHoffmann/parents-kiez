@@ -64,7 +64,7 @@ class BabysittersController < ApplicationController
 
   def upvote
     if @babysitter.upvote_by current_user
-      redirect_to babysitters_path, notice: "This babysitter was saved successfully!"
+      redirect_to profile_path(current_user.profile), notice: "The babysitter was added to your list!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -72,7 +72,7 @@ class BabysittersController < ApplicationController
 
   def downvote
     if @babysitter.downvote_by current_user
-      redirect_to babysitters_path, notice: "Babysitter removed from your list!"
+      redirect_to profile_path(current_user.profile), notice: "The babysitter was removed from your list!"
     else
       render :new, status: :unprocessable_entity
     end
