@@ -42,6 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_221623) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "babysitter_ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.bigint "babysitter_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "stars"
+    t.index ["babysitter_id"], name: "index_babysitter_ratings_on_babysitter_id"
+  end
+
   create_table "babysitters", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -149,6 +158,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_13_221623) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "babysitter_ratings", "babysitters"
   add_foreign_key "babysitters", "users"
   add_foreign_key "chatrooms", "users", column: "user1_id"
   add_foreign_key "chatrooms", "users", column: "user2_id"

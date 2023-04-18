@@ -481,4 +481,356 @@ event8.image.analyze
 event8.image.metadata["public_id"] = Cloudinary::Uploader.upload(event8.image.blob.url, resource_type: :auto)["public_id"]
 event8.save
 
+event9 = felix.events.create!(
+  name: 'Kids Painting Workshop',
+  description: 'Join us for a fun-filled painting workshop for kids! Our experienced art instructor will teach them how to paint a beautiful picture using acrylic paints. The kids will have a great time and take home their own masterpiece!',
+  address: 'Kopenhagener Str. 46, 10437 Berlin, Germany',
+  cost: 25.00,
+  category: 'Arts & Crafts',
+  date: '2023-06-01',
+  user_id: User.all.sample.id
+)
+p event9
+image_event9 = URI.open("")
+event9.image.attach(io: image_event9, filename: "event9.jpg")
+event9.image.analyze
+event9.image.metadata["public_id"] = Cloudinary::Uploader.upload(event9.image.blob.url, resource_type: :auto)["public_id"]
+event9.save
+
+event10 = felix.events.create!(
+  name: 'Kids Sports Day',
+  description: 'Bring your little athletes to our sports day event! We have a range of fun sports activities planned for the kids including soccer, basketball, and relay races. The event is designed to encourage kids to be active, healthy and have fun with their peers.',
+  address: 'Kastanienallee 82, 10435 Berlin, Germany',
+  cost: 20.00,
+  category: 'Sports & Fitness',
+  date: '2023-06-15',
+  user_id: User.all.sample.id
+)
+p event10
+image_event10 = URI.open("")
+event10.image.attach(io: image_event10, filename: "event10.jpg")
+event10.image.analyze
+event10.image.metadata["public_id"] = Cloudinary::Uploader.upload(event10.image.blob.url, resource_type: :auto)["public_id"]
+event10.save
+
+event11 = felix.events.create!(
+  name: 'Kids Movie Night',
+  description: 'Join us for a fun night of movies and snacks for kids! We will be screening a selection of family-friendly movies, and the kids can enjoy popcorn, candy, and other treats. Parents can relax and enjoy the movie with their kids.',
+  address: 'Oranienburger Str. 18, 10178 Berlin, Germany',
+  cost: 10.00,
+  category: 'Entertainment',
+  date: '2023-07-02',
+  user_id: User.all.sample.id
+)
+p event11
+image_event11 = URI.open("")
+event11.image.attach(io: image_event11, filename: "event11.jpg")
+event11.image.analyze
+event11.image.metadata["public_id"] = Cloudinary::Uploader.upload(event11.image.blob.url, resource_type: :auto)["public_id"]
+event11.save
+
+event12 = felix.events.create!(
+  name: 'Kids Robotics Workshop',
+  description: 'Join our robotics workshop and learn how to build and program robots! Our experienced instructors will teach kids the basics of robotics, including coding and electronics. Kids will have fun and learn valuable skills for the future!',
+  address: 'Richard-Sorge-Straße 5, 10249 Berlin, Germany',
+  cost: 35.00,
+  category: 'Science & Technology',
+  date: '2023-07-15',
+  user_id: User.all.sample.id
+)
+p event12
+image_event12 = URI.open("")
+event12.image.attach(io: image_event12, filename: "event12.jpg")
+event12.image.analyze
+event12.image.metadata["public_id"] = Cloudinary::Uploader.upload(event12.image.blob.url, resource_type: :auto)["public_id"]
+event12.save
+
+event13 = felix.events.create!(
+  name: 'Kids Nature Walk',
+  description: 'Join us for a guided nature walk for kids! We will explore the local park, observe plants and animals, and learn about the environment. Our experienced guide will teach kids about conservation and environmental stewardship while having fun in nature!',
+  address: 'Prenzlauer Allee 232, 10405 Berlin, Germany',
+  cost: 5.00,
+  category: 'Outdoors & Recreation',
+  date: '2023-08-07',
+  user_id: User.all.sample.id
+)
+p event13
+image_event13 = URI.open("")
+event13.image.attach(io: image_event13, filename: "event13.jpg")
+event13.image.analyze
+event13.image.metadata["public_id"] = Cloudinary::Uploader.upload(event13.image.blob.url, resource_type: :auto)["public_id"]
+event13.save
+
+event14 = felix.events.create!(
+  name: 'Kids Creative Writing Workshop',
+  description: 'Join our creative writing workshop for kids and let their imaginations run wild! Our experienced writing instructors will teach kids the basics of storytelling and creative writing, and guide them in crafting their own short stories. Kids will learn how to express their ideas and emotions through words and have fun in the process!',
+  address: 'Karl-Liebknecht-Str. 29, 10178 Berlin, Germany',
+  cost: 20.00,
+  category: 'Arts & Culture',
+  date: '2023-08-21',
+  user_id: User.all.sample.id
+)
+p event14
+image_event14 = URI.open("")
+event14.image.attach(io: image_event14, filename: "event14.jpg")
+event14.image.analyze
+event14.image.metadata["public_id"] = Cloudinary::Uploader.upload(event14.image.blob.url, resource_type: :auto)["public_id"]
+event14.save
+
+event15 = felix.events.create!(
+  name: 'Kids Photography Workshop',
+  description: 'Bring your little photographers to our photography workshop! Our professional photographer will teach kids the basics of photography and how to use a camera to take great pictures. They will learn about composition, lighting, and editing while having fun taking pictures in a scenic location!',
+  address: 'Oranienburger Str. 285, 13437 Berlin, Germany',
+  cost: 25.00,
+  category: 'Arts & Culture',
+  date: '2023-09-10',
+  user_id: User.all.sample.id
+)
+p event15
+image_event15 = URI.open("")
+event15.image.attach(io: image_event15, filename: "event15.jpg")
+event15.image.analyze
+event15.image.metadata["public_id"] = Cloudinary::Uploader.upload(event15.image.blob.url, resource_type: :auto)["public_id"]
+event15.save
+
+event16 = felix.events.create!(
+  name: 'Kids Dance Class',
+  description: 'Let your kids dance and have fun in our dance class! Our experienced dance instructors will teach kids different styles of dance, from hip hop to ballet. They will learn new moves, improve their coordination and flexibility, and have a great time dancing with other kids!',
+  address: 'Kastanienallee 77, 10435 Berlin, Germany',
+  cost: 15.00,
+  category: 'Arts & Culture',
+  date: '2023-09-24',
+  user_id: User.all.sample.id
+)
+p event16
+image_event16 = URI.open("")
+event16.image.attach(io: image_event16, filename: "event16.jpg")
+event16.image.analyze
+event16.image.metadata["public_id"] = Cloudinary::Uploader.upload(event16.image.blob.url, resource_type: :auto)["public_id"]
+event16.save
+
+event17 = felix.events.create!(
+  name: 'Kids Coding Workshop',
+  description: 'Get your little ones interested in coding with our coding workshop! Our experienced instructors will teach kids the basics of coding using fun and interactive games and activities. They will learn how to write code, create games, and use different programming languages in a supportive and encouraging environment.',
+  address: 'Gleimstraße 1, 10437 Berlin, Germany',
+  cost: 20.00,
+  category: 'Technology',
+  date: '2023-10-08',
+  user_id: User.all.sample.id
+)
+p event17
+image_event17 = URI.open("")
+event17.image.attach(io: image_event17, filename: "event17.jpg")
+event17.image.analyze
+event17.image.metadata["public_id"] = Cloudinary::Uploader.upload(event17.image.blob.url, resource_type: :auto)["public_id"]
+event17.save
+
+event18 = felix.events.create!(
+  name: 'Kids Fitness Class',
+  description: 'Get your kids moving with our fitness class! Our experienced fitness instructors will teach kids how to exercise safely and effectively, while having fun and making new friends. They will learn different types of exercise, such as cardio and strength training, and improve their overall fitness and health.',
+  address: 'Wolliner Str. 25, 10435 Berlin, Germany',
+  cost: 10.00,
+  category: 'Sports & Fitness',
+  date: '2023-10-22',
+  user_id: User.all.sample.id
+)
+p event18
+image_event18 = URI.open("")
+event18.image.attach(io: image_event18, filename: "event18.jpg")
+event18.image.analyze
+event18.image.metadata["public_id"] = Cloudinary::Uploader.upload(event18.image.blob.url, resource_type: :auto)["public_id"]
+event18.save
+
+event19 = felix.events.create!(
+  name: 'Kids Theater Workshop',
+  description: 'Does your child love acting and performing? Sign them up for our theater workshop! Our experienced theater instructors will teach kids the basics of acting, voice projection, stage presence, and more. They will work on a short play throughout the workshop and perform it at the end for family and friends.',
+  address: 'Warschauer Pl. 18, 10245 Berlin, Germany',
+  cost: 25.00,
+  category: 'Arts & Culture',
+  date: '2023-11-05',
+  user_id: User.all.sample.id
+)
+p event19
+image_event19 = URI.open("")
+event19.image.attach(io: image_event19, filename: "event19.jpg")
+event19.image.analyze
+event19.image.metadata["public_id"] = Cloudinary::Uploader.upload(event19.image.blob.url, resource_type: :auto)["public_id"]
+event19.save
+
+event20 = felix.events.create!(
+  name: 'Kids Nature Walk',
+  description: 'Take your kids on an adventure in nature with our guided nature walk! Our experienced guides will lead kids on a walk through a local park, forest, or nature reserve, pointing out interesting plants and animals along the way. Kids will learn about the environment and the importance of conservation, while getting some fresh air and exercise.',
+  address: 'Am Treptower Park 17, 12435 Berlin, Germany',
+  cost: 5.00,
+  category: 'Outdoors & Recreation',
+  date: '2023-11-19',
+  user_id: User.all.sample.id
+)
+p event20
+image_event20 = URI.open("")
+event20.image.attach(io: image_event20, filename: "event20.jpg")
+event20.image.analyze
+event20.image.metadata["public_id"] = Cloudinary::Uploader.upload(event20.image.blob.url, resource_type: :auto)["public_id"]
+event20.save
+
+event21 = felix.events.create!(
+  name: 'Kids Photography Workshop',
+  description: 'Is your child interested in photography? Sign them up for our photography workshop! Our professional photographer will teach kids the basics of photography, including how to use a camera, framing and composition, lighting, and more. They will also learn about different types of photography, such as landscape, portrait, and macro photography, and have the opportunity to practice their skills on a guided photo walk.',
+  address: 'Schönhauser Allee 36, 10435 Berlin, Germany',
+  cost: 20.00,
+  category: 'Arts & Culture',
+  date: '2023-12-02',
+  user_id: User.all.sample.id
+)
+p event21
+image_event21 = URI.open("")
+event21.image.attach(io: image_event21, filename: "event21.jpg")
+event21.image.analyze
+event21.image.metadata["public_id"] = Cloudinary::Uploader.upload(event21.image.blob.url, resource_type: :auto)["public_id"]
+event21.save
+
+event22 = felix.events.create!(
+  name: 'Kids Ice Skating Lesson',
+  description: 'Get your kids moving and grooving with our ice skating lesson! Our experienced skating instructors will teach kids the basics of ice skating, from how to balance on the ice to gliding and stopping. They will also learn some fun skating tricks and games. Skates and helmets will be provided, so all you need to do is dress warmly and bring your sense of adventure!',
+  address: 'Müllerstraße 163, 13353 Berlin, Germany',
+  cost: 15.00,
+  category: 'Sports',
+  date: '2023-12-16',
+  user_id: User.all.sample.id
+)
+p event22
+image_event22 = URI.open("")
+event22.image.attach(io: image_event22, filename: "event22.jpg")
+event22.image.analyze
+event22.image.metadata["public_id"] = Cloudinary::Uploader.upload(event22.image.blob.url, resource_type: :auto)["public_id"]
+event22.save
+
+event23 = felix.events.create!(
+  name: 'Kids Nature Walk',
+  description: 'Join us for a fun and educational nature walk! Our experienced guide will take kids on a journey through the local forests and fields, pointing out interesting plants and animals along the way. They will learn about the natural world around them and have the opportunity to collect leaves, rocks, and other natural treasures. This is a great way for kids to get some fresh air and exercise while also learning about the environment!',
+  address: 'Puschkinallee 13, 12435 Berlin, Germany',
+  cost: 10.00,
+  category: 'Outdoors & Adventure',
+  date: '2024-02-04',
+  user_id: User.all.sample.id
+)
+p event23
+image_event23 = URI.open("")
+event23.image.attach(io: image_event23, filename: "event23.jpg")
+event23.image.analyze
+event23.image.metadata["public_id"] = Cloudinary::Uploader.upload(event23.image.blob.url, resource_type: :auto)["public_id"]
+event23.save
+
+event24 = felix.events.create!(
+  name: 'Kids Musical Theater Workshop',
+  description: 'Does your child love to sing, dance, and act? Sign them up for our musical theater workshop! Our experienced instructors will teach kids the basics of musical theater, including singing, dancing, and acting techniques. They will also work on a short performance piece to be presented at the end of the workshop. This is a great opportunity for kids to build their confidence, creativity, and teamwork skills while also having a lot of fun!',
+  address: 'Karl-Liebknecht-Str. 13, 10178 Berlin, Germany',
+  cost: 25.00,
+  category: 'Arts & Culture',
+  date: '2024-03-02',
+  user_id: User.all.sample.id
+)
+p event24
+image_event24 = URI.open("")
+event24.image.attach(io: image_event24, filename: "event24.jpg")
+event24.image.analyze
+event24.image.metadata["public_id"] = Cloudinary::Uploader.upload(event24.image.blob.url, resource_type: :auto)["public_id"]
+event24.save
+
+event25 = felix.events.create!(
+  name: 'Kids Karate Class',
+  description: 'Join our karate class for kids and learn discipline, self-defense, and respect in a fun and safe environment! Our experienced instructor will teach kids the basics of karate, including kicks, punches, and blocks. They will also learn about the philosophy behind karate and how it can help them in their daily lives. This is a great opportunity for kids to build their physical and mental strength while also having a lot of fun!',
+  address: 'Grünberger Str. 69, 10245 Berlin, Germany',
+  cost: 20.00,
+  category: 'Sports & Fitness',
+  date: '2024-04-06',
+  user_id: User.all.sample.id
+)
+p event25
+image_event25 = URI.open("")
+event25.image.attach(io: image_event25, filename: "event25.jpg")
+event25.image.analyze
+event25.image.metadata["public_id"] = Cloudinary::Uploader.upload(event25.image.blob.url, resource_type: :auto)["public_id"]
+event25.save
+
+event26 = felix.events.create!(
+  name: 'Kids Robotics Workshop',
+  description: 'Do your kids love robots and technology? Sign them up for our robotics workshop! Our experienced instructors will teach kids the basics of robotics, including programming, design, and construction. They will also work on building their own robot from scratch and programming it to perform different tasks. This is a great opportunity for kids to develop their problem-solving, critical thinking, and teamwork skills while also having a lot of fun!',
+  address: 'Friedrichstraße 68, 10117 Berlin, Germany',
+  cost: 35.00,
+  category: 'Science & Technology',
+  date: '2024-05-11',
+  user_id: User.all.sample.id
+)
+p event26
+image_event26 = URI.open("")
+event26.image.attach(io: image_event26, filename: "event26.jpg")
+event26.image.analyze
+event26.image.metadata["public_id"] = Cloudinary::Uploader.upload(event26.image.blob.url, resource_type: :auto)["public_id"]
+event26.save
+
+event27 = felix.events.create!(
+  name: 'Kids Music Class',
+  description: 'Do you want your kids to learn music and develop their creativity? Sign them up for our music class! Our experienced instructors will teach kids the basics of music, including rhythm, melody, and harmony. They will also learn to play different instruments such as piano, guitar, and drums. This is a great opportunity for kids to explore their musical interests and develop their skills in a fun and supportive environment!',
+  address: 'Rathausstraße 5, 10178 Berlin, Germany',
+  cost: 25.00,
+  category: 'Arts & Culture',
+  date: '2024-06-01',
+  user_id: User.all.sample.id
+)
+p event27
+image_event27 = URI.open("")
+event27.image.attach(io: image_event27, filename: "event27.jpg")
+event27.image.analyze
+event27.image.metadata["public_id"] = Cloudinary::Uploader.upload(event27.image.blob.url, resource_type: :auto)["public_id"]
+event27.save
+
+event28 = felix.events.create!(
+  name: 'Kids Photography Workshop',
+  description: 'Is your kid interested in photography and capturing moments? Sign them up for our photography workshop! Our experienced instructors will teach kids the basics of photography, including composition, lighting, and editing. They will also work on taking pictures in different environments and using different techniques to create stunning images. This is a great opportunity for kids to develop their artistic eye and creativity while also learning valuable technical skills!',
+  address: 'Köpenicker Str. 48/49, 10179 Berlin, Germany',
+  cost: 30.00,
+  category: 'Arts & Culture',
+  date: '2024-07-10',
+  user_id: User.all.sample.id
+)
+p event28
+image_event28 = URI.open("")
+event28.image.attach(io: image_event28, filename: "event28.jpg")
+event28.image.analyze
+event28.image.metadata["public_id"] = Cloudinary::Uploader.upload(event28.image.blob.url, resource_type: :auto)["public_id"]
+event28.save
+
+event29 = felix.events.create!(
+  name: 'Kids Theater Workshop',
+  description: 'Do you have a young performer in your life? Our theater workshop is the perfect place for them to learn acting, improvisation, and stagecraft! Our experienced instructors will guide kids through the process of creating a performance from start to finish, and they will learn how to work together as a team to put on a great show. This is a great opportunity for kids to develop their confidence, creativity, and communication skills!',
+  address: 'Brunnenstraße 24, 10119 Berlin, Germany',
+  cost: 35.00,
+  category: 'Arts & Culture',
+  date: '2024-08-15',
+  user_id: User.all.sample.id
+)
+p event29
+image_event29 = URI.open("")
+event29.image.attach(io: image_event29, filename: "event29.jpg")
+event29.image.analyze
+event29.image.metadata["public_id"] = Cloudinary::Uploader.upload(event29.image.blob.url, resource_type: :auto)["public_id"]
+event29.save
+
+event30 = felix.events.create!(
+  name: 'Kids Nature Walk',
+  description: 'Do your kids love spending time in nature? Sign them up for our guided nature walk! Our experienced guides will take kids on a walk through a local park or nature reserve, where they will learn about different plants and animals and how they contribute to the ecosystem. They will also participate in fun activities and games that teach them about the natural world. This is a great opportunity for kids to learn about the environment and develop their love of nature!',
+  address: 'Friedrichstraße 43-45, 10969 Berlin, Germany',
+  cost: 15.00,
+  category: 'Outdoors & Adventure',
+  date: '2024-09-20',
+  user_id: User.all.sample.id
+)
+p event30
+image_event30 = URI.open("")
+event30.image.attach(io: image_event30, filename: "event30.jpg")
+event30.image.analyze
+event30.image.metadata["public_id"] = Cloudinary::Uploader.upload(event30.image.blob.url, resource_type: :auto)["public_id"]
+event30.save
+
 puts "Events successfully created"
