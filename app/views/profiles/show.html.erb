@@ -1,53 +1,143 @@
 <h1>Your Profiles</h1>
 
+<div class="container">
+    <div class="profile-main-body">
 
-  <div class="container my-5 text-center">
-    <h2 >Bookmarked Events</h2>
-    <ul>
-      <% current_user.bookmarked_events.each do |event| %>
-      <% if  event.votes_for[0].vote_flag %>
-        <div class="card-chat">
-          <%= cl_image_tag (event.image.key), class: "avatar-img"%>
-          <%= link_to event.name, event %>
-          <%= link_to "Unsave", downvote_event_path(event , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
+
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="profile-card">
+                <div class="profile-card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <% if current_user.image.key.nil? %>
+                      <%= image_tag "/assets/default_avatar.png", class: "rounded-circle", width: 150, alt: "Default Profile Picture" %>
+                    <% else  %>
+                      <%= cl_image_tag current_user.image.key, class: "rounded-circle", width: 150, height: 150, crop: :fill, alt: "Profile Picture"  %>
+                    <% end %>
+                    <div class="mt-3">
+                      <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 items-container">
+                  <div class="profile-card h-100">
+                    <div class="profile-card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">reserved</i>Items</h6>
+                          <% current_user.bookmarked_items.each do |item| %>
+                              <% if  item.votes_for[0].vote_flag %>
+                                <div class="card-chat">
+                                  <%= cl_image_tag (item.image.key), class: "avatar-img mx-2"%>
+                                  <%= link_to item.name, item_path(item) %>
+                                  <%= link_to "Unsave", downvote_item_path(item , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %>
+                                </div>
+                              <% else  %>
+                                <%= nil %>
+                              <% end %>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+              <div class="profile-card mb-3">
+                <div class="profile-card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= current_user.first_name %> <%= current_user.last_name %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= current_user.email %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Password</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      **********
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Gender</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= current_user.gender %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <%= current_user.address %>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <%= link_to 'Edit', edit_user_registration_path(current_user), class: "btn btn-info" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row gutters-sm">
+                <div class="col-sm-6 mb-3">
+                  <div class="profile-card h-100">
+                    <div class="profile-card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">bookmarks</i>Events</h6>
+                        <% current_user.bookmarked_events.each do |event| %>
+                          <% if  event.votes_for[0].vote_flag %>
+                            <div class="card-chat">
+                              <%= cl_image_tag (event.image.key), class: "avatar-img mx-2"%>
+                              <%= link_to event.name, event %>
+                              <%= link_to "Unsave", downvote_event_path(event , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %>
+                            </div>
+                          <% else  %>
+                            <%= nil %>
+                          <% end %>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-3">
+                  <div class="profile-card h-100">
+                    <div class="profile-card-body">
+                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">bookmarks</i>Babysitters</h6>
+                        <% current_user.bookmarked_babysitters.each do |babysitter| %>
+                          <% if  babysitter.votes_for[0].vote_flag %>
+                            <div class="card-chat">
+                              <%= cl_image_tag (babysitter.image.key), class: "avatar-img mx-2"%>
+                              <%= link_to babysitter.first_name, babysitter %>
+                              <%= link_to "Unsave", downvote_babysitter_path(babysitter , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
+                            </div>
+                            <% else  %>
+                              <%= nil %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+
         </div>
-      <% else  %>
-        <%= nil %>
-      <% end %>
-    <% end %>
-    </ul>
-  </div>
-
-  <div class="container my-5 text-center">
-    <h2 >Bookmarked Babysitters</h2>
-    <ul>
-    <% current_user.bookmarked_babysitters.each do |babysitter| %>
-    <% if  babysitter.votes_for[0].vote_flag %>
-      <div class="card-chat">
-        <%= cl_image_tag (babysitter.image.key), class: "avatar-img"%>
-        <%= link_to babysitter.first_name, babysitter %>
-        <%= link_to "Unsave", downvote_babysitter_path(babysitter , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
-      </div>
-      <% else  %>
-        <%= nil %>
-      <% end %>
-    <% end %>
-    </ul>
-  </div>
-
-    <div class="container my-5 text-center">
-    <h2 >Reserved Items</h2>
-    <ul>
-    <% current_user.bookmarked_items.each do |item| %>
-    <% if  item.votes_for[0].vote_flag %>
-      <div class="card-chat">
-        <%= cl_image_tag (item.image.key), class: "avatar-img"%>
-        <%= link_to item.name, item_path(item) %>
-        <%= link_to "Unsave", downvote_item_path(item , type: "bookmark") ,data: {turbo_method: :put}, class: "unsave m-3" %></li>
-      </div>
-      <% else  %>
-        <%= nil %>
-      <% end %>
-    <% end %>
-    </ul>
-  </div>
+    </div>
