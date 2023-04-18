@@ -15,11 +15,17 @@
     padding: 2px;
     bottom: -44px;
     left: -23px;
-    background-color: #dad6d6;
+    background-color: #f6f6f6;
     color: black;
     height: 32px;
     width: 215px;
-    border: 2px solid rgb(54, 53, 53) ;
+    border: 2px solid rgb(252, 137, 91) ;
+    background-color:rgb(247, 136, 92) ;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+
   }
 
   .save-event{
@@ -38,7 +44,9 @@
       padding-bottom: 20px;
       font-size: 2.5rem;
     }
-
+    .card-text{
+      font-size: 1.5rem;
+    }
   }
 
 
