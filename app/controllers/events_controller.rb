@@ -53,7 +53,7 @@ class EventsController < ApplicationController
 
   def upvote
     if @event.upvote_by current_user
-      redirect_to events_path, notice: "This event was added to your favourites"
+      redirect_to profile_path(current_user.profile), notice: "This event was added to your favourites!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
 
   def downvote
     if @event.downvote_by current_user
-      redirect_to babysitters_path, notice: "You have removed this event from your list"
+      redirect_to profile_path(current_user.profile), notice: "You have removed this event from your list"
     else
       render :new, status: :unprocessable_entity
     end
