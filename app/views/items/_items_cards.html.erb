@@ -1,0 +1,44 @@
+<h1 class="text-center item-heading-index pt-3">Available Items</h1>
+<div class="row gutters-sm">
+  <div class="col-sm-12 mb-3">
+    <div class="profile-card h-100">
+      <div class="profile-card-body">
+
+        <% if @items.empty? %>
+          <p>Sorry, there are no available items at the moment.</p>
+        <% else %>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <% @items.each do |item| %>
+                <% if (item.available == true) %>
+                  <div class="card-chat">
+                      <%= link_to item_path(item) do %>
+                          <% if item.image.key != nil %>
+                            <img class="avatar-img mx-2" src="<%= cl_image_path item.image.key %>" alt="<%= item.name %>">
+                          <% else %>
+                            <img class="avatar-img mx-2" src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg", class="card-img-top, alt="<%= item.name %>">
+                          <% end %>
+                      <% end %>
+
+                          <h5 class="card-title"><strong><%= item.name %></strong></h5>
+
+
+                          <% if item.user.address.size > 15 %>
+                            <p class="card-text"><strong>Address: </strong><%= item.user.address.slice(0,35) %>...</p>
+                          <% else %>
+                            <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
+                          <% end %>
+
+                          <%= button_to "Reserve".html_safe, upvote_item_path(item , type: "bookmark") , method: :put, class: 'btn btn-warning' %>
+                          <%= link_to 'Details', item_path(item), class: "btn btn-success", style: "margin-left: 17px;" %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
