@@ -61,6 +61,28 @@ class ItemsController < ApplicationController
     end
   end
 
+  def upvote
+    set_item
+    if @item.upvote_by current_user
+      @item.available = false
+      @item.save!
+      redirect_to profile_path(current_user.profile), notice: "This item was reserved successfully!"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def downvote
+    set_item
+    if @item.downvote_by current_user
+      @item.available = true
+      @item.save!
+      redirect_to profile_path(current_user.profile), notice: "Item removed from your list!"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_item
@@ -68,6 +90,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :age, :image)
+    params.require(:item).permit(:name, :description, :age, :image, :available)
   end
 end
