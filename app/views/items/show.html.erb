@@ -26,36 +26,37 @@
               <div class="card-body-items">
                 <h2 class="card-title mb-4"><strong><%= @item.name %></strong></h2>
                 <% if @item.available %>
-                  <h4 class="card-text">Available</h4>
+                  <p class="card-text"><i class="fa-solid fa-check"></i> Available</h4>
                 <% else %>
-                  <h4 class="card-text">Reserved</h4>
+                  <p class="card-text">Reserved</h4>
                 <% end %>
-                <p class="card-text m-2 mb-4"><strong>Age: </strong> for <%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
-                <p class="card-text m-2 mb-4"><strong>Address: </strong><%= @item.user.address %></p>
+                <p class="card-text m-2 mb-4"><i class="fa-brands fa-pagelines"></i> <strong> Age: </strong><%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
+                <p class="card-text m-2 mb-4"><i class="fa-solid fa-house"></i> <strong> Address: </strong><%= @item.user.address %></p>
                 <div class="items-butons ">
                   <%= button_to "Reserve".html_safe, upvote_item_path(@item , type: "bookmark"),class:"reserve" , method: :put %>
-                  <%= link_to edit_item_path(@item), class: "edit-btn", style: "margin-left: 25px" do %>
-                    <strong>Edit Item</strong>
-                  <% end %>
-                  <%= link_to item_path(@item),
-                    data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing this item?" },
-                    class: "delete-btn", style: "#" do %>
-                      <strong>Delete</strong>
-                  <% end %>
+
+                  <div>
+                    <% if @item.user == current_user %>
+                    <%= link_to "Edit item", edit_item_path, class: "edit-btn", style: "margin-left: 25px" %>
+                    <%= link_to "Delete your item", item_path(@item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing this item??" }, class: 'delete-btn ' %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class= "descrcription m-3">
+            <div class= "description m-3">
               <p class="card-text-description m-2"><strong>Description: </strong>
               <%= @item.description %></p>
             </div>
+          </div>
         </div>
       </div>
-      <div class= "back">
-        <strong><%= link_to  items_path, class: "back-items" do %>
+      <div class= "back-item">
+        <%= link_to  items_path, class: "back-items" do %>
           <i class="fa-solid fa-arrow-left-long"></i>
           Back to Items
-        <% end %></strong>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

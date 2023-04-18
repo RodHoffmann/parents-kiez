@@ -15,13 +15,15 @@
     padding: 2px;
     bottom: -44px;
     left: -23px;
+    font-weight: bold;
     background-color: #f6f6f6;
     color: black;
     height: 32px;
-    width: 215px;
-    border: 2px solid rgb(252, 137, 91) ;
-    background-color:rgb(247, 136, 92) ;
+    width: 200px;
+    border: 2px solid #7392ad;
+    background-color:#9ac6ea ;
     opacity: 0.7;
+    border-radius: 3px;
     &:hover{
       opacity: 1;
     }
@@ -32,6 +34,10 @@
     position: absolute;
     top: 5px;
     right: 5px;
+    background-color: #9ac6ea;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
 
   }
   .card-text{
