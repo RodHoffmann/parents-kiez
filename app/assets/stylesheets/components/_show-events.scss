@@ -1,7 +1,7 @@
 #show-card-events{
   position:relative;
   margin-top: 30px;
-  display: flex;
+
   justify-content:space-between;
   align-items: center;
 
@@ -36,17 +36,16 @@
     .card-title{
       font-weight: bold;
       padding-bottom: 20px;
+      font-size: 2.5rem;
     }
-    .card-text-description{
-      font-size: 22px;
 
-    }
   }
 
 
 
 }
 .event-photo {
+  margin-top: 8px;
   margin-left: 15px;
   max-width: 50%;
   height: auto;
@@ -56,18 +55,20 @@
 
 @media (min-width: 576px) {
   .event-photo  {
-      max-width: 60%;
+      max-width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .event-photo  {
+      max-width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .event-photo {
+      max-width: 600px;
   }
 }
 
-@media (min-width: 992px) {
-  .event-photo {
-      max-width: 500px;
-  }
-}
-.baby-rating{
-  display:flex;
-}
 .links {
 
   .btn-send-msg {
@@ -83,4 +84,12 @@
     border: 2px solid black ;
     background: #dad6d6;
   }
+}
+
+.descrcription{
+  font-size:1.5rem;
+  .card-text-description{
+    font-weight: bold;
+  }
+
 }
