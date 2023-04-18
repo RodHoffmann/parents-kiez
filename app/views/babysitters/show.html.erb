@@ -30,35 +30,38 @@
               <div class="card-body">
 
                 <h2 class="card-title m-2"><%= @babysitter.first_name%> <%= @babysitter.last_name%></h2>
-                <h4 class="card-text m-2"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</h4>
-                <h4 class="card-text m-2"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></h4>
-                <h5 class="card-text m-2"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></h5>
-                <h5 class="card-meta m-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></h5>
-                <h5 class="card-meta m-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></h5>
-                <div class="mb-2">
-                <div class= "baby-rating" >
-                    <h5 > Rating   </h5>
-                    <% @avarage_review.times do  %>
-                        <i  class="fa-solid fa-star "></i>
-                    <% end %>
-
+                <p class="card-text m-2"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</p>
+                <p class="card-text m-2"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></p>
+                <p class="card-text m-2"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></p>
+                <p class="card-text m-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></p>
+                <p class="card-text m-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></p>
+                <div class="m-2 mt-3">
+                <div class= "baby-rating">
+                    <h2 class= >Rating  </h3>
+                    <div class="d-flex align-items-center ">
+                      <% @avarage_review.times do  %>
+                          <i  class="fa-solid fa-star "></i>
+                      <% end %>
+                    </div>
                 </div>
-                <%= simple_form_for @review do |f| %>
+                <div class="form-rating">
+                  <%= simple_form_for @review do |f| %>
 
-                        <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>
-                        <%= hidden_field_tag 'babysitter', @babysitter.id %>
-                        <%= f.submit "Send your review" %>
-                <% end %>
+                          <%= f.input :rating, collection: (1..5).to_a, label: "Add your rating", input_html: {data: {controller: "star-rating"}} %>
+                          <%= hidden_field_tag 'babysitter', @babysitter.id %>
+                          <%= f.submit "Send your review" %>
+                  <% end %>
+                </div>
                   <% if @babysitter.user == current_user %>
                     <%= link_to "Edit information", edit_babysitter_path, class: "btn-send-msg m-2" %>
                     <%= link_to "Delete your application", babysitter_path(@babysitter), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing your application ?" }, class: 'btn btn-danger  m-2rounded-pill px-4 fw-bold' %>
                 <% end %>
                 </div>
-                <div class="links">
+                <div class="btn-msg">
 
                   <%= link_to chatroom_path(@chatroom), class: "btn-send-msg m-1" do %>
                     send Message
-                    <span><i class="fa-regular fa-envelope"></i></span>
+                    <span><i class="fa-regular fa-comment"></i></span>
                   <% end %>
 
                 </div>
