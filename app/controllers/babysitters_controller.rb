@@ -12,14 +12,6 @@ class BabysittersController < ApplicationController
   end
 
   def show
-    user2 = @babysitter.user
-    if !Chatroom.where(user1: current_user, user2: user2).empty?
-      @chatroom = Chatroom.where(user1: current_user, user2: user2)[0]
-    elsif !Chatroom.where(user1: user2, user2: current_user).empty?
-      @chatroom = Chatroom.where(user1: user2, user2: current_user)[0]
-    else
-      @chatroom = Chatroom.create(user1: current_user, user2: user2)
-    end
     @review = Review.new
     @count_reviews = Review.where(babysitter_id: @babysitter.id).length
     if @count_reviews != 0

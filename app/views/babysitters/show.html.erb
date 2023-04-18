@@ -22,7 +22,7 @@
                 <% if @babysitter.image.key != nil %>
                     <img class="card-img-show " src="<%= cl_image_path @babysitter.image.key %>" alt="<%= @babysitter.first_name %>" style="width: 400px; height: auto;">
                 <% else %>
-                    <img class="card-img-show" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-show, alt="<%=  @babysitter.first_name %>">
+                    <img class="card-img-show" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-show", alt="<%=  @babysitter.first_name %>">
                 <% end %>
               </div>
           </div>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="btn-msg">
 
-                  <%= link_to chatroom_path(@chatroom), class: "btn-send-msg m-1" do %>
+                  <%= link_to new_chatroom_path(@babysitter), data: { turbo_method: "post" }, class: "btn-send-msg m-1" do %>
                     send Message
                     <span><i class="fa-regular fa-comment"></i></span>
                   <% end %>
