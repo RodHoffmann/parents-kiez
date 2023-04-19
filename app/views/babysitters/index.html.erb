@@ -1,49 +1,69 @@
-<div class="body-container">
-
-  <div class="container">
-    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
-      <div class="text-block">
-        <h2>Need a Nanny or babysitter ? </h2>
-      </div>
-    </div>
-  <div class ="search">
-    <%= form_with url: babysitters_path, method: :get, class: "d-flex my-3 mx-3" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Nanny or babysitter ?" %>
-    <% end %>
-  </div>
-    <div class="container m-10" id="index-container">
+<div class="container">
+  <%= render "search_bar" %>
+  <div>
     <%if !current_user.babysitter.present?  %>
-        <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to 'apply as a babysitter', new_babysitter_path, :id =>"apply-a"%></button>
-      <%end%>
-      <div class="row">
-        <% @babysitters.each do |babysitter| %>
-          <div class="col-sm-12 col-md-6 col-lg-3 mb-4">
-            <div class="card h-100  mb-10 mt-10" id= "index-card">
-              <div classs="item">
-                <% if babysitter.image.key != nil %>
-                  <img class="card-img-top" src="<%= cl_image_path babysitter.image.key %>" alt="<%= babysitter.first_name %>">
-                <% else %>
-                  <img class="card-img-top" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  babysitter.first_name %>">
-                <% end %>
-              </div>
-              <div class="card-body">
-                <h2 class="card_title"><%= babysitter.first_name%>  <%= babysitter.last_name%></h2>
-                <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= babysitter.age%> Years Old</h4>
-                <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
-                <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
-
-                    <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
-
-              </button>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
+      <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to "Create your babysitter's profile", new_babysitter_path, :id =>"apply-a"%></button>
+    <%end%>
   </div>
+      <div class="babysitters_index_cards">
+      <% @babysitters.each do |babysitter| %>
+      <div class="card">
 
+          <% if babysitter.image.key != nil %>
+          <div class="bg-image hover-overlay ripple img_container" data-mdb-ripple-color="light" style="background-image: url('<%= cl_image_path babysitter.image.key %>');">
+            </div>
+          <% else %>
+            <img class="img_card" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top, alt="<%=  babysitter.first_name %>">
+          <% end %>
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+          </a>
+
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold"><a><%= babysitter.first_name %> <%= babysitter.last_name %></a></h5>
+          <ul class="list-unstyled list-inline mb-0">
+            <li class="list-inline-item me-0">
+              <i class="fas fa-star text-warning fa-xs"> </i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="fas fa-star text-warning fa-xs"></i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="fas fa-star text-warning fa-xs"></i>
+            </li>
+            <li class="list-inline-item me-0">
+              <i class="fas fa-star text-warning fa-xs"></i>
+            </li>
+            <li class="list-inline-item">
+              <i class="fas fa-star-half-alt text-warning fa-xs"></i>
+            </li>
+            <li class="list-inline-item">
+              <p class="text-muted">4.5 (413)</p>
+            </li>
+          </ul>
+          <p class="mb-2"><%= Geocoder.search(babysitter.address)[0].data["address"]["city"]  %>, <%= Geocoder.search(babysitter.address)[0].data["address"]["country"]  %></p>
+
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the bulk of the
+            card's content.
+          </p>
+          <hr class="my-4" />
+          <ul class="list-unstyled list-inline d-flex justify-content-between">
+            <li class="list-inline-item me-0">
+              <div class="chip me-0"><p><i class="fa-brands fa-pagelines"></i>&nbsp<%= babysitter.age%></p></div>
+            </li>
+            <li class="list-inline-item me-0">
+              <div class="chip me-0"><p><i class="fa-solid fa-user"></i>&nbsp<%= babysitter.gender%></p></div>
+            </li>
+            <li class="list-inline-item me-0">
+              <div class="chip me-0"><p><i class="fa-solid fa-sack-dollar"></i>&nbsp<%= babysitter.cost_per_hour%></p></div>
+            </li>
+          </ul>
+          <div class="details_btn_container">
+            <%= link_to 'Details', babysitter_path(babysitter), class: "btn btn_details", style: "" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+      </div>
 </div>

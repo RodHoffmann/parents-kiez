@@ -299,7 +299,7 @@ puts "Creating babysitters.."
 first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack"]
 last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson"]
 genders = ["Female", "Female", "Female"]
-addresses = ["Schönhauser Allee 26A, 10435 Berlin", "Immanuelkirchstraße 14A, 10405 Berlin", "Bartningallee 29, 10557 Berlin", "Beusselstraße 61, 10553 Berlin", "Friedrich-Olbricht-Damm 66, 13627 Berlin", "Ohmstraße 4-6, 13629 Berlin", "Zehlendorfer Damm 121, 14532 Kleinmachnow", "Ruhlsdorfer Str. 95, 14532 Stahnsdorf", "Dorfaue 12, 14979 Großbeeren", "Johannisthaler Ch 317, 12351 Berlin"]
+addresses = ["Schönhauser Allee 26A, 10435 Berlin", "Immanuelkirchstraße 14A, 10405 Berlin", "Bartningallee 29, 10557 Berlin", "Beusselstraße 61, 10553 Berlin", "Friedrich-Olbricht-Damm 66, 13627 Berlin", "Ohmstraße 4-6, 13629 Berlin", "Zehlendorfer Damm 121, 14532 Berlin", "Ruhlsdorfer Str. 95, 14532 Berlin", "Dorfaue 12, 14979 Großbeeren, Berlin", "Johannisthaler Ch 317, 12351 Berlin"]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 image_paths = [
