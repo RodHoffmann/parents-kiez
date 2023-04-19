@@ -28,3 +28,31 @@
     margin-top: 10px;
   }
 }
+
+.btn_create_profile {
+  background-color: #ff8247;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.btn_create_profile:hover {
+  background-color: #ffb999;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.container_btn_create_profile {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

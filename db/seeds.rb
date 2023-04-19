@@ -299,7 +299,7 @@ puts "Creating babysitters.."
 first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack"]
 last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson"]
 genders = ["Female", "Female", "Female"]
-addresses = ["Schönhauser Allee 26A, 10435 Berlin", "Immanuelkirchstraße 14A, 10405 Berlin", "Bartningallee 29, 10557 Berlin", "Beusselstraße 61, 10553 Berlin", "Friedrich-Olbricht-Damm 66, 13627 Berlin", "Ohmstraße 4-6, 13629 Berlin", "Zehlendorfer Damm 121, 14532 Berlin", "Ruhlsdorfer Str. 95, 14532 Berlin", "Dorfaue 12, 14979 Großbeeren, Berlin", "Johannisthaler Ch 317, 12351 Berlin"]
+addresses = ["Schönhauser Allee 26A, 10435 Berlin", "Immanuelkirchstraße 14A, 10405 Berlin", "Bartningallee 29, 10557 Berlin", "Beusselstraße 61, 10553 Berlin", "Friedrich-Olbricht-Damm 66, 13627 Berlin", "Ohmstraße 4-6, 13629 Berlin", "Zehlendorfer Damm 121, 14532 Berlin", "Ruhlsdorfer Str. 95, 14532 Berlin", "Am Rain 12, 13591 Berlin, Germany", "Johannisthaler Chaussee 317, 12351 Berlín, Alemania"]
 costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
 years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 image_paths = [
@@ -314,8 +314,6 @@ image_paths = [
   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg",
   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680696646/pexels-photo-1499327_pfelku.jpg"
 ]
-
-
 
 # Create 10 Babysitter records
 10.times do |i|
@@ -335,6 +333,12 @@ image_paths = [
 
 puts "image added to user"
 
+bio_name = user.first_name
+
+bios = [" Hi there! I'm #{bio_name}, an experienced babysitter with CPR certification. I've cared for children of all ages and enjoy playing games, reading stories, and creating fun activities. I'm available on evenings and weekends and can't wait to meet your little ones!",
+  "Hello, I'm #{bio_name}! I'm a fun and energetic caregiver with a background in early childhood education. I love spending time outdoors, doing arts and crafts, and engaging kids in imaginative play. I have experience working with children with special needs and always prioritize safety and fun!",
+"Hey, I'm #{bio_name}! I'm a responsible and reliable sitter with experience caring for infants to teenagers. I love playing sports, doing puzzles, and creating DIY projects with kids. I'm also comfortable with meal prep, light housekeeping, and homework help. Let's have some fun together!"]
+
 puts "babysitters successfully created"
   babysitter= Babysitter.create!(
     first_name: first_names[i % 10],
@@ -344,7 +348,8 @@ puts "babysitters successfully created"
     address: addresses[i % 10],
     cost_per_hour: costs_per_hour[i % 5],
     years_of_experience: years_of_experience[i % 11],
-    user: user
+    user: user,
+    bio: bios[i % 3]
   )
   babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
   babysitter.save!

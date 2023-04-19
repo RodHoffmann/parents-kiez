@@ -1,8 +1,8 @@
 <div class="container">
   <%= render "search_bar" %>
-  <div>
+  <div class='container_btn_create_profile'>
     <%if !current_user.babysitter.present?  %>
-      <button class="btn  my-2 my-sm-0 mr-3" type="submit" id= "apply-btn"><%= link_to "Create your babysitter's profile", new_babysitter_path, :id =>"apply-a"%></button>
+      <strong><%= link_to "Create a babysitter profile", new_babysitter_path, class:"btn btn_create_profile" %></strong>
     <%end%>
   </div>
       <div class="babysitters_index_cards">
@@ -44,11 +44,10 @@
               <p class="text-muted"><%= @average_review %> (<%= @count_reviews %>)</p>
             </li>
           </ul>
-          <p class="mb-2"><%= Geocoder.search(babysitter.address)[0].data["address"]["city"]  %>, <%= Geocoder.search(babysitter.address)[0].data["address"]["country"]  %></p>
+          <p class="mb-2"><i><%= Geocoder.search(babysitter.user.address)[0].data["address"]["city"]  %>, <%= Geocoder.search(babysitter.user.address)[0].data["address"]["country"]  %></i></p>
 
           <p class="card-text">
-            Some quick example text to build on the card title and make up the bulk of the
-            card's content.
+            <%= babysitter.bio[0..100] %> ... (<%= link_to "Read more", babysitter_path(babysitter) %>)
           </p>
           <hr class="my-4" />
           <ul class="list-unstyled list-inline d-flex justify-content-between">
