@@ -27,6 +27,9 @@
     justify-content: center;
     margin-top: 10px;
   }
+  .card {
+    border-radius: 10px;
+  }
 }
 
 .btn_create_profile {
@@ -53,6 +56,6 @@
 }
 .container_btn_create_profile {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   text-align: center;
 }
