@@ -14,7 +14,7 @@
       <div class="col-sm-12 col-md-12 col-lg-12 col-12 mb-4">
         <div class="card-show mb-10 mt-20", id= "show-card-events">
           <div class="row", id="card">
-          <%= button_to "Save <i class='fa-regular fa-bookmark'></i> ".html_safe, upvote_event_path(@event , type: "bookmark") ,class:"save-event" , method: :put %>
+          <%= button_to "Save <i class='fa-solid fa-bookmark'></i> ".html_safe, upvote_event_path(@event , type: "bookmark") ,class:"save-event" , method: :put %>
 
           <div class="col-6 col-sm-12 col-lg-6 col-12 col-md-12">
             <div classs="event-photo">
@@ -32,7 +32,7 @@
               <p class="card-text m-2 mb-4"><i class="fa-solid fa-location-dot"></i>  <%= @event.address%> </p>
               <p class="card-text m-2 mb-3"><i class="fa-solid fa-shapes"></i> Category: <%= @event.category%> </p>
               <p class="card-text m-2 mb-3"><i class="fa-solid fa-calendar-days"></i>  <%= @event.date%> </p>
-              <p class="card-text m-2 mb-3"><i class="fa-solid fa-sack-dollar"></i> Cost:<%= @event.cost%></p>
+              <p class="card-text m-2 mb-3"><i class="fa-solid fa-sack-dollar"></i> Cost:<%= @event.cost%> <i class="fa-solid fa-euro-sign"></i></p>
             </div>
           </div>
         </div>

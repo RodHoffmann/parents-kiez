@@ -641,6 +641,12 @@ image_paths = [
 
 puts "image added to user"
 
+bio_name = user.first_name
+
+bios = [" Hi there! I'm #{bio_name}, an experienced babysitter with CPR certification. I've cared for children of all ages and enjoy playing games, reading stories, and creating fun activities. I'm available on evenings and weekends and can't wait to meet your little ones!",
+  "Hello, I'm #{bio_name}! I'm a fun and energetic caregiver with a background in early childhood education. I love spending time outdoors, doing arts and crafts, and engaging kids in imaginative play. I have experience working with children with special needs and always prioritize safety and fun!",
+"Hey, I'm #{bio_name}! I'm a responsible and reliable sitter with experience caring for infants to teenagers. I love playing sports, doing puzzles, and creating DIY projects with kids. I'm also comfortable with meal prep, light housekeeping, and homework help. Let's have some fun together!"]
+
 puts "babysitters successfully created"
   babysitter= Babysitter.create!(
     first_name: first_names[i % 30],
@@ -650,7 +656,8 @@ puts "babysitters successfully created"
     address: addresses[i % 30],
     cost_per_hour: costs_per_hour[i % 5],
     years_of_experience: years_of_experience[i % 11],
-    user: user
+    user: user,
+    bio: bios[i % 3]
   )
   babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
   babysitter.save!
