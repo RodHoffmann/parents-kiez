@@ -1,7 +1,7 @@
 <% content_for :meta_title, "#{@babysitter.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_image, cl_image_path(@babysitter.image.key) %>
 
- <div class="container">
+<div class="container">
   <div class="body-container m-20">
     <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
       <div class="text-block">
@@ -22,7 +22,7 @@
                 <% if @babysitter.image.key != nil %>
                     <img class="card-img-show " src="<%= cl_image_path @babysitter.image.key %>" alt="<%= @babysitter.first_name %>" style="width: 400px; height: auto;">
                 <% else %>
-                    <img class="card-img-show" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-show, alt="<%=  @babysitter.first_name %>">
+                    <img class="card-img-show" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-show", alt="<%=  @babysitter.first_name %>">
                 <% end %>
               </div>
           </div>
@@ -37,7 +37,7 @@
                 <p class="card-text m-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></p>
                 <div class="m-2 mt-3">
                 <div class= "baby-rating">
-                    <h2 class= >Rating  </h3>
+                    <h2 class= >Rating  </h2>
                     <div class="d-flex align-items-center ">
                       <% @avarage_review.times do  %>
                           <i  class="fa-solid fa-star "></i>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="btn-msg">
 
-                  <%= link_to chatroom_path(@chatroom), class: "btn-send-msg m-1" do %>
+                  <%= link_to new_chatroom_path(@babysitter), data: { turbo_method: "post" }, class: "btn-send-msg m-1" do %>
                     send Message
                     <span><i class="fa-regular fa-comment"></i></span>
                   <% end %>

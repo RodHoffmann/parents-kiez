@@ -1,79 +1,25 @@
-
-<div class="container">
-  <div class="body-container m-20">
-    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
-      <div class="text-block">
-        <h2>Find what you need for your child here  </h2>
+<div class="">
+  <div class="row">
+    <h1 class="text-center item-heading-index pt-3">Find items in your neighbourhood or share them with your community</h1>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= render "search_bar" %>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-6">
+        <%= render "items_cards" %>
+      </div>
+      <div class="col-6" style="position: sticky;">
+        <div>
+          <%= render "map" %>
+        </div>
+        <div class="text-center container_btn_below_map">
+          <strong><%= link_to "Post your item", new_item_path, class:"btn btn_below_map" %></strong>
+        </div>
       </div>
     </div>
-
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
-  <div class ="search">
-    <%= form_with url: items_path, method: :get, class: "d-flex my-3 mx-3" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find things you need for your child" %>
-    <% end %>
   </div>
-
-  <div class="text-center m-5">
-    <strong><%= link_to "Post your item", new_item_path, class:"custom-btn-item-index m-3" %></strong>
-  </div>
-
-  <h1 class="text-center item-heading-index pt-3">Available Items</h1>
-
-  <% if @items.empty? %>
-    <p>Sorry, there are no available items at the moment.</p>
-  <% else %>
-    <div class="container mx-auto mt-4">
-      <div class="row">
-        <% @items.each do |item| %>
-          <div class="col-lg-3">
-            <div class="card item-card-index" style="width: 18rem;">
-              <%= link_to item_path(item) do %>
-
-                <div class="image-container">
-                  <% if item.image.key != nil %>
-                    <img class="card-img-top" src="<%= cl_image_path item.image.key %>" alt="<%= item.name %>">
-                  <% else %>
-                    <img class="card-img-top" src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg", class="card-img-top, alt="<%= item.name %>">
-                  <% end %>
-                </div>
-
-              <% end %>
-
-              <div class="card-body custom-card-body-2">
-                <div class="custom-card-body-1">
-                  <h5 class="card-title"><strong><%= item.name %></strong></h5>
-
-                  <p class="card-text"><strong>Age: </strong> For babies <%= truncate(item.age, length: 15, separator: ' ', omission: '...') %></p>
-
-                  <% if item.user.address.size > 15 %>
-                    <p class="card-text"><strong>Address: </strong><%= item.user.address.slice(0,35) %>...</p>
-                  <% else %>
-                    <p class="card-text"><strong>Address: </strong><%= item.user.address %></p>
-                  <% end %>
-
-                  <a href="#" class="btn btn-item-index" style="margin-left: 7px"><i class="fas fa-link"></i><strong> Reserve</strong></a>
-                  <%= button_to "Reserve".html_safe, upvote_item_path(item , type: "bookmark") , method: :put %>
-                  <%= link_to item_path(item), class: "btn btn-item-index", style: "margin-left: 17px;" do %>
-                    <i class="fab fa-github"></i><strong> Details</strong>
-                  <% end %>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-
-
 </div>

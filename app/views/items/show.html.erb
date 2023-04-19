@@ -2,61 +2,61 @@
 <% content_for :meta_title, "#{@item.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @item.description %>
 <% content_for :meta_image, cl_image_path(@item.image.key) %>
-
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <div class="card item-card-show mb-4">
-
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="image-container">
-              <% if @item.image.key != nil %>
-                <%= cl_image_tag @item.image.key, class: "card-img-right" %>
-              <% else %>
-                <img src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" class="card-img-right" alt="<%= @item.name %>">
-              <% end %>
+<div class="container">
+    <div class="body-container m-20">
+    <div class="maintxt m-2" style="background-image: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 12%)), url(https://res.cloudinary.com/dgtys3cw2/image/upload/v1680712038/jiytcvpbi3agsombbixi.jpg)">
+      <div class="text-block">
+        <h2>Discover all activities we have for children </h2>
+      </div>
+    </div>
+    <div class="row m-25">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-12 mb-4">
+        <div class="card item-card-show mb-4 mt-10", id= "show-card-items">
+          <div class="row">
+            <div class=" col-6 col-sm-12 col-lg-6  col-md-12">
+              <div class="items-pic">
+                <% if @item.image.key != nil %>
+                  <%= cl_image_tag @item.image.key, class: "items-photo" %>
+                <% else %>
+                  <img src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" class="items-photo" alt="<%= @item.name %>">
+                <% end %>
+              </div>
             </div>
-          </div>
+            <div class="col-6 col-sm-6 col-lg-6 col-md-6">
+              <div class="card-body-items">
+                <h2 class="card-title mb-4"><strong><%= @item.name %></strong></h2>
+                <% if @item.available %>
+                  <p class="card-text"><i class="fa-solid fa-check"></i> Available</h4>
+                <% else %>
+                  <p class="card-text">Reserved</h4>
+                <% end %>
+                <p class="card-text m-2 mb-4"><i class="fa-brands fa-pagelines"></i> <strong> Age: </strong><%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
+                <p class="card-text m-2 mb-4"><i class="fa-solid fa-house"></i> <strong> Address: </strong><%= @item.user.address %></p>
+                <div class="items-butons ">
+                  <%= button_to "Reserve".html_safe, upvote_item_path(@item , type: "bookmark"),class:"reserve" , method: :put %>
 
-          <div class="col-md-6">
-
-            <div class="card-body custom-card-body">
-
-              <h2 class="card-title mb-4"><strong><%= @item.name %></strong></h2>
-
-              <% if @item.available %>
-                <h4 class="card-subtitle mb-4 text-muted">Available</h4>
-              <% else %>
-                <h4 class="card-subtitle mb-4 text-muted">Reserved</h4>
-              <% end %>
-
-              <p class="card-text"><strong>Description: </strong><%= @item.description %></p>
-              <p class="card-text"><strong>Age: </strong> for <%= @item.age %> <%= @item.age == '1' ? "Year" : "Years" %></p>
-
-              <p class="card-text"><strong>Address: </strong><%= @item.user.address %></p>
-
+                  <div>
+                    <% if @item.user == current_user %>
+                    <%= link_to "Edit item", edit_item_path, class: "edit-btn", style: "margin-left: 25px" %>
+                    <%= link_to "Delete your item", item_path(@item), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing this item??" }, class: 'delete-btn ' %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <a href="#" class="btn btn-item-show"><strong>Reserve</strong></a>
-            <%= link_to edit_item_path(@item), class: "btn btn-item-show", style: "margin-left: 25px" do %>
-              <strong>Edit Item</strong>
-            <% end %>
-
-            <%= link_to item_path(@item),
-              data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to stop sharing this item?" },
-              class: "btn btn-item-show", style: "#" do %>
-                <strong>Delete</strong>
-              <% end %>
-
-
+            <div class= "description m-3">
+              <p class="card-text-description m-2"><strong>Description: </strong>
+              <%= @item.description %></p>
+            </div>
           </div>
         </div>
       </div>
+      <div class= "back-item">
+        <%= link_to  items_path, class: "back-items" do %>
+          <i class="fa-solid fa-arrow-left-long"></i>
+          Back to Items
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="text-center mt-5">
-  <strong><%= link_to "Back to Items", items_path, class: "custom-btn-item-show" %></strong>
 </div>

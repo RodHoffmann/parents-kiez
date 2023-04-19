@@ -4,7 +4,6 @@
   display: flex;
   justify-content:space-between;
   align-items: center;
-  font-family:$body-font ;
   background: rgb(237, 245, 255);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.295);
   width:100%;
@@ -38,14 +37,13 @@
   .card-body{
     padding-top: 20px;
     font-weight: 300;
-    font-family:$body-font ;
   .card-text{
     font-size: 22px;
   }
     .card-title{
       font-weight: bold;
       padding-bottom: 20px;
-      font-family:$body-font ;
+
     }
   }
 
@@ -74,7 +72,7 @@
 .baby-rating{
   display:flex;
   justify-content: space-between;
-  font-family:$body-font ;
+
   width: 120px;
   font-size: 22px;
   h2{
@@ -87,7 +85,7 @@
 
   .btn-send-msg {
     display: block;
-    font-family:$body-font ;
+    
     padding: 2px;
     margin-top: 10px;
     height: 30px;

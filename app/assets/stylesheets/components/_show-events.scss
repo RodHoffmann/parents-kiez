@@ -1,7 +1,7 @@
 #show-card-events{
   position:relative;
   margin-top: 30px;
-  display: flex;
+
   justify-content:space-between;
   align-items: center;
 
@@ -15,20 +15,34 @@
     padding: 2px;
     bottom: -44px;
     left: -23px;
-    background-color: #dad6d6;
+    font-weight: bold;
+    background-color: #f6f6f6;
     color: black;
     height: 32px;
-    width: 215px;
-    border: 2px solid rgb(54, 53, 53) ;
+    width: 200px;
+    border: 2px solid #7392ad;
+    background-color:#9ac6ea ;
+    opacity: 0.7;
+    border-radius: 3px;
+    &:hover{
+      opacity: 1;
+    }
+
   }
 
   .save-event{
     position: absolute;
     top: 5px;
     right: 5px;
+    background-color: #9ac6ea;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
 
   }
-
+  .card-text{
+    font-size: 1.5rem;
+  }
   .card-body-event{
     padding-top: 20px;
     font-weight: 300;
@@ -36,17 +50,16 @@
     .card-title{
       font-weight: bold;
       padding-bottom: 20px;
+      font-size: 2.5rem;
     }
-    .card-text-description{
-      font-size: 22px;
 
-    }
   }
 
 
 
 }
 .event-photo {
+  margin-top: 8px;
   margin-left: 15px;
   max-width: 50%;
   height: auto;
@@ -56,18 +69,20 @@
 
 @media (min-width: 576px) {
   .event-photo  {
-      max-width: 60%;
+      max-width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .event-photo  {
+      max-width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .event-photo {
+      max-width: 600px;
   }
 }
 
-@media (min-width: 992px) {
-  .event-photo {
-      max-width: 500px;
-  }
-}
-.baby-rating{
-  display:flex;
-}
 .links {
 
   .btn-send-msg {
@@ -83,4 +98,12 @@
     border: 2px solid black ;
     background: #dad6d6;
   }
+}
+
+.descrcription{
+  font-size:1.5rem;
+  .card-text-description{
+    font-weight: bold;
+  }
+
 }

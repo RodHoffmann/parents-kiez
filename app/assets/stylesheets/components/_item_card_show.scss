@@ -1,63 +1,94 @@
-.item-card-show {
-  background: #E6F3FF;
-  border: 1px solid #D9D9D9;
-  color: rgba(0, 0, 0, 0.8);
-  margin-bottom: 3rem;
-  border-radius: 0px;
-  box-shadow: #CBBFBB 1px 1px 10px;
-}
-.custom-card-body {
-  font-family: 'Nunito';
-}
-.btn-item-show {
-  margin: 35px 0px 20px 26px;
-  border: 5px solid;
-  border-image-slice: 1;
-  background: linear-gradient(to left top, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.8) 90%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  border-image-source: linear-gradient(to left top, #D9D9D9 10%, #D9D9D9 90%) !important;
-  text-decoration: none;
-  transition: all .4s ease;
-  box-shadow: #CBBFBB 1px 1px 10px;
-}
-.btn-item-show:hover, .btn-item-index:focus {
-  background: linear-gradient(to left bottom, #E6F3FF 10%, #ADD8E6 90%) !important;
-  -webkit-background-clip: none !important;
-  -webkit-text-fill-color: black !important;
-  border: 5px solid #fff !important;
-  box-shadow: #222 1px 0 10px;
-  text-decoration: none;
-}
-.card-title {
-  font-family: 'Nunito';
-}
-.card-img-right {
-  height: 349px;
-  width: 423px;
-  border: 3px solid;
-  border-image-slice: 1;
-  background-color: #E6F3FF;
-  border-image-source: linear-gradient(to left top, #D9D9D9 10%, #D9D9D9 90%) !important;
-  box-shadow: #CBBFBB 1px 1px 10px;
-}
-.custom-btn-item-show {
-  border: 6px solid;
-  border-image-slice: 1;
-  background-color: #E6F3FF;
-  border-image-source: linear-gradient(to left top, #D9D9D9 10%, #D9D9D9 90%) !important;
-  text-decoration: none;
-  padding: 12px;
-  transition: all .4s ease;
-  text-decoration: none;
+#show-card-items{
+  position:relative;
+  margin-top: 30px;
+  justify-content:space-between;
+  align-items: center;
+  background: rgb(237, 245, 255);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.295);
+  width:100%;
+  height: 100%;
+
+  .back{
+    position: absolute;
+    padding: 2px;
+    bottom: -44px;
+    left: -23px;
+    background-color: #F6F6F6;
+    color: black;
+    height: 32px;
+    width: 200px;
+      border: 2px solid #7392ad;
+    background-color:#9ac6ea ;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  }
+.items-butons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: black;
-  box-shadow: #CBBFBB 1px 1px 10px;
- }
-.custom-btn-item-show:hover, .custom-btn-item-show:focus {
-  background: linear-gradient(to left bottom, #E6F3FF 10%, #ADD8E6 90%) !important;
-  -webkit-background-clip: none !important;
-  -webkit-text-fill-color: rgba(0, 0, 0, 0.8) !important;
-  border: 5px solid #fff !important;
-  box-shadow: #222 1px 0 10px;
-  text-decoration: none;
+  font-weight: 300;
+  margin-top: 49px;
+  text-align: center;
+  .edit-btn{
+    color: black;
+    border: 3px solid;
+    background-color:#9ac6ea ;
+    opacity: 0.7;
+    font-weight: bold;
+    width: 120px;
+    padding: 3px;
+  }
+  .delete-btn{
+    color: black;
+    border: 3px solid rgb(123, 185, 239);
+    opacity: 0.7;
+    margin-right: 20px;
+    font-weight: bold;
+    width: 120px;
+    padding: 3px;
+  }
+  .reserve{
+    color: black;
+    border: 1px solid #6d889ff0;
+    background-color:#9ac6ea ;
+    opacity: 0.7;
+    margin-left: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    width: 150px;
+    padding: 3px;
+    &:hover{
+      opacity:1;
+    }
+  }
+}
+  .card-body-items{
+    padding-top: 20px;
+    font-weight: 300;
+    .card-items-subtitle{
+      font-weight: bold;
+      padding-bottom: 20px;
+      font-size: 2.5rem;
+    }
+    .card-text{
+      font-size: 1.5rem;
+    }
+  }
+.items-pic{
+  .items-photo {
+    margin-top: 8px;
+    margin-left: 15px;
+    border-radius: 5px 10px 0 0;
+    max-width: 94%;
+  }
+}
+.description{
+  font-size:1.5rem;
+  .card-text-description{
+    font-weight: bold;
+  }
 }

@@ -1,0 +1,45 @@
+<div class="row gutters-sm">
+  <div class="col-sm-12 mb-3">
+    <div class="profile-card h-100">
+      <div class="profile-card-body">
+        <% if @events.empty? %>
+          <p>Sorry, there are no events at the moment. Come back later!</p>
+        <% else %>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <% @events.each do |event| %>
+                <div class="card_items_index">
+                  <%= link_to event_path(event) do %>
+                    <% if event.image.key != nil %>
+                      <img class="" src="<%= cl_image_path event.image.key %>" alt="<%= event.name %>">
+                    <% else %>
+                      <div class="text-center avatar-container d-flex justify-content-center align-items-center">
+                        <img class="" src="https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png", class="card-img-top", alt="<%= event.name %>">
+                      </div>
+                    <% end %>
+                  <% end %>
+                    <div class='card_content'>
+                      <h5 class="card-title"><strong><%= event.name %></strong></h5>
+                    </div>
+                    <div class='card_content'>
+                      <% if event.address.size > 15 %>
+                        <p class=""><%= event.address.slice(0,70) %>...</p>
+                      <% else %>
+                        <p class=""><%= event.address %></p>
+                      <% end %>
+                    </div>
+                    <div class="card_content">
+                      <p class=""><strong>Date: </strong><%= event.date %></p>
+                    </div>
+                    <div>
+                      <%= link_to 'Details', event_path(event), class: "btn btn_details", style: "margin-left: 17px;" %>
+                    </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
