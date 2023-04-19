@@ -1,0 +1,61 @@
+.babysitters_index_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  .img_card {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .img_container {
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+  }
+  .btn_details {
+    background-color: #e6f3ff;
+    color: black;
+  }
+  .btn_details:hover {
+    background-color: #ADD8FF;
+  }
+  .details_btn_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .card {
+    border-radius: 10px;
+  }
+}
+
+.btn_create_profile {
+  background-color: #ff8247;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.btn_create_profile:hover {
+  background-color: #ffb999;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.container_btn_create_profile {
+  display: flex;
+  justify-content: right;
+  text-align: center;
+}
