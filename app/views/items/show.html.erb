@@ -45,17 +45,17 @@
               </div>
             </div>
             <div class= "description m-3">
-              <p class="card-text-description m-2"><strong>Description: </strong>
-              <%= @item.description %></p>
+              <p class="card-text-description m-2">Description<br></p>
+              <p class="item-desc"><%= @item.description %></p>
             </div>
           </div>
-        </div>
+          <div class= "back-item">
+            <%= link_to  items_path, class: "back-items" do %>
+              <i class="fa-solid fa-arrow-left-long"></i>
+              Back to Items
+            <% end %>
+          </div>
       </div>
-      <div class= "back-item">
-        <%= link_to  items_path, class: "back-items" do %>
-          <i class="fa-solid fa-arrow-left-long"></i>
-          Back to Items
-        <% end %>
       </div>
     </div>
   </div>

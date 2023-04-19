@@ -5,13 +5,13 @@
   justify-content:space-between;
   align-items: center;
   background: rgb(237, 245, 255);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.295);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.295);
   width:100%;
-  height: 100%;
+  height: 40rem;
 
   .btn-msg{
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 5px;
   }
 
@@ -19,24 +19,39 @@
     position: absolute;
     padding: 2px;
     bottom: -44px;
-    left: -23px;
-    background-color: #F0F0F0;
+    left: 0px;
+    font-weight: bold;
+    background-color: #9ac6ea78;
     color: black;
     height: 32px;
-    width: 215px;
-    border: 2px solid rgb(54, 53, 53) ;
+    width: 200px;
+    border: 1px solid #7392ad;
+    background-color:#9ac6ea78 ;
+    opacity: 0.7;
+    border-radius: 3px;
+    &:hover{
+      opacity: 1;
+    }
   }
 
   .save{
     position: absolute;
     top: 5px;
     right: 5px;
+    font-weight: bold;
+    border: 2px solid #7392ad;
+    background-color:#9ac6ea78 ;
+    opacity: 0.7;
+    border-radius: 3px;
+    &:hover{
+      opacity: 1;
+    }
 
   }
 
   .card-body{
     padding-top: 20px;
-    font-weight: 300;
+
   .card-text{
     font-size: 22px;
   }
@@ -55,7 +70,8 @@
   max-width: 50%;
   height: auto;
   object-fit: cover;
-  border-radius: 5px 10px 0 0;
+  border-radius: 2px 2px 0 0;
+  margin-top: 19px;
 }
 
 @media (min-width: 576px) {
@@ -69,6 +85,8 @@
       max-width: 500px;
   }
 }
+
+
 .baby-rating{
   display:flex;
   justify-content: space-between;
@@ -76,34 +94,50 @@
   width: 120px;
   font-size: 22px;
   h2{
-    font-family:$body-font ;
+    font-family: 'Lato', sans-serif;
 
     font-size: 22px;
   }
 }
-.btn-msg {
 
-  .btn-send-msg {
-    display: block;
-    
-    padding: 2px;
-    margin-top: 10px;
-    height: 30px;
-    width: 155px;
-    font-size: 18px;
-    font-weight: 400;
-    color: black;
-    border-radius: 3px;
-    border: 2px solid black ;
-    background: #F0F0F0;
+.card-body .btn-send-msg {
+  display: block;
+
+  padding: 2px;
+  margin-top: 10px;
+  height: 2rem;
+  width: 10rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  border-radius: 3px;
+  border: 2px solid black ;
+  border: 2px solid #7392ad;
+  background-color:#9ac6ea78 ;
+  opacity: 0.7;
+  border-radius: 3px;
+  &:hover{
+    opacity: 1;
   }
 }
 
 
 .form-rating{
-  border: 1px solid black;
-  padding: 8px;
+  border: 1px solid #00000030;
+  padding: 10px;
   width: -moz-fit-content;
-  width: 235px;
-  margin-top: 95px;
+  width: 12rem;
+  margin-top: 108px;
+  border-radius: 14px;
+  font-family: 'Lato', sans-serif;
+  .btn-submit{
+    border: 2px solid #7392ad;
+    background-color:#9ac6ea78 ;
+    opacity: 0.7;
+  border-radius: 6px;
+  font-weight: bold;
+  &:hover{
+    opacity: 1;
+  }
+  }
 }
