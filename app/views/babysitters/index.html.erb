@@ -33,7 +33,7 @@
                 <h2 class="card_title"><%= babysitter.first_name%>  <%= babysitter.last_name%></h2>
                 <h4 class="card-text"><i class="fa-brands fa-pagelines"></i> Age : <%= babysitter.age%> Years Old</h4>
                 <h4 class="card-text"><i class="fa-solid fa-user"></i>  <%= babysitter.gender%></h4>
-                <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%></h5>
+                <h4 class="card-meta mb-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= babysitter.cost_per_hour%> <i class="fa-solid fa-euro-sign"></i></h5>
 
                     <button class="btn" type="submit" id= "babysitter-btn"><%= link_to 'View Profile', babysitter_path(babysitter), :id =>"a-btn"%></button>
 
