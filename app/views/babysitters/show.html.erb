@@ -9,13 +9,13 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row ",id="p-show-card">
       <div class="col-sm-12 col-md-12 col-lg-12 col-12 mb-4 ">
         <div class="mb-10 mt-20", id= "show-card">
 
 
           <div class="row">
-          <%= button_to "Save <i class='fa-regular fa-bookmark'></i> ".html_safe, upvote_babysitter_path(@babysitter , type: "bookmark") ,class:"save" , method: :put %>
+          <%= button_to "Save <i class='fa-solid fa-bookmark'></i> ".html_safe, upvote_babysitter_path(@babysitter , type: "bookmark") ,class:"save" , method: :put %>
 
           <div class="col-6 col-sm-12 col-lg-6 col-12 col-md-12">
               <div class="item-photo">
@@ -29,15 +29,15 @@
             <div class="col-6 col-sm-6 col-lg-6 col-md-6">
               <div class="card-body">
 
-                <h2 class="card-title m-2"><%= @babysitter.first_name%> <%= @babysitter.last_name%></h2>
-                <p class="card-text m-2"><i class="fa-brands fa-pagelines"></i> Age : <%= @babysitter.age%> Years Old</p>
+                <h2 class="card-title m-2 mb-2"><%= @babysitter.first_name%> <%= @babysitter.last_name%></h2>
+                <p class="card-text m-2 mb-2"><i class="fa-brands fa-pagelines"></i> Age: <%= @babysitter.age%> Years Old</p>
                 <p class="card-text m-2"><i class="fa-solid fa-user"></i>  <%= @babysitter.gender%></p>
-                <p class="card-text m-2"><i class="fa-solid fa-house"></i> Address :<%= @babysitter.address%></p>
-                <p class="card-text m-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour :<%= @babysitter.cost_per_hour%></p>
-                <p class="card-text m-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience :<%= @babysitter.years_of_experience%></p>
+                <p class="card-text m-2"><i class="fa-solid fa-house"></i> Address: <%= @babysitter.address%></p>
+                <p class="card-text m-2"><i class="fa-solid fa-sack-dollar"></i> Cost per hour: <%= @babysitter.cost_per_hour%> <i class="fa-solid fa-euro-sign"></i></p>
+                <p class="card-text m-2"><i class="fa-regular fa-calendar-plus"></i> Years of experience: <%= @babysitter.years_of_experience%></p>
                 <div class="m-2 mt-3">
                 <div class= "baby-rating">
-                    <h2 class= >Rating  </h2>
+                    <h2 class= >Ratings  </h2>
                     <div class="d-flex align-items-center ">
                       <% @avarage_review.times do  %>
                           <i  class="fa-solid fa-star "></i>
@@ -49,7 +49,7 @@
 
                           <%= f.input :rating, collection: (1..5).to_a, label: "Add your rating", input_html: {data: {controller: "star-rating"}} %>
                           <%= hidden_field_tag 'babysitter', @babysitter.id %>
-                          <%= f.submit "Send your review" %>
+                          <%= f.submit "Send your review", class: "btn-submit m-2" %>
                   <% end %>
                 </div>
                   <% if @babysitter.user == current_user %>
@@ -60,7 +60,7 @@
                 <div class="btn-msg">
 
                   <%= link_to new_chatroom_path(@babysitter), data: { turbo_method: "post" }, class: "btn-send-msg m-1" do %>
-                    send Message
+                    Send Message
                     <span><i class="fa-regular fa-comment"></i></span>
                   <% end %>
 
@@ -73,7 +73,7 @@
           <div>
             <%= link_to  babysitters_path, class:"back" do %>
               <i class="fa-solid fa-angle-left"></i>
-              Back to babysitters Page
+              Back to babysitters
             <% end %>
           </div>
         </div>
