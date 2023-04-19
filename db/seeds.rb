@@ -545,111 +545,116 @@ puts "Messages successfully created"
 # Create 30 users
 puts "Creating babysitters.."
 # Define arrays of possible values
-# first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack", "Katie", "Liam", "Maggie", "Nathan", "Olivia", "Patrick", "Quinn", "Rachel", "Samuel", "Tina", "Una", "Vera", "William", "Xavier", "Yvonne", "Zachary", "Aaron", "Beth", "Caleb", "Diana"]
+first_names = ["Alice", "Bob", "Charlie", "Dave", "Emma", "Frank", "Grace", "Henry", "Isabella", "Jack", "Katie", "Liam", "Maggie", "Nathan", "Olivia", "Patrick", "Quinn", "Rachel", "Samuel", "Tina", "Una", "Vera", "William", "Xavier", "Yvonne", "Zachary", "Aaron", "Beth", "Caleb", "Diana"]
 
-# last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson", "Kim", "Lee", "Martinez", "Nelson", "O'Connor", "Patel", "Quinn", "Rodriguez", "Singh", "Taylor", "Upton", "Vargas", "White", "Xu", "Yoder", "Zhang", "Anderson", "Baker", "Carter", "Diaz"]
+last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia", "Hernandez", "Ingram", "Jackson", "Kim", "Lee", "Martinez", "Nelson", "O'Connor", "Patel", "Quinn", "Rodriguez", "Singh", "Taylor", "Upton", "Vargas", "White", "Xu", "Yoder", "Zhang", "Anderson", "Baker", "Carter", "Diaz"]
 
-# genders = ["Female", "Female", "Female"]
+genders = ["Female", "Female", "Female"]
 
-# addresses = [
-#   "Schönhauser Allee 26A, 10435 Berlin",
-#   "Immanuelkirchstraße 14A, 10405 Berlin",
-#   "Bartningallee 29, 10557 Berlin",
-#   "Beusselstraße 61, 10553 Berlin",
-#   "Friedrich-Olbricht-Damm 66, 13627 Berlin",
-#   "Ohmstraße 4-6, 13629 Berlin",
-#   "Zehlendorfer Damm 121, 14532 Kleinmachnow",
-#   "Ruhlsdorfer Str. 95, 14532 Stahnsdorf",
-#   "Dorfaue 12, 14979 Großbeeren",
-#   "Johannisthaler Ch 317, 12351 Berlin",
-#   "Gleimstraße 40, 10437 Berlin",
-#   "Kopenhagener Str. 72, 10437 Berlin",
-#   "Pappelallee 76, 10437 Berlin",
-#   "Prenzlauer Allee 87, 10405 Berlin",
-#   "Marienburger Str. 16, 10405 Berlin",
-#   "Dunckerstraße 68, 10439 Berlin",
-#   "Stargarder Str. 64, 10437 Berlin",
-#   "Lychener Str. 50, 10437 Berlin",
-#   "Greifswalder Str. 87, 10409 Berlin",
-#   "Greifswalder Str. 39, 10405 Berlin",
-#   "Danziger Str. 38, 10435 Berlin",
-#   "Landsberger Allee 203, 13055 Berlin",
-#   "Petersburger Str. 72, 10247 Berlin",
-#   "Sonnenallee 67, 12045 Berlin",
-#   "Hobrechtstraße 66, 12047 Berlin",
-#   "Kottbusser Damm 95, 10967 Berlin",
-#   "Oranienstraße 142, 10969 Berlin",
-#   "Warschauer Str. 33, 10243 Berlin",
-#   "Frankfurter Allee 111, 10247 Berlin",
-#   "Karl-Marx-Allee 93, 10243 Berlin"
-# ]
-# costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
-# years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# image_paths = [
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684576/pexels-photo-774909_kkqjgd.jpg",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684546/bbysitter8_vxhlkb.jpg",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684534/bbysitter7_oh2jpf.webp",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684523/bbysitter6_plhyf6.webp",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684512/bbs2_chvgbj.webp",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684497/bbs1_j2rglu.jpg",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684479/basitter5_b4qys3.webp",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680269286/development/0tvh27st2cftr688nzogenl4q3f8.png",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg",
-#   "https://res.cloudinary.com/dah2xuhge/image/upload/v1680696646/pexels-photo-1499327_pfelku.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887818/pexels-photo-415829_cg26mv.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887768/pexels-photo-3764119_wegegj.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887802/pexels-photo-3763188_z4p8yl.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887732/portrait-young-beautiful-girl-fashion-photo-29870052_c5bofb.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887784/pexels-photo-3775540_jci3e0.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887717/photo-1599032909756-5deb82fea3b0_tqknhb.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887699/photo-1522767131594-6b7e96848fba_yywdrx.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887683/ef1bbbf6dff0c90864d83b252ac689c0_in6jo9.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887666/c9ae9eb0553884648730c9e9dda25bf2_e7uh7g.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887651/amazing-woman-portrait-beautiful-girl-model-fashion_shyxkl.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887637/young-beautiful-woman-on-light-background_yt5edi.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887618/studio-shot-of-young-beautiful-woman_c1nokw.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887579/wp7583556_zozjsp.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887595/young-blonde-girl-with-beautiful-blue-eyes-wearing-black-jacket_ldgcdw.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887540/wallpaper2you_514211_tavf1x.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887524/SuErD7_mdg5y1.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681887504/photo-1565768028719-709cc89b4bba_tcjzyi.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681822472/portrait-of-a-beautiful-young-woman-outdoor_x95oy9.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681822454/blonde-girl-smiling_bit8vt.jpg",
-#   "https://res.cloudinary.com/do01ayalz/image/upload/v1681822307/360_F_187145146_SB34n4kdiNqlVSvaTy4YUJcUWjNO540N_sbh3w5.jpg"
-# ]
+addresses = [
+  "Schönhauser Allee 26A, 10435 Berlin",
+  "Immanuelkirchstraße 14A, 10405 Berlin",
+  "Bartningallee 29, 10557 Berlin",
+  "Beusselstraße 61, 10553 Berlin",
+  "Friedrich-Olbricht-Damm 66, 13627 Berlin",
+  "Ohmstraße 4-6, 13629 Berlin",
+  "Zehlendorfer Damm 121, 14532 Kleinmachnow",
+  "Ruhlsdorfer Str. 95, 14532 Stahnsdorf",
+  "Dorfaue 12, 14979 Großbeeren",
+  "Johannisthaler Ch 317, 12351 Berlin",
+  "Gleimstraße 40, 10437 Berlin",
+  "Kopenhagener Str. 72, 10437 Berlin",
+  "Pappelallee 76, 10437 Berlin",
+  "Prenzlauer Allee 87, 10405 Berlin",
+  "Marienburger Str. 16, 10405 Berlin",
+  "Dunckerstraße 68, 10439 Berlin",
+  "Stargarder Str. 64, 10437 Berlin",
+  "Lychener Str. 50, 10437 Berlin",
+  "Greifswalder Str. 87, 10409 Berlin",
+  "Greifswalder Str. 39, 10405 Berlin",
+  "Danziger Str. 38, 10435 Berlin",
+  "Landsberger Allee 203, 13055 Berlin",
+  "Petersburger Str. 72, 10247 Berlin",
+  "Sonnenallee 67, 12045 Berlin",
+  "Hobrechtstraße 66, 12047 Berlin",
+  "Kottbusser Damm 95, 10967 Berlin",
+  "Oranienstraße 142, 10969 Berlin",
+  "Warschauer Str. 33, 10243 Berlin",
+  "Frankfurter Allee 111, 10247 Berlin",
+  "Karl-Marx-Allee 93, 10243 Berlin"
+]
+costs_per_hour = [10.0, 12.5, 15.0, 17.5, 20.0]
+years_of_experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+image_paths = [
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684576/pexels-photo-774909_kkqjgd.jpg",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80",
+  "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  "https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684512/bbs2_chvgbj.webp",
 
-# # Create 10 Babysitter records
-# 30.times do |i|
-#   user = User.create!(
-#     email: "babysitter#{i + 1}@example.com",
-#     password: "password",
-#     first_name: first_names[i % 30],
-#     last_name: last_names[i % 30],
-#     gender: genders[i % 2],
-#     address: addresses[i % 30]
-#   )
-#   puts i
-#   # Download a random image from the internet and upload it to Cloudinary
-#   file = image_paths[i]
-#   puts "trying to add #{file}"
-#   user.image.attach(io: URI.open(file), filename: "image.jpg")
+  "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684479/basitter5_b4qys3.webp",
+  "https://www.catholicsingles.com/wp-content/uploads/2020/06/blog-header-3.png",
+  "https://res.cloudinary.com/dah2xuhge/image/upload/v1680684434/baby.setter1_u54lxy.jpg",
+  "https://www.perfocal.com/blog/content/images/2020/07/Perfocal_Male_Dating_Profile.jpg",
 
-# puts "image added to user"
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887818/pexels-photo-415829_cg26mv.jpg",
+  "https://t4.ftcdn.net/jpg/03/98/85/77/360_F_398857704_n44BPhqM68Xk9vT31BeFkLQwWsgeZS6C.jpg",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887802/pexels-photo-3763188_z4p8yl.jpg",
+  "https://media.istockphoto.com/id/1258168119/photo/profile-picture-of-smiling-male-employee-posing-at-workplace.jpg?s=612x612&w=0&k=20&c=2jo-LMcqRoP-krKmZnPDk9ezJQWCnSfbFXcshtzRTxE=",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887784/pexels-photo-3775540_jci3e0.jpg",
 
-# puts "babysitters successfully created"
-#   babysitter= Babysitter.create!(
-#     first_name: first_names[i % 30],
-#     last_name: last_names[i % 30],
-#     age: 18 + (i % 13),
-#     gender: genders[i % 2],
-#     address: addresses[i % 30],
-#     cost_per_hour: costs_per_hour[i % 5],
-#     years_of_experience: years_of_experience[i % 11],
-#     user: user
-#   )
-#   babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
-#   babysitter.save!
-# end
+  "https://media.istockphoto.com/id/1473016495/photo/closeup-portrait-of-confident-business-man-posing-looking-at-camera.jpg?s=612x612&w=0&k=20&c=sREpXAPmOfuU1XOZfrwvT5RjCB5aW-xM-M5ATABH7f0=",
+  "https://t3.ftcdn.net/jpg/04/73/11/56/360_F_473115635_ut9ET35Sb5Q0bVNqErYU1qQehlhfJpkY.jpg",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887683/ef1bbbf6dff0c90864d83b252ac689c0_in6jo9.jpg",
+  "https://t3.ftcdn.net/jpg/01/95/87/04/360_F_195870457_ikd3O9QHsLHtqwK92Mynk3Mdq37Qji1H.jpg",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887651/amazing-woman-portrait-beautiful-girl-model-fashion_shyxkl.jpg",
+
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887637/young-beautiful-woman-on-light-background_yt5edi.jpg",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887618/studio-shot-of-young-beautiful-woman_c1nokw.jpg",
+  "https://t4.ftcdn.net/jpg/02/05/57/31/360_F_205573127_717UojzrGbQjHC4Ctn06kFjoZ7Hl6oX3.webp",
+  "https://t4.ftcdn.net/jpg/03/54/18/79/360_F_354187986_PLWm3c9JJJW48Wu8yUbaUnldmOaimIY2.jpg",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681887540/wallpaper2you_514211_tavf1x.jpg",
+
+  "https://t4.ftcdn.net/jpg/04/30/27/41/360_F_430274102_sEWTZoMpY1NCGd6hDH7Ns4vLykDPOck7.jpg",
+  "https://www.slazzer.com/blog/wp-content/uploads/2022/11/Professional-Profile-Picture-1.jpg",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681822472/portrait-of-a-beautiful-young-woman-outdoor_x95oy9.jpg",
+  "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://res.cloudinary.com/do01ayalz/image/upload/v1681822307/360_F_187145146_SB34n4kdiNqlVSvaTy4YUJcUWjNO540N_sbh3w5.jpg"
+]
+
+# Create 10 Babysitter records
+30.times do |i|
+  user = User.create!(
+    email: "babysitter#{i + 1}@example.com",
+    password: "password",
+    first_name: first_names[i % 30],
+    last_name: last_names[i % 30],
+    gender: genders[i % 2],
+    address: addresses[i % 30]
+  )
+  puts i
+  # Download a random image from the internet and upload it to Cloudinary
+  file = image_paths[i]
+  puts "trying to add #{file}"
+  user.image.attach(io: URI.open(file), filename: "image.jpg")
+
+puts "image added to user"
+
+puts "babysitters successfully created"
+  babysitter= Babysitter.create!(
+    first_name: first_names[i % 30],
+    last_name: last_names[i % 30],
+    age: 18 + (i % 13),
+    gender: genders[i % 2],
+    address: addresses[i % 30],
+    cost_per_hour: costs_per_hour[i % 5],
+    years_of_experience: years_of_experience[i % 11],
+    user: user
+  )
+  babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
+  babysitter.save!
+end
 puts "babysitters successfully created"
 
 puts "Creating Events.."
@@ -657,7 +662,7 @@ puts "Creating Events.."
 event1 = john.events.create!(
   name: 'Berlin Zoo Day Trip',
   description: 'Join us for a day at the Berlin Zoo! Get up close and personal with lions, tigers, and bears (oh my!), as well as a wide variety of other fascinating creatures from all around the world.',
-  address: 'Simon-Dach-Straße 43, 10245 Berlin, Germany',
+  address: 'Hardenbergpl. 8, 10787 Berlin, Germany',
   cost: 20.00,
   category: 'Animals & Nature',
   date: '2023-05-06',
