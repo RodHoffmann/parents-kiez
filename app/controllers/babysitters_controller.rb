@@ -6,7 +6,6 @@ class BabysittersController < ApplicationController
       @babysitters = Babysitter.search_by_first_name_and_last_name_and_cost_per_hour_and_address_and_age_and_gender(params[:query])
     else
       @babysitters = Babysitter.all
-
     end
 
   end
