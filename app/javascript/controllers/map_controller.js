@@ -18,7 +18,7 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v11",
       center: [userLng, userLat],
-      zoom: 12
+      zoom: 13
      })
      this.#addMarkersToMap()
 
