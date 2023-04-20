@@ -7,20 +7,21 @@ class BabysittersController < ApplicationController
     else
       @babysitters = Babysitter.all
     end
-
+    @babysitters_hashes_array = @babysitters.map do |babysitter|
+      {
+        babysitter: babysitter,
+        count_reviews: count_reviews(babysitter),
+        average_review: average_review(babysitter, count_reviews(babysitter)),
+        city: "Berlin",
+        country: "Germany"
+      }
+    end
   end
 
   def show
     @review = Review.new
-    @count_reviews = Review.where(babysitter_id: @babysitter.id).length
-    if @count_reviews != 0
-      @avarage_review = Review.where(babysitter_id: @babysitter.id).map do |review|
-        review.rating
-      end.reduce {|a, b| a+b } / @count_reviews
-    else
-      @avarage_review = 0
-    end
-
+    @count_reviews = count_reviews(@babysitter)
+    @average_review = average_review(@babysitter, @count_reviews)
   end
 
   def new
@@ -55,7 +56,7 @@ class BabysittersController < ApplicationController
 
   def upvote
     if @babysitter.upvote_by current_user
-      redirect_to profile_path(current_user.profile), notice: "The babysitter was added to your list!"
+      redirect_to babysitter_path(@babysitter), notice: "The babysitter was added to your list!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -67,6 +68,21 @@ class BabysittersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def count_reviews(babysitter)
+    Review.where(babysitter_id: babysitter.id).length
+  end
+
+  def average_review(babysitter, count_reviews)
+    if count_reviews != 0
+      average_review = Review.where(babysitter_id: babysitter.id).map do |review|
+        review.rating
+      end.reduce {|a, b| a+b } / count_reviews
+    else
+      average_review = 0
+    end
+    average_review
   end
 
   private

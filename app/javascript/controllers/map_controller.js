@@ -6,17 +6,21 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array,
+    userCenter: Object
   }
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
+    const userLng = this.userCenterValue.lng
+    const userLat = this.userCenterValue.lat
 
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v11",
+      center: [userLng, userLat],
+      zoom: 12
      })
      this.#addMarkersToMap()
-     this.#fitMapToMarkers()
 
      this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }))
   }

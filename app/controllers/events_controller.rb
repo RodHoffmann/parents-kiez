@@ -16,6 +16,7 @@ class EventsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: { event: event })
       }
     end
+    @user_center = { lat: current_user.latitude, lng: current_user.longitude }
   end
 
   def show
@@ -53,7 +54,7 @@ class EventsController < ApplicationController
 
   def upvote
     if @event.upvote_by current_user
-      redirect_to profile_path(current_user.profile), notice: "This event was added to your favourites!"
+      redirect_to event_path(@event), notice: "This event was added to your favourites!"
     else
       render :new, status: :unprocessable_entity
     end
