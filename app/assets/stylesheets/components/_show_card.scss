@@ -141,3 +141,12 @@
   }
   }
 }
+
+.gl-star-rating--stars {
+  &:after {
+    display: none !important;
+  }
+  &:before {
+    display: none !important;
+  }
+}
