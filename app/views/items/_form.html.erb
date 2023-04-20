@@ -1,11 +1,28 @@
 <div class="container">
-  <%= simple_form_for(item) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :age, collection: Item::AGES, as: :radio_buttons %>
-    <%= f.input :image, as: :file %>
-    <div class="m-2 text-center">
-    <%= f.submit "Post it now!", class: "btn btn-color px-5 mb-3 w-100" %>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-5">
+          <%= simple_form_for(item) do |f| %>
+            <div class="text-center">
+              <img src="https://res.cloudinary.com/dgtys3cw2/image/upload/v1681998330/u5wb312rwezict6va5bb.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3" style:"width: 200; height:200;" >
+            </div>
+            <div class="m-3">
+              <%= f.input :name %>
+            </div>
+            <div class="m-3">
+              <%= f.input :description %>
+            </div>
+            <div class="m-3">
+              <%= f.input :age, collection: Item::AGES, as: :select %>
+            </div>
+            <div class="m-3">
+              <%= f.input :image, as: :file %>
+            </div>
+            <div class="m-3">
+            <div class="text-center m-3 mt-4">
+                <%= f.button :submit, "Post it now!", class: "btn btn-color px-5 mb-3 w-100" %>
+            </div>
+          <% end %>
+      </div>
     </div>
-  <% end %>
-</div>
+  </div>
