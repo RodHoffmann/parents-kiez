@@ -100,425 +100,425 @@ puts "Users creation completed successfuly"
 
 puts "Creating Items.."
 
-# item1 = john.items.create!(
-#   name: "Baby rattle",
-#   description: "A colorful plastic rattle for babies",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item1
-# image_item1 = URI.open("https://www.verywellfamily.com/thmb/oAmzoovzj0HqQmprnm9KkwueGJ4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-Baby-Rattles-VWF-tout-281a53fe25764897ad227834f014e655.jpg")
-# item1.image.attach(io: image_item1, filename: "item1.jpg")
-# item1.image.analyze
-# item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
-# item1.save
+item1 = john.items.create!(
+  name: "Baby rattle",
+  description: "A colorful plastic rattle for babies",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item1
+image_item1 = URI.open("https://www.verywellfamily.com/thmb/oAmzoovzj0HqQmprnm9KkwueGJ4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Best-Baby-Rattles-VWF-tout-281a53fe25764897ad227834f014e655.jpg")
+item1.image.attach(io: image_item1, filename: "item1.jpg")
+item1.image.analyze
+item1.image.metadata["public_id"] = Cloudinary::Uploader.upload(item1.image.blob.url, resource_type: :auto)["public_id"]
+item1.save
 
-# item2 = felix.items.create!(
-#   name: "Toddler shoes",
-#   description: "A pair of used toddler shoes in good condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item2
-# image_item2 = URI.open("https://i.ebayimg.com/images/g/esAAAOSwJdRhpPQD/s-l500.jpg")
-# item2.image.attach(io: image_item2, filename: "item2.jpg")
-# item2.image.analyze
-# item2.image.metadata["public_id"] = Cloudinary::Uploader.upload(item2.image.blob.url, resource_type: :auto)["public_id"]
-# item2.save
+item2 = felix.items.create!(
+  name: "Toddler shoes",
+  description: "A pair of used toddler shoes in good condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item2
+image_item2 = URI.open("https://i.ebayimg.com/images/g/esAAAOSwJdRhpPQD/s-l500.jpg")
+item2.image.attach(io: image_item2, filename: "item2.jpg")
+item2.image.analyze
+item2.image.metadata["public_id"] = Cloudinary::Uploader.upload(item2.image.blob.url, resource_type: :auto)["public_id"]
+item2.save
 
-# item3 = jane.items.create!(
-#   name: "Baby clothes",
-#   description: "A bag of gently used baby clothes",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item3
-# image_item3 = URI.open("https://www.sassymamasg.com/wp-content/uploads/2021/11/kids-clothes-babies-singapore-poney.jpeg")
-# item3.image.attach(io: image_item3, filename: "item3.jpg")
-# item3.image.analyze
-# item3.image.metadata["public_id"] = Cloudinary::Uploader.upload(item3.image.blob.url, resource_type: :auto)["public_id"]
-# item3.save
+item3 = jane.items.create!(
+  name: "Baby clothes",
+  description: "A bag of gently used baby clothes",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item3
+image_item3 = URI.open("https://www.sassymamasg.com/wp-content/uploads/2021/11/kids-clothes-babies-singapore-poney.jpeg")
+item3.image.attach(io: image_item3, filename: "item3.jpg")
+item3.image.analyze
+item3.image.metadata["public_id"] = Cloudinary::Uploader.upload(item3.image.blob.url, resource_type: :auto)["public_id"]
+item3.save
 
-# item4 = norma.items.create!(
-#   name: "Potty seat",
-#   description: "A used potty seat in good condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item4
-# image_item4 = URI.open("https://media-www.canadiantire.ca/product/fixing/plumbing/faucets-fixtures/0631048/children-s-potty-seat-75f8a6df-590e-4147-9da1-758f491bb969.png")
-# item4.image.attach(io: image_item4, filename: "item4.jpg")
-# item4.image.analyze
-# item4.image.metadata["public_id"] = Cloudinary::Uploader.upload(item4.image.blob.url, resource_type: :auto)["public_id"]
-# item4.save
+item4 = norma.items.create!(
+  name: "Potty seat",
+  description: "A used potty seat in good condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item4
+image_item4 = URI.open("https://media-www.canadiantire.ca/product/fixing/plumbing/faucets-fixtures/0631048/children-s-potty-seat-75f8a6df-590e-4147-9da1-758f491bb969.png")
+item4.image.attach(io: image_item4, filename: "item4.jpg")
+item4.image.analyze
+item4.image.metadata["public_id"] = Cloudinary::Uploader.upload(item4.image.blob.url, resource_type: :auto)["public_id"]
+item4.save
 
-# item5 = john.items.create!(
-#   name: "Stroller",
-#   description: "A used stroller in good condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item5
-# image_item5 = URI.open("https://media.4rgos.it/i/Argos/8440442_R_Z001A?w=750&h=440&qlt=70")
-# item5.image.attach(io: image_item5, filename: "item5.jpg")
-# item5.image.analyze
-# item5.image.metadata["public_id"] = Cloudinary::Uploader.upload(item5.image.blob.url, resource_type: :auto)["public_id"]
-# item5.save
+item5 = john.items.create!(
+  name: "Stroller",
+  description: "A used stroller in good condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item5
+image_item5 = URI.open("https://media.4rgos.it/i/Argos/8440442_R_Z001A?w=750&h=440&qlt=70")
+item5.image.attach(io: image_item5, filename: "item5.jpg")
+item5.image.analyze
+item5.image.metadata["public_id"] = Cloudinary::Uploader.upload(item5.image.blob.url, resource_type: :auto)["public_id"]
+item5.save
 
-# item6 = felix.items.create!(
-#   name: "Crib",
-#   description: "A wooden crib in excellent condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item6
-# image_item6 = URI.open("https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202253/0240/west-elm-x-pbk-mid-century-convertible-crib-1-c.jpg")
-# item6.image.attach(io: image_item6, filename: "item6.jpg")
-# item6.image.analyze
-# item6.image.metadata["public_id"] = Cloudinary::Uploader.upload(item6.image.blob.url, resource_type: :auto)["public_id"]
-# item6.save
+item6 = felix.items.create!(
+  name: "Crib",
+  description: "A wooden crib in excellent condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item6
+image_item6 = URI.open("https://assets.pkimgs.com/pkimgs/ab/images/dp/wcm/202253/0240/west-elm-x-pbk-mid-century-convertible-crib-1-c.jpg")
+item6.image.attach(io: image_item6, filename: "item6.jpg")
+item6.image.analyze
+item6.image.metadata["public_id"] = Cloudinary::Uploader.upload(item6.image.blob.url, resource_type: :auto)["public_id"]
+item6.save
 
-# item7 = jane.items.create!(
-#   name: "Breast pump",
-#   description: "A used breast pump in good condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item7
-# image_item7 = URI.open("https://m.media-amazon.com/images/I/81eryoA2dPL._SL1500_.jpg")
-# item7.image.attach(io: image_item7, filename: "item7.jpg")
-# item7.image.analyze
-# item7.image.metadata["public_id"] = Cloudinary::Uploader.upload(item7.image.blob.url, resource_type: :auto)["public_id"]
-# item7.save
+item7 = jane.items.create!(
+  name: "Breast pump",
+  description: "A used breast pump in good condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item7
+image_item7 = URI.open("https://m.media-amazon.com/images/I/81eryoA2dPL._SL1500_.jpg")
+item7.image.attach(io: image_item7, filename: "item7.jpg")
+item7.image.analyze
+item7.image.metadata["public_id"] = Cloudinary::Uploader.upload(item7.image.blob.url, resource_type: :auto)["public_id"]
+item7.save
 
-# item8 = norma.items.create!(
-#   name: "Baby monitor",
-#   description: "A used baby monitor in good condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item8
-# image_item8 = URI.open("https://media.wired.com/photos/5c490e5ac2835a2c29c0dc92/191:100/w_2580,c_limit/eufybaby.jpg")
-# item8.image.attach(io: image_item8, filename: "item8.jpg")
-# item8.image.analyze
-# item8.image.metadata["public_id"] = Cloudinary::Uploader.upload(item8.image.blob.url, resource_type: :auto)["public_id"]
-# item8.save
+item8 = norma.items.create!(
+  name: "Baby monitor",
+  description: "A used baby monitor in good condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item8
+image_item8 = URI.open("https://media.wired.com/photos/5c490e5ac2835a2c29c0dc92/191:100/w_2580,c_limit/eufybaby.jpg")
+item8.image.attach(io: image_item8, filename: "item8.jpg")
+item8.image.analyze
+item8.image.metadata["public_id"] = Cloudinary::Uploader.upload(item8.image.blob.url, resource_type: :auto)["public_id"]
+item8.save
 
-# item9 = rodrigo.items.create!(
-#   name: "Baby swing",
-#   description: "A used baby swing in good condition",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item9
-# image_item9 = URI.open("https://www.takatomo.de/media/catalog/product/s/o/solvej-swings-schaukel-dunkelgrau-4.jpg")
-# item9.image.attach(io: image_item9, filename: "item9.jpg")
-# item9.image.analyze
-# item9.image.metadata["public_id"] = Cloudinary::Uploader.upload(item9.image.blob.url, resource_type: :auto)["public_id"]
-# item9.save
+item9 = rodrigo.items.create!(
+  name: "Baby swing",
+  description: "A used baby swing in good condition",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item9
+image_item9 = URI.open("https://www.takatomo.de/media/catalog/product/s/o/solvej-swings-schaukel-dunkelgrau-4.jpg")
+item9.image.attach(io: image_item9, filename: "item9.jpg")
+item9.image.analyze
+item9.image.metadata["public_id"] = Cloudinary::Uploader.upload(item9.image.blob.url, resource_type: :auto)["public_id"]
+item9.save
 
-# item10 = john.items.create!(
-#   name: "Baby bath tub",
-#   description: "A sturdy plastic baby bath tub with built-in seat and drain plug",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item10
-# image_item10 = URI.open("https://rukminim1.flixcart.com/image/416/416/kzzw5u80/bath-tub/v/i/y/swimming-pool-inflatable-baby-bath-tub-pool-summer-indoor-original-imagbw4ygc9thyhg.jpeg?q=70")
-# item10.image.attach(io: image_item10, filename: "item10.jpg")
-# item10.image.analyze
-# item10.image.metadata["public_id"] = Cloudinary::Uploader.upload(item10.image.blob.url, resource_type: :auto)["public_id"]
-# item10.save
+item10 = john.items.create!(
+  name: "Baby bath tub",
+  description: "A sturdy plastic baby bath tub with built-in seat and drain plug",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item10
+image_item10 = URI.open("https://rukminim1.flixcart.com/image/416/416/kzzw5u80/bath-tub/v/i/y/swimming-pool-inflatable-baby-bath-tub-pool-summer-indoor-original-imagbw4ygc9thyhg.jpeg?q=70")
+item10.image.attach(io: image_item10, filename: "item10.jpg")
+item10.image.analyze
+item10.image.metadata["public_id"] = Cloudinary::Uploader.upload(item10.image.blob.url, resource_type: :auto)["public_id"]
+item10.save
 
-# item11 = felix.items.create!(
-#   name: "Baby high chair",
-#   description: "A sturdy and adjustable high chair suitable for infants and toddlers",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item11
-# image_item11 = URI.open("https://media.sketchfab.com/models/92f82f6db6d04e5dae037df20273c506/thumbnails/70b24082258f4a8a85138892527f1480/1504e5fd1bf541deba6d5650df59fb92.jpeg")
-# item11.image.attach(io: image_item11, filename: "item11.jpg")
-# item11.image.analyze
-# item11.image.metadata["public_id"] = Cloudinary::Uploader.upload(item11.image.blob.url, resource_type: :auto)["public_id"]
-# item11.save
+item11 = felix.items.create!(
+  name: "Baby high chair",
+  description: "A sturdy and adjustable high chair suitable for infants and toddlers",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item11
+image_item11 = URI.open("https://media.sketchfab.com/models/92f82f6db6d04e5dae037df20273c506/thumbnails/70b24082258f4a8a85138892527f1480/1504e5fd1bf541deba6d5650df59fb92.jpeg")
+item11.image.attach(io: image_item11, filename: "item11.jpg")
+item11.image.analyze
+item11.image.metadata["public_id"] = Cloudinary::Uploader.upload(item11.image.blob.url, resource_type: :auto)["public_id"]
+item11.save
 
-# item12 = jane.items.create!(
-#   name: "Baby play mat",
-#   description: "A soft and colorful play mat for babies with detachable toys",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item12
-# image_item12 = URI.open("https://www.parents.com/thmb/o5wvuIisbeuGw20qlQK1EdQ41kE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sassy-stages-stem-developmental-play-gym-tout-2000-1dce6dd0f0054cbdb91844e6d30be2af.jpg")
-# item12.image.attach(io: image_item12, filename: "item12.jpg")
-# item12.image.analyze
-# item12.image.metadata["public_id"] = Cloudinary::Uploader.upload(item12.image.blob.url, resource_type: :auto)["public_id"]
-# item12.save
+item12 = jane.items.create!(
+  name: "Baby play mat",
+  description: "A soft and colorful play mat for babies with detachable toys",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item12
+image_item12 = URI.open("https://www.parents.com/thmb/o5wvuIisbeuGw20qlQK1EdQ41kE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sassy-stages-stem-developmental-play-gym-tout-2000-1dce6dd0f0054cbdb91844e6d30be2af.jpg")
+item12.image.attach(io: image_item12, filename: "item12.jpg")
+item12.image.analyze
+item12.image.metadata["public_id"] = Cloudinary::Uploader.upload(item12.image.blob.url, resource_type: :auto)["public_id"]
+item12.save
 
-# item13 = rodrigo.items.create!(
-#   name: "Baby carrier",
-#   description: "A comfortable and ergonomic baby carrier for parents to carry their infants",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item13
-# image_item13 = URI.open("")
-# item13.image.attach(io: image_item13, filename: "item13.jpg")
-# item13.image.analyze
-# item13.image.metadata["public_id"] = Cloudinary::Uploader.upload(item13.image.blob.url, resource_type: :auto)["public_id"]
-# item13.save
+item13 = rodrigo.items.create!(
+  name: "Baby carrier",
+  description: "A comfortable and ergonomic baby carrier for parents to carry their infants",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item13
+image_item13 = URI.open("")
+item13.image.attach(io: image_item13, filename: "item13.jpg")
+item13.image.analyze
+item13.image.metadata["public_id"] = Cloudinary::Uploader.upload(item13.image.blob.url, resource_type: :auto)["public_id"]
+item13.save
 
-# item14 = jane.items.create!(
-#   name: "Baby bottle sterilizer",
-#   description: "An electric sterilizer for baby bottles, pacifiers, and breast pump parts",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item14
-# image_item14 = URI.open("")
-# item14.image.attach(io: image_item14, filename: "item14.jpg")
-# item14.image.analyze
-# item14.image.metadata["public_id"] = Cloudinary::Uploader.upload(item14.image.blob.url, resource_type: :auto)["public_id"]
-# item14.save
+item14 = jane.items.create!(
+  name: "Baby bottle sterilizer",
+  description: "An electric sterilizer for baby bottles, pacifiers, and breast pump parts",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item14
+image_item14 = URI.open("")
+item14.image.attach(io: image_item14, filename: "item14.jpg")
+item14.image.analyze
+item14.image.metadata["public_id"] = Cloudinary::Uploader.upload(item14.image.blob.url, resource_type: :auto)["public_id"]
+item14.save
 
-# item15 = john.items.create!(
-#   name: "Convertible car seat",
-#   description: "A car seat that can be converted from rear-facing to forward-facing as the child grows",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item15
-# image_item15 = URI.open("")
-# item15.image.attach(io: image_item15, filename: "item15.jpg")
-# item15.image.analyze
-# item15.image.metadata["public_id"] = Cloudinary::Uploader.upload(item15.image.blob.url, resource_type: :auto)["public_id"]
-# item15.save
+item15 = john.items.create!(
+  name: "Convertible car seat",
+  description: "A car seat that can be converted from rear-facing to forward-facing as the child grows",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item15
+image_item15 = URI.open("")
+item15.image.attach(io: image_item15, filename: "item15.jpg")
+item15.image.analyze
+item15.image.metadata["public_id"] = Cloudinary::Uploader.upload(item15.image.blob.url, resource_type: :auto)["public_id"]
+item15.save
 
-# item16 = felix.items.create!(
-#   name: "Diaper bag",
-#   description: "A stylish and functional diaper bag with multiple pockets and compartments",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item16
-# image_item16 = URI.open("")
-# item16.image.attach(io: image_item16, filename: "item16.jpg")
-# item16.image.analyze
-# item16.image.metadata["public_id"] = Cloudinary::Uploader.upload(item16.image.blob.url, resource_type: :auto)["public_id"]
-# item16.save
+item16 = felix.items.create!(
+  name: "Diaper bag",
+  description: "A stylish and functional diaper bag with multiple pockets and compartments",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item16
+image_item16 = URI.open("")
+item16.image.attach(io: image_item16, filename: "item16.jpg")
+item16.image.analyze
+item16.image.metadata["public_id"] = Cloudinary::Uploader.upload(item16.image.blob.url, resource_type: :auto)["public_id"]
+item16.save
 
-# item17 = norma.items.create!(
-#   name: "Baby teething toys",
-#   description: "A set of soft and chewy teething toys to soothe your baby's sore gums",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item17
-# image_item17 = URI.open("")
-# item17.image.attach(io: image_item17, filename: "item17.jpg")
-# item17.image.analyze
-# item17.image.metadata["public_id"] = Cloudinary::Uploader.upload(item17.image.blob.url, resource_type: :auto)["public_id"]
-# item17.save
+item17 = norma.items.create!(
+  name: "Baby teething toys",
+  description: "A set of soft and chewy teething toys to soothe your baby's sore gums",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item17
+image_item17 = URI.open("")
+item17.image.attach(io: image_item17, filename: "item17.jpg")
+item17.image.analyze
+item17.image.metadata["public_id"] = Cloudinary::Uploader.upload(item17.image.blob.url, resource_type: :auto)["public_id"]
+item17.save
 
-# item18 = rodrigo.items.create!(
-#   name: "Baby wrap carrier",
-#   description: "A stretchy and versatile wrap carrier to keep your baby close and your hands free",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item18
-# image_item18 = URI.open("")
-# item18.image.attach(io: image_item18, filename: "item18.jpg")
-# item18.image.analyze
-# item18.image.metadata["public_id"] = Cloudinary::Uploader.upload(item18.image.blob.url, resource_type: :auto)["public_id"]
-# item18.save
+item18 = rodrigo.items.create!(
+  name: "Baby wrap carrier",
+  description: "A stretchy and versatile wrap carrier to keep your baby close and your hands free",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item18
+image_item18 = URI.open("")
+item18.image.attach(io: image_item18, filename: "item18.jpg")
+item18.image.analyze
+item18.image.metadata["public_id"] = Cloudinary::Uploader.upload(item18.image.blob.url, resource_type: :auto)["public_id"]
+item18.save
 
-# item19 = felix.items.create!(
-#   name: "Baby activity center",
-#   description: "An interactive play center with music, lights, and toys to keep your baby entertained",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item19
-# image_item19 = URI.open("")
-# item19.image.attach(io: image_item19, filename: "item19.jpg")
-# item19.image.analyze
-# item19.image.metadata["public_id"] = Cloudinary::Uploader.upload(item19.image.blob.url, resource_type: :auto)["public_id"]
-# item19.save
+item19 = felix.items.create!(
+  name: "Baby activity center",
+  description: "An interactive play center with music, lights, and toys to keep your baby entertained",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item19
+image_item19 = URI.open("")
+item19.image.attach(io: image_item19, filename: "item19.jpg")
+item19.image.analyze
+item19.image.metadata["public_id"] = Cloudinary::Uploader.upload(item19.image.blob.url, resource_type: :auto)["public_id"]
+item19.save
 
-# item20 = john.items.create!(
-#   name: "Baby nasal aspirator",
-#   description: "A safe and effective way to clear your baby's stuffy nose",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item20
-# image_item20 = URI.open("")
-# item20.image.attach(io: image_item20, filename: "item20.jpg")
-# item20.image.analyze
-# item20.image.metadata["public_id"] = Cloudinary::Uploader.upload(item20.image.blob.url, resource_type: :auto)["public_id"]
-# item20.save
+item20 = john.items.create!(
+  name: "Baby nasal aspirator",
+  description: "A safe and effective way to clear your baby's stuffy nose",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item20
+image_item20 = URI.open("")
+item20.image.attach(io: image_item20, filename: "item20.jpg")
+item20.image.analyze
+item20.image.metadata["public_id"] = Cloudinary::Uploader.upload(item20.image.blob.url, resource_type: :auto)["public_id"]
+item20.save
 
-# item21 = jane.items.create!(
-#   name: "Baby carrier",
-#   description: "A comfortable and versatile baby carrier to keep your hands free while you're on the go",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item21
-# image_item21 = URI.open("")
-# item21.image.attach(io: image_item21, filename: "item21.jpg")
-# item21.image.analyze
-# item21.image.metadata["public_id"] = Cloudinary::Uploader.upload(item21.image.blob.url, resource_type: :auto)["public_id"]
-# item21.save
+item21 = jane.items.create!(
+  name: "Baby carrier",
+  description: "A comfortable and versatile baby carrier to keep your hands free while you're on the go",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item21
+image_item21 = URI.open("")
+item21.image.attach(io: image_item21, filename: "item21.jpg")
+item21.image.analyze
+item21.image.metadata["public_id"] = Cloudinary::Uploader.upload(item21.image.blob.url, resource_type: :auto)["public_id"]
+item21.save
 
-# item22 = john.items.create!(
-#   name: "Baby bouncer",
-#   description: "A comfortable and portable baby bouncer that vibrates and plays music to soothe your baby",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item22
-# image_item22 = URI.open("")
-# item22.image.attach(io: image_item22, filename: "item22.jpg")
-# item22.image.analyze
-# item22.image.metadata["public_id"] = Cloudinary::Uploader.upload(item22.image.blob.url, resource_type: :auto)["public_id"]
-# item22.save
+item22 = john.items.create!(
+  name: "Baby bouncer",
+  description: "A comfortable and portable baby bouncer that vibrates and plays music to soothe your baby",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item22
+image_item22 = URI.open("")
+item22.image.attach(io: image_item22, filename: "item22.jpg")
+item22.image.analyze
+item22.image.metadata["public_id"] = Cloudinary::Uploader.upload(item22.image.blob.url, resource_type: :auto)["public_id"]
+item22.save
 
-# item23 = norma.items.create!(
-#   name: "Baby activity center",
-#   description: "An interactive baby activity center with multiple toys and activities to keep your baby engaged",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item23
-# image_item23 = URI.open("")
-# item23.image.attach(io: image_item23, filename: "item23.jpg")
-# item23.image.analyze
-# item23.image.metadata["public_id"] = Cloudinary::Uploader.upload(item23.image.blob.url, resource_type: :auto)["public_id"]
-# item23.save
+item23 = norma.items.create!(
+  name: "Baby activity center",
+  description: "An interactive baby activity center with multiple toys and activities to keep your baby engaged",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item23
+image_item23 = URI.open("")
+item23.image.attach(io: image_item23, filename: "item23.jpg")
+item23.image.analyze
+item23.image.metadata["public_id"] = Cloudinary::Uploader.upload(item23.image.blob.url, resource_type: :auto)["public_id"]
+item23.save
 
-# item24 = rodrigo.items.create!(
-#   name: "Baby gate",
-#   description: "A durable and easy-to-install baby gate to keep your baby safe and secure",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item24
-# image_item24 = URI.open("")
-# item24.image.attach(io: image_item24, filename: "item24.jpg")
-# item24.image.analyze
-# item24.image.metadata["public_id"] = Cloudinary::Uploader.upload(item24.image.blob.url, resource_type: :auto)["public_id"]
-# item24.save
+item24 = rodrigo.items.create!(
+  name: "Baby gate",
+  description: "A durable and easy-to-install baby gate to keep your baby safe and secure",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item24
+image_item24 = URI.open("")
+item24.image.attach(io: image_item24, filename: "item24.jpg")
+item24.image.analyze
+item24.image.metadata["public_id"] = Cloudinary::Uploader.upload(item24.image.blob.url, resource_type: :auto)["public_id"]
+item24.save
 
-# item25 = jane.items.create!(
-#   name: "Convertible car seat",
-#   description: "A car seat that can be used as both rear-facing and front-facing to accommodate growing babies",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item25
-# image_item25 = URI.open("")
-# item25.image.attach(io: image_item25, filename: "item25.jpg")
-# item25.image.analyze
-# item25.image.metadata["public_id"] = Cloudinary::Uploader.upload(item25.image.blob.url, resource_type: :auto)["public_id"]
-# item25.save
+item25 = jane.items.create!(
+  name: "Convertible car seat",
+  description: "A car seat that can be used as both rear-facing and front-facing to accommodate growing babies",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item25
+image_item25 = URI.open("")
+item25.image.attach(io: image_item25, filename: "item25.jpg")
+item25.image.analyze
+item25.image.metadata["public_id"] = Cloudinary::Uploader.upload(item25.image.blob.url, resource_type: :auto)["public_id"]
+item25.save
 
-# item26 = john.items.create!(
-#   name: "Baby carrier",
-#   description: "A comfortable and adjustable baby carrier to keep your hands free while carrying your baby",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item26
-# image_item26 = URI.open("")
-# item26.image.attach(io: image_item26, filename: "item26.jpg")
-# item26.image.analyze
-# item26.image.metadata["public_id"] = Cloudinary::Uploader.upload(item26.image.blob.url, resource_type: :auto)["public_id"]
-# item26.save
+item26 = john.items.create!(
+  name: "Baby carrier",
+  description: "A comfortable and adjustable baby carrier to keep your hands free while carrying your baby",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item26
+image_item26 = URI.open("")
+item26.image.attach(io: image_item26, filename: "item26.jpg")
+item26.image.analyze
+item26.image.metadata["public_id"] = Cloudinary::Uploader.upload(item26.image.blob.url, resource_type: :auto)["public_id"]
+item26.save
 
-# item27 = felix.items.create!(
-#   name: "Diaper pail",
-#   description: "A hands-free, odor-locking diaper pail to keep your nursery smelling fresh",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item27
-# image_item27 = URI.open("")
-# item27.image.attach(io: image_item27, filename: "item27.jpg")
-# item27.image.analyze
-# item27.image.metadata["public_id"] = Cloudinary::Uploader.upload(item27.image.blob.url, resource_type: :auto)["public_id"]
-# item27.save
+item27 = felix.items.create!(
+  name: "Diaper pail",
+  description: "A hands-free, odor-locking diaper pail to keep your nursery smelling fresh",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item27
+image_item27 = URI.open("")
+item27.image.attach(io: image_item27, filename: "item27.jpg")
+item27.image.analyze
+item27.image.metadata["public_id"] = Cloudinary::Uploader.upload(item27.image.blob.url, resource_type: :auto)["public_id"]
+item27.save
 
-# item28 = norma.items.create!(
-#   name: "Baby bouncer",
-#   description: "A comfortable and soothing baby bouncer that can be used to lull your baby to sleep",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item28
-# image_item28 = URI.open("")
-# item28.image.attach(io: image_item28, filename: "item28.jpg")
-# item28.image.analyze
-# item28.image.metadata["public_id"] = Cloudinary::Uploader.upload(item28.image.blob.url, resource_type: :auto)["public_id"]
-# item28.save
+item28 = norma.items.create!(
+  name: "Baby bouncer",
+  description: "A comfortable and soothing baby bouncer that can be used to lull your baby to sleep",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item28
+image_item28 = URI.open("")
+item28.image.attach(io: image_item28, filename: "item28.jpg")
+item28.image.analyze
+item28.image.metadata["public_id"] = Cloudinary::Uploader.upload(item28.image.blob.url, resource_type: :auto)["public_id"]
+item28.save
 
-# item29 = felix.items.create!(
-#   name: "Baby carrier",
-#   description: "A comfortable and adjustable baby carrier for on-the-go parents",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item29
-# image_item29 = URI.open("")
-# item29.image.attach(io: image_item29, filename: "item29.jpg")
-# item29.image.analyze
-# item29.image.metadata["public_id"] = Cloudinary::Uploader.upload(item29.image.blob.url, resource_type: :auto)["public_id"]
-# item29.save
+item29 = felix.items.create!(
+  name: "Baby carrier",
+  description: "A comfortable and adjustable baby carrier for on-the-go parents",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item29
+image_item29 = URI.open("")
+item29.image.attach(io: image_item29, filename: "item29.jpg")
+item29.image.analyze
+item29.image.metadata["public_id"] = Cloudinary::Uploader.upload(item29.image.blob.url, resource_type: :auto)["public_id"]
+item29.save
 
-# item30 = rodrigo.items.create!(
-#   name: "Baby gate",
-#   description: "A sturdy and reliable baby gate to keep your little one safe",
-#   age: Item::AGES.shuffle[0],
-#   available: true,
-#   user_id: User.last.id
-# )
-# p item30
-# image_item30 = URI.open("")
-# item30.image.attach(io: image_item30, filename: "item30.jpg")
-# item30.image.analyze
-# item30.image.metadata["public_id"] = Cloudinary::Uploader.upload(item30.image.blob.url, resource_type: :auto)["public_id"]
-# item30.save
+item30 = rodrigo.items.create!(
+  name: "Baby gate",
+  description: "A sturdy and reliable baby gate to keep your little one safe",
+  age: Item::AGES.shuffle[0],
+  available: true,
+  user_id: User.last.id
+)
+p item30
+image_item30 = URI.open("")
+item30.image.attach(io: image_item30, filename: "item30.jpg")
+item30.image.analyze
+item30.image.metadata["public_id"] = Cloudinary::Uploader.upload(item30.image.blob.url, resource_type: :auto)["public_id"]
+item30.save
 
 puts "Items created successfully"
 
