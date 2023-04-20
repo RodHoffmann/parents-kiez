@@ -56,7 +56,7 @@ class BabysittersController < ApplicationController
 
   def upvote
     if @babysitter.upvote_by current_user
-      redirect_to profile_path(current_user.profile), notice: "The babysitter was added to your list!"
+      redirect_to babysitter_path(@babysitter), notice: "The babysitter was added to your list!"
     else
       render :new, status: :unprocessable_entity
     end

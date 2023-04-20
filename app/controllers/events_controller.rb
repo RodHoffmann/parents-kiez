@@ -54,7 +54,7 @@ class EventsController < ApplicationController
 
   def upvote
     if @event.upvote_by current_user
-      redirect_to profile_path(current_user.profile), notice: "This event was added to your favourites!"
+      redirect_to event_path(@event), notice: "This event was added to your favourites!"
     else
       render :new, status: :unprocessable_entity
     end

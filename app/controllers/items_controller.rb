@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
     if @item.upvote_by current_user
       @item.available = false
       @item.save!
-      redirect_to profile_path(current_user.profile), notice: "This item was reserved successfully!"
+      redirect_to items_path, notice: "This item was reserved successfully!"
     else
       render :new, status: :unprocessable_entity
     end
