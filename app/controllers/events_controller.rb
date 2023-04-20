@@ -16,6 +16,7 @@ class EventsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: { event: event })
       }
     end
+    @user_center = { lat: current_user.latitude, lng: current_user.longitude }
   end
 
   def show

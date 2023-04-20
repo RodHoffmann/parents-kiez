@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
         marker_html: render_to_string(partial: "marker", locals: { item: item })
       }
     end
+    @user_center = { lat: current_user.latitude, lng: current_user.longitude }
   end
 
   def show
