@@ -89,7 +89,7 @@ rodrigo = User.create(email: 'rodrigo@example.com',
   password: '123456',
   first_name: 'Rodrigo',
   last_name: 'Mueller',
-  address: 'Schönhauser Allee 77',
+  address: 'Auguststraße 22, 10117 Berlin, Germany',
   gender: "Non Binary")
 
 rodrigo.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098439/ucuf0ijqdn74bbxgzcg9.jpg'), filename: 'profile5.jpg', content_type: 'image/jpg')
