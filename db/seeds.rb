@@ -90,7 +90,7 @@ rodrigo = User.create(email: 'rodrigo@example.com',
   first_name: 'Rodrigo',
   last_name: 'Mueller',
   address: 'Schönhauser Allee 77',
-  gender: "Other")
+  gender: "Non Binary")
 
 rodrigo.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098439/ucuf0ijqdn74bbxgzcg9.jpg'), filename: 'profile5.jpg', content_type: 'image/jpg')
 p rodrigo
@@ -551,6 +551,8 @@ last_names = ["Adams", "Brown", "Clark", "Davis", "Edwards", "Foster", "Garcia",
 
 genders = ["Female", "Female", "Female"]
 
+ratings = [5, 4, 3, 2, 1]
+
 addresses = [
   "Schönhauser Allee 26a, 10435 Berlin, Germany",
   "Immanuelkirchstraße 14A, 10405 Berlin, Germany",
@@ -661,6 +663,7 @@ puts "babysitters successfully created"
   )
   babysitter.image.attach(io: URI.open(file), filename: "image.jpg")
   babysitter.save!
+  rand(100).times { Review.new(rating: ratings[rand(4)], babysitter: babysitter, user: User.all.sample).save! }
 end
 puts "babysitters successfully created"
 
