@@ -1,8 +1,27 @@
 <div class="container chatroom"
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"%>
-  <h1>#<%= @current_user.first_name %> & <%= @current_user == @chatroom.user2 ? @chatroom.user1.first_name : @chatroom.user2.first_name %></h1>
-
+  <% if (@current_user == @chatroom.user2) %>
+    <% if @chatroom.user1.image == nil %>
+      <div class="text-center avatar-container d-flex justify-content-center align-items-center">
+        <%= image_tag "/assets/default_avatar.png", class: "avatar-img" %>
+      </div>
+    <% else %>
+      <div class="avatar_container">
+        <%= (cl_image_tag @chatroom.user1.image.key, class: "rounded-circle", width: 100, height: 100, crop: :fill, alt: "Profile Picture") %>
+      </div>
+    <% end %>
+  <% else %>
+    <% if @chatroom.user2.image == nil %>
+      <div class="text-center avatar-container d-flex justify-content-center align-items-center">
+        <%= image_tag "/assets/default_avatar.png", class: "avatar-img" %>
+      </div>
+    <% else %>
+      <div class="avatar_container">
+        <%= (cl_image_tag @chatroom.user2.image.key, class: "rounded-circle", width: 100, height: 100, crop: :fill, alt: "Profile Picture") %>
+      </div>
+    <% end %>
+  <% end %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>

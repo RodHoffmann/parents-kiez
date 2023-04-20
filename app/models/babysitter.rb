@@ -1,7 +1,7 @@
 class Babysitter < ApplicationRecord
   has_one_attached :image
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :age, presence: true
