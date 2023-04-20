@@ -1,8 +1,11 @@
   <div class ="search">
-    <%= form_with url: babysitters_path, method: :get, class: "d-flex my-3 mx-3" do %>
+    <%= form_with url: babysitters_path, method: :get, class: "search-form-control d-flex my-3 mx-3" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Find a babysitter" %>
+      <button name="button" type="submit" class="btn-search">
+        Go <i class="fas fa-search"></i>
+      </button>
     <% end %>
   </div>
