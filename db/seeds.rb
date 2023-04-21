@@ -111,6 +111,11 @@ puts "Chatrooms creation completed successfuly"
 
 puts "Creating messages..."
 
+chatrooms.each do |chatroom|
+  Message.create(content: 'Hello, how are you?', user_id: chatroom.user1.id, chatroom_id: chatroom.id)
+  Message.create(content: 'Fine, thank you for asking! how about you?', user_id: chatroom.user2.id, chatroom_id: chatroom.id)
+end
+
 puts "Messages successfully created"
 
 # Create 30 users
@@ -833,21 +838,3 @@ event30.image.metadata["public_id"] = Cloudinary::Uploader.upload(event30.image.
 event30.save
 
 puts "Events successfully created"
-
-jane_babysitter = Babysitter.create!(
-  first_name: 'Jane',
-  last_name: 'Jackson',
-  age: 25,
-  gender: "Female",
-  address: 'Simon Bolivar Str. 52',
-  cost_per_hour: 10,
-  years_of_experience: 5,
-  user: jane,
-  bio: "Hi, I'm Jane, a compassionate and experienced babysitter based in Berlin, Germany. With over 5 years of experience, I have become a trusted and reliable caregiver for families throughout the area. I understand that every child is unique and requires individual attention and care. I am patient, attentive, and have a natural ability to connect with children of all ages. My gentle and nurturing demeanor puts parents at ease, knowing that their child is in good hands. Safety is always a top priority for me, and I am CPR and first aid certified. Whether it's a date night out for parents or a full-time nanny, I am dedicated to providing high-quality and personalized care for each family I work with."
-)
-
-
-jane_babysitter.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098708/aqfxtwzil5kqpqb2k740.jpg'), filename: 'profile3.jpg', content_type: 'image/jpg')
-jane_babysitter.save!
-
-rand(100).times { Review.new(rating: ratings[rand(3..5)], babysitter: jane_babysitter, user: User.all.sample).save! }
