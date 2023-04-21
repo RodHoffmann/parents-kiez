@@ -850,4 +850,4 @@ jane_babysitter = Babysitter.create!(
 jane_babysitter.image.attach(io: URI.open('https://res.cloudinary.com/dgtys3cw2/image/upload/v1680098708/aqfxtwzil5kqpqb2k740.jpg'), filename: 'profile3.jpg', content_type: 'image/jpg')
 jane_babysitter.save!
 
-rand(100).times { Review.new(rating: ratings[rand(3..5)], babysitter: jane_babysitter, user: jane).save! }
+rand(100).times { Review.new(rating: ratings[rand(3..5)], babysitter: jane_babysitter, user: User.all.sample).save! }
